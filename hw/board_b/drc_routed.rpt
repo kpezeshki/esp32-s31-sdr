@@ -1,28 +1,8 @@
 ** Drc report for esp32sdr_b_routed.kicad_pcb **
-** Created on 2026-11-10T22:04:13 **
+** Created on 2026-11-11T00:50:33 **
 ** Report includes: Errors, Warnings **
 
 ** Found 137 DRC violations **
-[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.1000 mm)
-    Rule: board setup constraints edge; error
-    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
-    @(101.9000 mm, 132.0000 mm): Pad 1 [EXT_REF] of J3 on F.Cu
-[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
-    Rule: board setup constraints edge; error
-    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
-    @(102.1000 mm, 129.1750 mm): Pad 2 [GND] of J3 on F.Cu
-[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
-    Rule: board setup constraints edge; error
-    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
-    @(102.1000 mm, 129.1750 mm): Pad 2 [GND] of J3 on B.Cu
-[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
-    Rule: board setup constraints edge; error
-    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
-    @(102.1000 mm, 134.8250 mm): Pad 2 [GND] of J3 on F.Cu
-[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
-    Rule: board setup constraints edge; error
-    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
-    @(102.1000 mm, 134.8250 mm): Pad 2 [GND] of J3 on B.Cu
 [copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.1000 mm)
     Rule: board setup constraints edge; error
     @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
@@ -43,142 +23,222 @@
     Rule: board setup constraints edge; error
     @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
     @(102.1000 mm, 116.3250 mm): Pad 2 [GND] of J1 on B.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.1000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
+    @(101.9000 mm, 132.0000 mm): Pad 1 [EXT_REF] of J3 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 129.1750 mm): Pad 2 [GND] of J3 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 129.1750 mm): Pad 2 [GND] of J3 on B.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 134.8250 mm): Pad 2 [GND] of J3 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 140.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 134.8250 mm): Pad 2 [GND] of J3 on B.Cu
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(124.3300 mm, 113.3050 mm): Footprint FHB8
+    @(125.5400 mm, 112.2000 mm): Footprint FHB9
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(124.3300 mm, 113.3050 mm): Footprint FHB8
+    @(123.4200 mm, 112.2000 mm): Footprint FHB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+    @(121.8200 mm, 120.9750 mm): Footprint FMB13
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+    @(123.0300 mm, 123.8000 mm): Footprint FMB14
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+    @(120.9100 mm, 123.8000 mm): Footprint FMB11
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(125.5400 mm, 112.2000 mm): Footprint FHB9
+    @(127.0800 mm, 112.2000 mm): Footprint R352
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(115.4600 mm, 122.6950 mm): Footprint FMB5
+    @(116.6700 mm, 123.8000 mm): Footprint FMB6
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(115.4600 mm, 122.6950 mm): Footprint FMB5
+    @(114.5500 mm, 123.8000 mm): Footprint FMB4
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(120.0900 mm, 115.0250 mm): Footprint FHB3
+    @(120.0900 mm, 113.3050 mm): Footprint FHB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(116.6600 mm, 110.7500 mm): Footprint L350
+    @(114.6600 mm, 112.4500 mm): Footprint U23
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(112.4300 mm, 123.8000 mm): Footprint FMB1
+    @(111.9700 mm, 124.9000 mm): Footprint L330
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(112.4300 mm, 123.8000 mm): Footprint FMB1
+    @(110.4200 mm, 123.1500 mm): Footprint U22
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(112.4300 mm, 123.8000 mm): Footprint FMB1
+    @(113.3400 mm, 122.6950 mm): Footprint FMB2
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
     @(117.6400 mm, 112.2000 mm): Footprint C355
     @(119.1800 mm, 112.2000 mm): Footprint FHB1
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(143.6000 mm, 110.1000 mm): Footprint U3
-    @(140.9350 mm, 114.8000 mm): Footprint L361
+    @(102.1000 mm, 113.5000 mm): Footprint J1
+    @(105.3800 mm, 113.5000 mm): Footprint C301
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(148.1550 mm, 111.8550 mm): Footprint C390
+    @(102.1000 mm, 113.5000 mm): Footprint J1
+    @(104.2000 mm, 113.9800 mm): Footprint D301
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(112.7100 mm, 112.6800 mm): Footprint C351
+    @(111.8800 mm, 112.2000 mm): Footprint C350
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(112.7100 mm, 112.6800 mm): Footprint C351
+    @(114.6600 mm, 112.4500 mm): Footprint U23
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
     @(147.8000 mm, 110.6000 mm): Footprint T2
+    @(148.9050 mm, 109.8650 mm): Footprint L390
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(108.1400 mm, 104.5000 mm): Footprint C310
-    @(110.4200 mm, 105.1500 mm): Footprint U21
+    @(147.8000 mm, 110.6000 mm): Footprint T2
+    @(148.1550 mm, 111.8550 mm): Footprint C390
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(116.6700 mm, 123.8000 mm): Footprint FMB6
-    @(117.5800 mm, 122.6950 mm): Footprint FMB7
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(116.6700 mm, 123.8000 mm): Footprint FMB6
-    @(115.4600 mm, 122.6950 mm): Footprint FMB5
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(117.5800 mm, 122.6950 mm): Footprint FMB7
-    @(118.7900 mm, 123.8000 mm): Footprint FMB8
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(119.9400 mm, 108.6250 mm): Footprint FLB8
-    @(119.9400 mm, 106.9050 mm): Footprint FLB7
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(152.4850 mm, 110.0575 mm): Footprint R394
-    @(154.0450 mm, 110.0575 mm): Footprint C392
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(152.4850 mm, 110.0575 mm): Footprint R394
-    @(151.6550 mm, 110.5375 mm): Footprint R393
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(152.4850 mm, 110.0575 mm): Footprint R394
-    @(153.2650 mm, 110.5375 mm): Footprint R395
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(152.4850 mm, 110.0575 mm): Footprint R394
-    @(151.2550 mm, 109.5775 mm): Footprint L391
+    @(119.1800 mm, 112.2000 mm): Footprint FHB1
+    @(120.0900 mm, 113.3050 mm): Footprint FHB2
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
     @(105.3800 mm, 113.5000 mm): Footprint C301
     @(104.2000 mm, 113.9800 mm): Footprint D301
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(105.3800 mm, 113.5000 mm): Footprint C301
-    @(102.1000 mm, 113.5000 mm): Footprint J1
+    @(111.9700 mm, 109.4000 mm): Footprint L311
+    @(110.7700 mm, 108.0000 mm): Footprint C311
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(111.9700 mm, 109.4000 mm): Footprint L311
+    @(111.9700 mm, 106.9000 mm): Footprint L310
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(150.2550 mm, 110.3450 mm): Footprint U4
+    @(151.2550 mm, 109.5775 mm): Footprint L391
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(150.2550 mm, 110.3450 mm): Footprint U4
+    @(148.9050 mm, 109.8650 mm): Footprint L390
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(151.2550 mm, 109.5775 mm): Footprint L391
+    @(151.6550 mm, 110.5375 mm): Footprint R393
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(151.2550 mm, 109.5775 mm): Footprint L391
+    @(152.4850 mm, 110.0575 mm): Footprint R394
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(143.6000 mm, 110.1000 mm): Footprint U3
+    @(140.9350 mm, 114.8000 mm): Footprint L361
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
     @(156.4750 mm, 110.0575 mm): Footprint J8
     @(154.0450 mm, 110.0575 mm): Footprint C392
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(121.8200 mm, 120.9750 mm): Footprint FMB13
-    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+    @(121.1500 mm, 105.8000 mm): Footprint FLB9
+    @(119.9400 mm, 106.9050 mm): Footprint FLB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(116.9100 mm, 105.8000 mm): Footprint FLB3
+    @(117.8200 mm, 106.9050 mm): Footprint FLB4
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(116.9100 mm, 105.8000 mm): Footprint FLB3
+    @(115.7000 mm, 106.9050 mm): Footprint FLB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(110.6400 mm, 112.2000 mm): Footprint FHP3
+    @(111.8800 mm, 112.2000 mm): Footprint C350
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(110.6400 mm, 112.2000 mm): Footprint FHP3
+    @(109.4300 mm, 113.3050 mm): Footprint FHP2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(119.9400 mm, 108.6250 mm): Footprint FLB8
+    @(119.9400 mm, 106.9050 mm): Footprint FLB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(111.9700 mm, 124.9000 mm): Footprint L330
+    @(110.4200 mm, 123.1500 mm): Footprint U22
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(111.9700 mm, 124.9000 mm): Footprint L330
+    @(111.9700 mm, 127.4000 mm): Footprint L331
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(139.0000 mm, 118.0200 mm): Footprint C364
+    @(140.3500 mm, 116.9000 mm): Footprint L360
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(139.0000 mm, 118.0200 mm): Footprint C364
+    @(137.5000 mm, 114.9500 mm): Footprint U25
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(151.6550 mm, 110.5375 mm): Footprint R393
+    @(152.4850 mm, 110.0575 mm): Footprint R394
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(119.7000 mm, 122.6950 mm): Footprint FMB9
+    @(119.7000 mm, 120.9750 mm): Footprint FMB10
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(119.7000 mm, 122.6950 mm): Footprint FMB9
+    @(118.7900 mm, 123.8000 mm): Footprint FMB8
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(119.7000 mm, 122.6950 mm): Footprint FMB9
+    @(120.9100 mm, 123.8000 mm): Footprint FMB11
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
     @(154.0450 mm, 110.0575 mm): Footprint C392
     @(153.2650 mm, 110.5375 mm): Footprint R395
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(114.6600 mm, 112.4500 mm): Footprint U23
-    @(112.7100 mm, 112.6800 mm): Footprint C351
+    @(154.0450 mm, 110.0575 mm): Footprint C392
+    @(152.4850 mm, 110.0575 mm): Footprint R394
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(114.6600 mm, 112.4500 mm): Footprint U23
-    @(116.6600 mm, 110.7500 mm): Footprint L350
+    @(111.9700 mm, 106.9000 mm): Footprint L310
+    @(113.2500 mm, 105.8000 mm): Footprint C313
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(110.4200 mm, 123.1500 mm): Footprint U22
-    @(108.1400 mm, 122.5000 mm): Footprint C330
+    @(111.9700 mm, 106.9000 mm): Footprint L310
+    @(110.4200 mm, 105.1500 mm): Footprint U21
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(110.4200 mm, 123.1500 mm): Footprint U22
-    @(112.4300 mm, 123.8000 mm): Footprint FMB1
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(110.4200 mm, 123.1500 mm): Footprint U22
-    @(111.9700 mm, 124.9000 mm): Footprint L330
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(119.9400 mm, 106.9050 mm): Footprint FLB7
-    @(119.0300 mm, 105.8000 mm): Footprint FLB6
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(119.9400 mm, 106.9050 mm): Footprint FLB7
-    @(121.1500 mm, 105.8000 mm): Footprint FLB9
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(151.6550 mm, 110.5375 mm): Footprint R393
-    @(151.2550 mm, 109.5775 mm): Footprint L391
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(140.3500 mm, 116.9000 mm): Footprint L360
-    @(141.6950 mm, 116.9000 mm): Footprint C362
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(140.3500 mm, 116.9000 mm): Footprint L360
-    @(140.9350 mm, 114.8000 mm): Footprint L361
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(140.3500 mm, 116.9000 mm): Footprint L360
-    @(139.0000 mm, 118.0200 mm): Footprint C364
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(140.3500 mm, 116.9000 mm): Footprint L360
-    @(137.5000 mm, 114.9500 mm): Footprint U25
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(146.3700 mm, 114.2700 mm): Footprint C371
+    @(143.8300 mm, 114.2700 mm): Footprint C370
     @(145.1000 mm, 116.9100 mm): Footprint T1
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(119.7000 mm, 120.9750 mm): Footprint FMB10
-    @(119.7000 mm, 122.6950 mm): Footprint FMB9
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(119.0300 mm, 105.8000 mm): Footprint FLB6
-    @(117.8200 mm, 106.9050 mm): Footprint FLB4
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(123.4200 mm, 112.2000 mm): Footprint FHB7
-    @(124.3300 mm, 113.3050 mm): Footprint FHB8
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(123.4200 mm, 112.2000 mm): Footprint FHB7
-    @(122.2100 mm, 113.3050 mm): Footprint FHB5
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
     @(117.8200 mm, 106.9050 mm): Footprint FLB4
@@ -186,163 +246,123 @@
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
     @(117.8200 mm, 106.9050 mm): Footprint FLB4
-    @(116.9100 mm, 105.8000 mm): Footprint FLB3
+    @(119.0300 mm, 105.8000 mm): Footprint FLB6
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(111.9700 mm, 106.9000 mm): Footprint L310
-    @(111.9700 mm, 109.4000 mm): Footprint L311
+    @(123.4200 mm, 112.2000 mm): Footprint FHB7
+    @(122.2100 mm, 113.3050 mm): Footprint FHB5
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(111.9700 mm, 106.9000 mm): Footprint L310
-    @(110.4200 mm, 105.1500 mm): Footprint U21
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(111.9700 mm, 106.9000 mm): Footprint L310
-    @(113.2500 mm, 105.8000 mm): Footprint C313
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(136.0000 mm, 118.0200 mm): Footprint C361
+    @(140.3500 mm, 116.9000 mm): Footprint L360
     @(137.5000 mm, 114.9500 mm): Footprint U25
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(118.7900 mm, 123.8000 mm): Footprint FMB8
-    @(119.7000 mm, 122.6950 mm): Footprint FMB9
+    @(140.3500 mm, 116.9000 mm): Footprint L360
+    @(140.9350 mm, 114.8000 mm): Footprint L361
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(119.7000 mm, 122.6950 mm): Footprint FMB9
-    @(120.9100 mm, 123.8000 mm): Footprint FMB11
+    @(140.3500 mm, 116.9000 mm): Footprint L360
+    @(141.6950 mm, 116.9000 mm): Footprint C362
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(113.3400 mm, 122.6950 mm): Footprint FMB2
-    @(114.5500 mm, 123.8000 mm): Footprint FMB4
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(113.3400 mm, 122.6950 mm): Footprint FMB2
-    @(112.4300 mm, 123.8000 mm): Footprint FMB1
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(113.3400 mm, 122.6950 mm): Footprint FMB2
     @(113.3400 mm, 120.9750 mm): Footprint FMB3
+    @(113.3400 mm, 122.6950 mm): Footprint FMB2
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(111.9700 mm, 109.4000 mm): Footprint L311
-    @(110.7700 mm, 108.0000 mm): Footprint C311
+    @(137.5000 mm, 114.9500 mm): Footprint U25
+    @(136.0000 mm, 118.0200 mm): Footprint C361
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(120.9100 mm, 123.8000 mm): Footprint FMB11
-    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+    @(113.2500 mm, 105.8000 mm): Footprint C313
+    @(114.7900 mm, 105.8000 mm): Footprint FLB1
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(143.8300 mm, 114.2700 mm): Footprint C370
+    @(121.3000 mm, 112.2000 mm): Footprint FHB4
+    @(120.0900 mm, 113.3050 mm): Footprint FHB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(121.3000 mm, 112.2000 mm): Footprint FHB4
+    @(122.2100 mm, 113.3050 mm): Footprint FHB5
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(110.4200 mm, 105.1500 mm): Footprint U21
+    @(108.1400 mm, 104.5000 mm): Footprint C310
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(146.3700 mm, 114.2700 mm): Footprint C371
     @(145.1000 mm, 116.9100 mm): Footprint T1
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(149.2550 mm, 112.2550 mm): Footprint C391
-    @(149.2550 mm, 114.0550 mm): Footprint R390
+    @(140.9350 mm, 114.8000 mm): Footprint L361
+    @(141.6950 mm, 116.9000 mm): Footprint C362
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(121.8200 mm, 122.6950 mm): Footprint FMB12
-    @(123.0300 mm, 123.8000 mm): Footprint FMB14
+    @(116.6700 mm, 123.8000 mm): Footprint FMB6
+    @(117.5800 mm, 122.6950 mm): Footprint FMB7
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(114.5500 mm, 123.8000 mm): Footprint FMB4
-    @(115.4600 mm, 122.6950 mm): Footprint FMB5
+    @(110.4200 mm, 123.1500 mm): Footprint U22
+    @(108.1400 mm, 122.5000 mm): Footprint C330
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(112.7100 mm, 112.6800 mm): Footprint C351
-    @(111.8800 mm, 112.2000 mm): Footprint C350
+    @(131.7000 mm, 109.7000 mm): Footprint C360
+    @(133.0000 mm, 110.9000 mm): Footprint U24
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(150.2550 mm, 110.3450 mm): Footprint U4
-    @(148.9050 mm, 109.8650 mm): Footprint L390
+    @(114.7900 mm, 105.8000 mm): Footprint FLB1
+    @(115.7000 mm, 106.9050 mm): Footprint FLB2
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(150.2550 mm, 110.3450 mm): Footprint U4
-    @(151.2550 mm, 109.5775 mm): Footprint L391
+    @(117.5800 mm, 122.6950 mm): Footprint FMB7
+    @(118.7900 mm, 123.8000 mm): Footprint FMB8
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(124.3300 mm, 113.3050 mm): Footprint FHB8
-    @(125.5400 mm, 112.2000 mm): Footprint FHB9
+    @(122.2100 mm, 115.0250 mm): Footprint FHB6
+    @(122.2100 mm, 113.3050 mm): Footprint FHB5
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(153.2650 mm, 110.5375 mm): Footprint R395
+    @(152.4850 mm, 110.0575 mm): Footprint R394
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
     @(110.7700 mm, 126.0000 mm): Footprint C331
     @(111.9700 mm, 127.4000 mm): Footprint L331
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(115.7000 mm, 106.9050 mm): Footprint FLB2
-    @(116.9100 mm, 105.8000 mm): Footprint FLB3
+    @(119.9400 mm, 106.9050 mm): Footprint FLB7
+    @(119.0300 mm, 105.8000 mm): Footprint FLB6
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(115.7000 mm, 106.9050 mm): Footprint FLB2
-    @(114.7900 mm, 105.8000 mm): Footprint FLB1
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(148.9050 mm, 109.8650 mm): Footprint L390
-    @(147.8000 mm, 110.6000 mm): Footprint T2
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(120.0900 mm, 113.3050 mm): Footprint FHB2
-    @(121.3000 mm, 112.2000 mm): Footprint FHB4
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(120.0900 mm, 113.3050 mm): Footprint FHB2
-    @(119.1800 mm, 112.2000 mm): Footprint FHB1
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(120.0900 mm, 113.3050 mm): Footprint FHB2
-    @(120.0900 mm, 115.0250 mm): Footprint FHB3
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(104.2000 mm, 113.9800 mm): Footprint D301
-    @(102.1000 mm, 113.5000 mm): Footprint J1
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(141.6950 mm, 116.9000 mm): Footprint C362
-    @(140.9350 mm, 114.8000 mm): Footprint L361
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(112.4300 mm, 123.8000 mm): Footprint FMB1
-    @(111.9700 mm, 124.9000 mm): Footprint L330
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(111.9700 mm, 124.9000 mm): Footprint L330
-    @(111.9700 mm, 127.4000 mm): Footprint L331
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(111.8800 mm, 112.2000 mm): Footprint C350
-    @(110.6400 mm, 112.2000 mm): Footprint FHP3
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(109.4300 mm, 113.3050 mm): Footprint FHP2
-    @(110.6400 mm, 112.2000 mm): Footprint FHP3
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(109.4300 mm, 113.3050 mm): Footprint FHP2
     @(108.5200 mm, 112.2000 mm): Footprint FHP1
+    @(109.4300 mm, 113.3050 mm): Footprint FHP2
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(139.0000 mm, 118.0200 mm): Footprint C364
-    @(137.5000 mm, 114.9500 mm): Footprint U25
+    @(114.5500 mm, 123.8000 mm): Footprint FMB4
+    @(113.3400 mm, 122.6950 mm): Footprint FMB2
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(127.0800 mm, 112.2000 mm): Footprint R352
-    @(125.5400 mm, 112.2000 mm): Footprint FHB9
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(121.3000 mm, 112.2000 mm): Footprint FHB4
-    @(122.2100 mm, 113.3050 mm): Footprint FHB5
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(122.2100 mm, 113.3050 mm): Footprint FHB5
-    @(122.2100 mm, 115.0250 mm): Footprint FHB6
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(113.2500 mm, 105.8000 mm): Footprint C313
-    @(114.7900 mm, 105.8000 mm): Footprint FLB1
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(133.0000 mm, 110.9000 mm): Footprint U24
-    @(131.7000 mm, 109.7000 mm): Footprint C360
+    @(149.2550 mm, 112.2550 mm): Footprint C391
+    @(149.2550 mm, 114.0550 mm): Footprint R390
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.3600 mm, 113.5000 mm): Segment of J1 on F.Silkscreen
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.3600 mm, 113.5000 mm): Segment of J1 on F.Silkscreen
+    @(104.2000 mm, 113.4950 mm): Pad 1 [RF_IN_SMA] of D301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.8600 mm, 113.2500 mm): Segment of J1 on F.Silkscreen
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.8600 mm, 113.2500 mm): Segment of J1 on F.Silkscreen
+    @(104.2000 mm, 113.4950 mm): Pad 1 [RF_IN_SMA] of D301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.8600 mm, 113.7500 mm): Segment of J1 on F.Silkscreen
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
     @(111.5000 mm, 124.2600 mm): Polygon of U22 on F.Silkscreen
@@ -353,36 +373,12 @@
     @(111.9700 mm, 106.4150 mm): Pad 1 [LB_LNA_O] of L310 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(104.3600 mm, 113.5000 mm): Segment of J1 on F.Silkscreen
-    @(104.2000 mm, 113.4950 mm): Pad 1 [RF_IN_SMA] of D301 on F.Cu
+    @(151.0050 mm, 109.7450 mm): Segment of U4 on F.Silkscreen
+    @(151.2550 mm, 110.0625 mm): Pad 1 [IF_SAW_O] of L391 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(104.3600 mm, 113.5000 mm): Segment of J1 on F.Silkscreen
-    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(104.8600 mm, 113.2500 mm): Segment of J1 on F.Silkscreen
-    @(104.2000 mm, 113.4950 mm): Pad 1 [RF_IN_SMA] of D301 on F.Cu
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(104.8600 mm, 113.2500 mm): Segment of J1 on F.Silkscreen
-    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(104.8600 mm, 113.7500 mm): Segment of J1 on F.Silkscreen
-    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(148.5000 mm, 111.3000 mm): Circle of T2 on F.Silkscreen
-    @(148.1550 mm, 111.3750 mm): Pad 1 [IF_CT] of C390 on F.Cu
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(152.8850 mm, 110.3839 mm): Segment of R395 on F.Silkscreen
-    @(152.9950 mm, 110.0575 mm): Pad 2 [PAD_O] of R394 on F.Cu
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(153.6450 mm, 110.3839 mm): Segment of R395 on F.Silkscreen
-    @(153.5650 mm, 110.0575 mm): Pad 1 [PAD_O] of C392 on F.Cu
+    @(151.0050 mm, 110.9450 mm): Segment of U4 on F.Silkscreen
+    @(151.2550 mm, 110.0625 mm): Pad 1 [IF_SAW_O] of L391 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
     @(151.2750 mm, 110.3839 mm): Segment of R393 on F.Silkscreen
@@ -393,12 +389,16 @@
     @(151.9750 mm, 110.0575 mm): Pad 1 [IF_SAW_O] of R394 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(151.0050 mm, 109.7450 mm): Segment of U4 on F.Silkscreen
-    @(151.2550 mm, 110.0625 mm): Pad 1 [IF_SAW_O] of L391 on F.Cu
+    @(152.8850 mm, 110.3839 mm): Segment of R395 on F.Silkscreen
+    @(152.9950 mm, 110.0575 mm): Pad 2 [PAD_O] of R394 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(151.0050 mm, 110.9450 mm): Segment of U4 on F.Silkscreen
-    @(151.2550 mm, 110.0625 mm): Pad 1 [IF_SAW_O] of L391 on F.Cu
+    @(153.6450 mm, 110.3839 mm): Segment of R395 on F.Silkscreen
+    @(153.5650 mm, 110.0575 mm): Pad 1 [PAD_O] of C392 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(148.5000 mm, 111.3000 mm): Circle of T2 on F.Silkscreen
+    @(148.1550 mm, 111.3750 mm): Pad 1 [IF_CT] of C390 on F.Cu
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(162.0000 mm, 100.0000 mm): Segment on Edge.Cuts

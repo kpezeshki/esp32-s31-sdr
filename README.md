@@ -33,9 +33,6 @@ The IF is 2440 MHz (61 × 40 MHz).
 
 - Instantaneous dynamic range is ≈44 dB in 40 MHz, limited by the 8-bit ADC.
 - Cost: about $87 per system at qty 5, about $68 at qty 10. That is from LCSC prices; the PCB and shipping figures are estimates.
-- Fixes in progress, to land in a follow-up commit:
-  - Board A: re-route the USB HS pair as a coupled 90 Ω pair.
-  - Board B: move the DNP 40 MHz reference-option links next to the TCXO.
 - Before ordering: run a JLC CPL/DFM preview, and check stock for the ESP32-S31 module and the RFFC5072.
 
 ## Repository layout
@@ -47,7 +44,7 @@ The IF is 2440 MHz (61 × 40 MHz).
 | `analysis/` | Python models: cascade, frequency plan, lumped filter synthesis, cost |
 | `em/` | Sonnet EM models of the 0402 filter layouts. EM-in-the-loop optimisation and Monte Carlo (`em/EM_REPORT.md`, `em/filters/FINAL_FILTERS.md`). `RLM_LICENSE` must be set to run Sonnet |
 | `hw/design2.py` | Netlists for both boards (`build_a`, `build_b`) |
-| `hw/placement_a.py`, `hw/placement_b.py` | Placement and scripted routes. Board A: module escapes and RGMII lanes. Board B: RF chain exactly as EM-modelled |
+| `hw/placement_a.py`, `hw/placement_b.py` | Placement and scripted routes. Board A: module escapes, RGMII lanes, USB HS pair. Board B: RF chain exactly as EM-modelled |
 | `hw/pcb2.py`, `hw/build_pcb.py`, `hw/footprints.py` | KiCad 10 board generation (pcbnew Python) and custom footprints (`hw/esp32_sdr.pretty`) |
 | `hw/fr2.py`, `hw/run_freerouting.sh` | Freerouting flow: DSN export/SES import, incremental passes, scripted fixes. Freerouting runs network-isolated (see `claude_notes/FREEROUTING_AUDIT.md`) |
 | `hw/stitch.py`, `hw/rm_dangling.py`, `hw/silk_clean.py`, `hw/render_routed.py` | Post-route: GND stitching, cleanup, silk, renders |

@@ -5,10 +5,10 @@ H3,M2.5,MountingHole_2.7mm_M2.5,
 H4,M2.5,MountingHole_2.7mm_M2.5,
 R706,1k,R_0603_1608Metric,ESP32 40 MHz option: 3.3 V CMOS -> ~0.9 Vpp divider
 R707,390,R_0603_1608Metric,
-R708,0,R_0603_1608Metric,fit + remove R701 for coherent ESP32 clock
+R708,0,R_0402_1005Metric,fit + remove R701 for coherent ESP32 clock; 0402 so it sits 1.6 mm from R701 (no REFCLK stub when DNP)
 J3,SMA_REF,SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount,
 C702,100nF,C_0603_1608Metric,
 R703,49.9,R_0603_1608Metric,
-R704,0,R_0603_1608Metric,external 10-104 MHz ref: fit + remove R701
+R704,0,R_0402_1005Metric,external 10-104 MHz ref: fit + remove R701; 0402 next to C384 (no REFCLK stub when DNP)
 C351,0.2pF,C_0402_1005Metric,QPL9503 input tune (DNP)
 R360,0,R_0402_1005Metric,gain-block bypass (fit + remove C361/C364)

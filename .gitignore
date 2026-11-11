@@ -18,3 +18,4 @@ hw/report/site/img/
 
 # Sonnet project caches (regenerable, contain machine logs)
 **/sondata/
+hw/board_*/esp32sdr_*_routed_*.kicad_pcb

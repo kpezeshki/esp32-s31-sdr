@@ -33,14 +33,35 @@ FIXUPS = {
     "A": [],
 }
 
-# Applied by `fr2.py X post` to the final *_routed board (after import + stitch).  ("drop_via", net, (x, y)) removes a
-# scripted escape via the router left unused (it connected to the stub instead).
+# Applied by `fr2.py X post` to the final *_routed board (after import + stitch).  Extra op:
+# ("set_end", net, (x_old, y_old), (x_new, y_new)) moves a track end (trims a scripted segment the router joined mid-way).
+# Unused scripted escape vias are removed afterwards by rm_dangling.py --include-locked.
+# Router-dependent entries are re-checked by DRC after every re-route.
 POST_FIXUPS = {
     "A": [
-        # C211/C203 GND pads (x 31.88) form an F.Cu island boxed in by the PHY's west pins: via at (32.4, 33.0)
-        # (>= 0.15 mm to the PHY pads, the VDDL via and traces; off the cap pads) + stub to C211 pad 2.
-        ("via", "GND", (32.4, 33.0)), ("track", "GND", pcbnew.F_Cu, [(31.88, 32.7), (32.4, 33.0)], 0.25),
-        ("drop_via", "RFFC_ENBL", None), ("drop_via", "RFFC_RESETX", None), ("drop_via", "SW2_V2", None),
+        # USB DM pre-route: if the router joins the last vertical mid-way at y 10.0, trim the stub above it
+        ("set_end", "USB_DM", (48.17, 9.0), (48.17, 10.0)),
+        # USB-C: DP pad A6 boxed in (router's A7/B7 DM tie left, its VBUS tie at x 55.33 behind the pads): re-run the
+        # VBUS tie further out (x 56.25, clear of the NPTH pegs) and tie A6-B6 with two vias at x 55.65 (B.Cu link)
+        ("del_track", "VBUS", (55.332, 8.533), (55.332, 4.436)), ("del_track", "VBUS", (55.332, 4.436), (54.946, 4.05)),
+        ("del_track", "VBUS", (54.915, 8.95), (55.332, 8.533)),
+        ("track", "VBUS", pcbnew.F_Cu, [(54.946, 4.05), (55.3, 4.4), (56.25, 5.35), (56.25, 7.65), (55.3, 8.6), (54.915, 8.95)], 0.3),
+        ("track", "USB_DP", pcbnew.F_Cu, [(54.355, 6.75), (55.65, 6.75)], 0.2), ("via", "USB_DP", (55.65, 6.75)),
+        ("track", "USB_DP", pcbnew.B_Cu, [(55.65, 6.75), (55.65, 5.75)], 0.2), ("via", "USB_DP", (55.65, 5.75)),
+        ("track", "USB_DP", pcbnew.F_Cu, [(55.65, 5.75), (54.355, 5.75)], 0.2),
+        # J6 (socket to Board B) pins 1 and 2 are both 5V0: strap them on B.Cu
+        ("track", "5V0", pcbnew.B_Cu, [(3.46, 10.0), (6.0, 10.0)], 0.5),
+        # C211/C203/C207 GND pads (x 31.88) are boxed in by the PHY's west-pin escapes: chain them on F.Cu and take
+        # them down through one via in C211's GND pad (vias in C203/C207 would hit B.Cu PHY_VDDL / PHY_LED2)
+        ("via", "GND", (31.88, 32.7)), ("track", "GND", pcbnew.F_Cu, [(31.88, 32.7), (31.88, 34.9)], 0.25),
+        # GND pads of R215 / R214 boxed in: short F.Cu bridges to the nearest GND via / the cap GND chain (x 31.88),
+        # R214's through the 0.48 mm gap between the C211 / C203 supply pads
+        ("track", "GND", pcbnew.F_Cu, [(31.23, 36.41), (31.28, 36.36), (32.77, 36.36), (33.05, 36.08), (33.05, 35.95)], 0.2),
+        ("via", "GND", (33.05, 35.95)),
+        ("track", "GND", pcbnew.F_Cu, [(29.16, 34.06), (29.16, 33.25), (31.88, 33.25)], 0.2),
+        # J4 DP pads were not linked to the ESD U5 by the router: via on U5's pin1-pin6 DP vertical + B.Cu run to the
+        # A6 tie via
+        ("via", "USB_DP", (50.05, 6.6)), ("track", "USB_DP", pcbnew.B_Cu, [(50.05, 6.6), (55.5, 6.6), (55.65, 6.75)], 0.2),
     ],
     "B": [
         # J7 (header to Board A) pins 1 and 2 are both 5V0 (2.54 mm apart): strap them so both pins carry supply current
@@ -129,14 +150,21 @@ elif step == "cont-export":
 elif step == "post":
     out = os.path.join(d, base + "_routed.kicad_pcb"); b = pcbnew.LoadBoard(out)
     tracks = list(b.GetTracks())
-    drops = {f[1] for f in POST_FIXUPS[which] if f[0] == "drop_via"}
-    # an unused escape via: the module-escape via of that net that touches only one track
-    for v in [t for t in tracks if t.GetClass() == "PCB_VIA" and t.GetNetname() in drops]:
-        n = sum(1 for t in tracks if t.GetClass() != "PCB_VIA" and t.GetNetname() == v.GetNetname()
-                and (t.GetStart() == v.GetPosition() or t.GetEnd() == v.GetPosition()))
-        if n <= 1: b.Remove(v); print("dropped dangling via", v.GetNetname())
-    saved = FIXUPS[which]; FIXUPS[which] = [f for f in POST_FIXUPS[which] if f[0] != "drop_via"]
+    near = lambda p, q: abs(pcbnew.ToMM(p.x) - O - q[0]) < 0.01 and abs(pcbnew.ToMM(p.y) - O - q[1]) < 0.01
+    dels = [f for f in POST_FIXUPS[which] if f[0] == "del_track"]
+    doomed = [t for t in tracks if t.GetClass() != "PCB_VIA" and any(
+        t.GetNetname() == f[1] and ((near(t.GetStart(), f[2]) and near(t.GetEnd(), f[3])) or (near(t.GetStart(), f[3]) and near(t.GetEnd(), f[2])))
+        for f in dels)]
+    for f in [f for f in POST_FIXUPS[which] if f[0] == "set_end"]:
+        for t in tracks:
+            if t.GetClass() == "PCB_VIA" or t.GetNetname() != f[1]: continue
+            new = pcbnew.VECTOR2I(mm(O + f[3][0]), mm(O + f[3][1]))
+            if near(t.GetEnd(), f[2]): t.SetEnd(new); print("trimmed", f[1])
+            elif near(t.GetStart(), f[2]): t.SetStart(new); print("trimmed", f[1])
+    saved = FIXUPS[which]; FIXUPS[which] = [f for f in POST_FIXUPS[which] if f[0] in ("via", "track")]
     apply_fixups(b, [], []); FIXUPS[which] = saved
+    for t in doomed: b.Remove(t)          # removals last (KiCad 10: collections break after Remove)
+    print("deleted tracks:", len(doomed))
     pcbnew.SaveBoard(out, b); print("saved", out)
 elif step == "cont-import":
     b = pcbnew.LoadBoard(os.path.join(d, base + "_cont.kicad_pcb"))

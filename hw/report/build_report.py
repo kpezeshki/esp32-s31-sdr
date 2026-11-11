@@ -154,22 +154,29 @@ Board A (base): U.FL ─ ESP32-S31-WROOM-1U (raw I/Q, 40 MS/s) ─ RGMII ─ YT8
   <li>silk.</li></ul></li>
 <li><b>Board A:</b>
   <ul><li>RGMII module-to-PHY lanes are scripted: intra-group skew ≈ 50 ps, far inside RGMII-ID tolerance.</li>
+  <li>The USB 2.0 HS pair is a scripted coupled pair (≈90 Ω) along the board's top edge over solid In1 GND, with DM/DP matched to 0.9 mm.</li>
   <li>TX 33 Ω resistors were dropped (D21): the reference places them at the MAC, which is impossible under the module.</li>
   <li>PHY decoupling sits at the pins.</li></ul></li>
 <li><b>Board B:</b>
-  <ul><li>The RFFC5072 loop filter is pinned next to the mixer; all LF nets are ≤12 mm on F.Cu.</li>
+  <ul><li>The RFFC5072 loop filter is pinned next to the mixer; all LF nets are ≤13 mm on F.Cu.</li>
+  <li>The reference-clock option links sit at the TCXO, so there is no long stub on the 40 MHz reference.</li>
   <li>Three scripted hand fixes.</li></ul></li>
 <li><b>Autorouter:</b> Freerouting, statically audited (not malicious) and run network-isolated in a memory-capped unit.</li>
 </ul>
 
 <h2>Before ordering</h2>
 <ol>
-<li><b>Board A USB HS pair:</b> 13.5 mm intra-pair skew (≈90 ps) and 4 vias. Re-route as a coupled 90 Ω pair, or accept full-speed USB (Ethernet is the data path).</li>
-<li><b>Board B 40 MHz reference stub:</b> 43 mm on REFCLK_RF because the DNP option resistors R704/R708 sit at the south edge. Move them next to the TCXO.</li>
 <li><b>JLC CPL/DFM preview:</b> check part rotations, and that JLC accepts the 0402 RF ladders at the EM-model pad gaps.</li>
 <li><b>Sourcing:</b> WROOM-1U is not on LCSC; RFFC5072 has 66 in stock and the T2 IF balun 25 (as of {today}). Re-check stock first.</li>
 <li><b>Get a live JLC quote</b> with these Gerbers/BOM/CPL to replace the PCB and shipping assumptions.</li>
 </ol>
+<p class=muted>Resolved since the first version of this report:
+<ul class=muted>
+<li><b>USB HS pair:</b> now a scripted, coupled 0.17/0.11 mm pair (≈90 Ω differential) over solid GND, with DM/DP matched to 0.9 mm (was 13.5 mm skew and 4 vias).</li>
+<li><b>USB-C pad ties:</b> scripted.</li>
+<li><b>40 MHz reference stub:</b> the DNP option links now sit at the TCXO/C384, so REFCLK_RF is 13 mm in total (was 43 mm).</li>
+<li><b>PHY decoupling:</b> three caps rotated so the supply pads face the PHY pins.</li>
+</ul></p>
 
 <h2>Files</h2>
 <ul class=mono>

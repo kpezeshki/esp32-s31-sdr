@@ -115,11 +115,11 @@ def build_b():
     R("R701", "0", "TCXO_OUT", "REFCLK_RF", pkg="R0402", group=g, note="TCXO -> RFFC REF_IN (default)")
     R("R706", "1k", "ESP_REFCLK", "ESPCLK_DIV", group=g, dnp=True, note="ESP32 40 MHz option: 3.3 V CMOS -> ~0.9 Vpp divider")
     R("R707", "390", "ESPCLK_DIV", "GND", group=g, dnp=True)
-    R("R708", "0", "ESPCLK_DIV", "REFCLK_RF", group=g, dnp=True, note="fit + remove R701 for coherent ESP32 clock")
+    R("R708", "0", "ESPCLK_DIV", "REFCLK_RF", pkg="R0402", group=g, dnp=True, note="fit + remove R701 for coherent ESP32 clock; 0402 so it sits 1.6 mm from R701 (no REFCLK stub when DNP)")
     D.add("J3", "SMA_REF", "Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount", {1: "EXT_REF", 2: "GND"}, "", "dnp", dnp=True, group=g)
     C("C702", "100nF", "EXT_REF", "EXTREF_AC", group=g, dnp=True)
     R("R703", "49.9", "EXTREF_AC", "GND", group=g, dnp=True)
-    R("R704", "0", "EXTREF_AC", "REFCLK_RF", group=g, dnp=True, note="external 10-104 MHz ref: fit + remove R701")
+    R("R704", "0", "EXTREF_AC", "REFCLK_RF", pkg="R0402", group=g, dnp=True, note="external 10-104 MHz ref: fit + remove R701; 0402 next to C384 (no REFCLK stub when DNP)")
     D0.build_rf(D, R, C, L, tail="ufl", hand0603=True)
     return D
 

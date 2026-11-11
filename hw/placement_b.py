@@ -191,6 +191,9 @@ FIXED = {   # ref: (x, y, rot)  -- Board B (62 x 38 mm)
     "C383": (40.6, 4.6, 0), "R382": (37.3, 4.6, 0), "C382": (34.0, 4.6, 0),
     "C380": (40.6, 2.9, 0), "R381": (37.3, 2.9, 0),
     "R380": (40.6, 1.2, 0), "C381": (37.3, 1.2, 0),
+    # DNP reference-option 0R links on REFCLK_RF sit right at C384 / R701, so with them unfitted the REFCLK_RF stub is
+    # ~1-2 mm (they used to sit at the south edge: 43 mm REFCLK stub).  The long runs are on their own option nets.
+    "R704": (31.8, 7.1, 0), "R708": (34.5, 9.5, 90),
 }
 def bbox(fp, margin=0.15):
     bb = fp.GetCourtyard(pcbnew.F_CrtYd).BBox() if fp.GetCourtyard(pcbnew.F_CrtYd).OutlineCount() else fp.GetBoundingBox(False)

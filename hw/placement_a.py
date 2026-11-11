@@ -43,6 +43,7 @@ def place_all(B, D):
         if ref in B.fps: B.place(ref, x, y, r)
     module_escapes(B)
     rgmii_lanes(B)
+    usb_pair(B)
     PL.place_rest(B, D)                         # ... and auto-placement then treats those routes as obstacles
 
 
@@ -125,3 +126,42 @@ def zones(B):
     B.poly_zone(pts, pcbnew.In2_Cu, "3V3", name="3V3_L3")
     if not os.environ.get("NO_OUTER_POUR"):
         B.poly_zone(pts, pcbnew.B_Cu, "GND", name="GND_L4"); B.poly_zone(pts, pcbnew.F_Cu, "GND", name="GND_L1")
+
+
+def _offset(pts, d):
+    """Offset a polyline by d to the LEFT of travel (board coords, y down: left of +x travel is -y), mitred corners."""
+    import math
+    segs = []
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+        L = math.hypot(x1 - x0, y1 - y0); ux, uy = (x1 - x0) / L, (y1 - y0) / L; nx, ny = uy, -ux
+        segs.append(((x0 + nx * d, y0 + ny * d), (x1 + nx * d, y1 + ny * d)))
+    out = [segs[0][0]]
+    for (a0, a1), (b0, b1) in zip(segs, segs[1:]):
+        dax, day = a1[0] - a0[0], a1[1] - a0[1]; dbx, dby = b1[0] - b0[0], b1[1] - b0[1]
+        den = dax * dby - day * dbx
+        if abs(den) < 1e-9: out.append(a1); continue
+        s = ((b0[0] - a0[0]) * dby - (b0[1] - a0[1]) * dbx) / den
+        out.append((a0[0] + s * dax, a0[1] + s * day))
+    out.append(segs[-1][1])
+    return [(round(x, 4), round(y, 4)) for x, y in out]
+
+
+def usb_pair(B):
+    """USB 2.0 HS pair as a scripted, coupled, length-matched route (the autorouter gave 13.5 mm skew + 4 vias).
+    0.17 mm lines at 0.28 mm pitch (0.11 mm gap) ~ 90 ohm differential over the adjacent plane (Hammerstad/Wadell
+    estimate for 0.0994 mm prepreg, er 4.1).  Path: module escape vias (14.35, 22.55/23.35) -> B.Cu west under the
+    left castellations -> side-by-side transition vias in the 7-10 mm channel (J6 pins / castellations) -> F.Cu north
+    -> F.Cu east along the top edge (over solid In1 GND) -> 45 deg down past U6 -> east -> north to just south of the
+    ESD U5; the autorouter finishes the last ~3 mm into U5 and J4.  DP is the mitred left offset of DM (exact pitch)."""
+    W, D = 0.17, 0.28
+    def run(net, layer, pts):
+        for a, b in zip(pts, pts[1:]): B.track(a, b, W, layer=layer, net=net)
+    BC, FC = pcbnew.B_Cu, pcbnew.F_Cu
+    run("USB_DM", BC, [(14.35, 22.55), (10.0, 22.55), (9.75, 22.8)])
+    run("USB_DP", BC, [(14.35, 23.35), (9.6, 23.35), (9.15, 22.9), (9.15, 22.8)])
+    B.via(9.75, 22.8, net="USB_DM", d=0.45, drill=0.2); B.via(9.15, 22.8, net="USB_DP", d=0.45, drill=0.2)
+    dm = [(9.62, 22.17), (9.62, 9.82), (9.97, 9.47), (31.0, 9.47), (33.0, 11.47), (47.70, 11.47), (48.17, 11.0), (48.17, 9.0)]
+    dp = _offset(dm, D)                     # heading north the left side is west -> DP west of DM, as U5 needs
+    run("USB_DM", FC, [(9.75, 22.8), (9.75, 22.3)] + dm)
+    run("USB_DP", FC, [(9.15, 22.8), (9.15, 22.45), (dp[0][0], dp[0][1] + 0.25)] + dp)
+

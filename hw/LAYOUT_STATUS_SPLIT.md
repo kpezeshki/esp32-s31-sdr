@@ -7,8 +7,8 @@ Status: **both boards placed, routed and DRC-checked**. Nothing is ordered; stoc
 | Size / stack | 62 × 46 mm, JLC04161H-3313 4L | 62 × 40 mm, same stack |
 | Parts | 67 (61 fitted, 6 DNP), 31 types, **all in-house** (A1: stencil + hotplate for module/PHY, rest by iron) | 160 (95 JLC-placed, 45 JLC types; 52 hand 0603+/connectors; 13 DNP) |
 | Layers | F: parts + signals · In1: **solid GND, no routing** · In2: 3V3 pour + signals · B: GND pour + signals | F: RF chain + parts · In1: **solid GND** (voids under RF 0402 pads per EM model) · In2: GND pour + signals · B: GND pour + signals |
-| Routing | Freerouting (sandboxed, D22 rules) + scripted RGMII lanes / module escapes + 1 post-route fix | Freerouting (sandboxed) + 3 scripted fixes (mixer VDD pins, LDO GND pin, J7 5V0 strap) |
-| Stitching | 127 GND vias (3 mm grid + edge row) | 234 GND vias (2.5 mm grid + 2 mm edge fence) |
+| Routing | Freerouting (sandboxed, D22 rules) + scripted RGMII lanes / module escapes / USB HS pair + post-route fixes (USB-C pad ties, GND bridges, J6 strap) | Freerouting (sandboxed) + 3 scripted fixes (mixer VDD pins, LDO GND pin, J7 5V0 strap) |
+| Stitching | ~122 GND vias (3 mm grid + edge row) | 234 GND vias (2.5 mm grid + 2 mm edge fence) |
 | DRC (KiCad, JLC basic rules) | **0** unconnected / shorts / clearance / hole-clearance | **0** unconnected / shorts / clearance / hole-clearance |
 | Remaining DRC flags (accepted) | silk only | 10 copper-edge (edge-launch SMA pads by design), 75 courtyard overlaps (RF ladders at EM-model spacing), silk |
 | Fab outputs | `board_a/fab/`: Gerbers+drill zip, BOM_A_kit, CPL_A, DNP list, layer PDFs | `board_b/fab/`: Gerbers+drill zip, BOM_B_JLC + CPL_B_JLC, BOM_B_HAND_LCSC, DNP list, layer PDFs |
@@ -34,15 +34,17 @@ Status: **both boards placed, routed and DRC-checked**. Nothing is ordered; stoc
   - U12 GND pin 2 escapes under the SOT-23 body to a via.
 
 ## Before ordering (open items)
-1. **USB HS pair (A):** autorouted with DM 57 mm / DP 70 mm and 4 vias on DP. That's 13.5 mm skew (≈90 ps, at the USB 2.0 HS limit) and not impedance-controlled. Re-route it as a coupled 90 Ω pair with KiCad's diff-pair router, or accept full-speed USB only. Ethernet is the primary data path.
-2. **MDI pairs (A):** short, but P/N length differs by up to 3.4 mm and they're not coupled. Tidy with the diff-pair router; optional.
-3. **Silkscreen:** about 250 silk-overlap/silk-over-pad flags on each board. Gerbers are exported with `--subtract-soldermask`, so silk is clipped from pads, but refdes text overlaps. Tidy or move refs to Fab and use the assembly PDFs.
-4. **JLC DFM/CPL preview (B):**
+1. **Silkscreen:** refdes are hidden on silk (too dense). Assembly uses the CPL or the labelled renders (`board_x/esp32sdr_x_routed.png`).
+2. **JLC DFM/CPL preview (B):**
    - Check part rotations in JLC's viewer (QFN/SOT rotation offsets).
    - Confirm they accept 0402s at the EM-model 0.3 mm pad gaps (the courtyard overlaps).
-5. **Sourcing:** U1 (WROOM-1U) has no LCSC listing and LCSC shows 0 stock for the S31; the RFFC5072 shows 22. Recheck before ordering.
-6. **40 MHz reference stub (B):** REFCLK_RF is 43 mm with 3 vias because the DNP option 0 Ω parts R704 (ext-ref SMA) and R708 (ESP32 clock) sit at the south edge. With them unfitted, that's a dangling stub on the RFFC reference input and could pick up reference spurs. Move R704/R708 next to R701/C384 so the stub is ≤ 3 mm and the long runs sit on their own option nets, then do an incremental re-route (`fr2.py B cont-export` with a move).
-7. **Optional re-check:** re-run Sonnet on the final routed RF regions. Stitching vias were kept clear of the In1 voids, and the RF copper is unchanged from the EM model.
+3. **Sourcing:** U1 (WROOM-1U) has no LCSC listing and LCSC shows 0 stock for the S31; the RFFC5072 shows 66 and T2 shows 25. Recheck before ordering.
+4. **Board A via-in-pad:** C211's GND pad carries one open via (that cap's GND was boxed in by the PHY escapes). It can wick a little solder on hotplate reflow; acceptable for a 0402 decoupler.
+5. **Optional re-check:** re-run Sonnet on the final routed RF regions. Stitching vias were kept clear of the In1 voids, and the RF copper is unchanged from the EM model.
+
+Resolved:
+- **USB HS pair:** now a scripted coupled 0.17/0.11 mm pair (≈90 Ω), matched to 0.9 mm on the scripted run, plus ~3 mm extra on DP in the USB-C breakout (~20 ps). It was 13.5 mm skew.
+- **40 MHz reference stub:** the DNP option links R704/R708 are now 0402 at C384/R701, so REFCLK_RF is 13 mm in total (was 43 mm).
 
 ## Flow (reproducible)
 ```
