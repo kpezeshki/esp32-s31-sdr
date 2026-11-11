@@ -1,0 +1,7 @@
+Designators,Value,Footprint,Note
+H1,M2.5,MountingHole_2.7mm_M2.5,
+H2,M2.5,MountingHole_2.7mm_M2.5,
+H3,M2.5,MountingHole_2.7mm_M2.5,
+H4,M2.5,MountingHole_2.7mm_M2.5,
+C216,1 nF 2 kV,C_1206_3216Metric,"DNP by default, footprint only, as the CoreBoard does with C72 'TBD(NC)'"
+R223,0R,R_0402_1005Metric,DNP: connects PHY INT_N to ESP32 GPIO4 as on the CoreBoard (R83). The esp-sdr FW does not use the interrupt. Whether GPI

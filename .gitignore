@@ -1,0 +1,20 @@
+__pycache__/
+# two-board flow intermediates
+hw/board_*/*.dsn
+hw/board_*/*.ses
+hw/board_*/freerouting*.log
+hw/board_*/*_locked.kicad_*
+hw/board_*/*_cont.kicad_*
+hw/board_*/*_nopour.kicad_*
+hw/board_*/*_pass*.kicad_pcb
+hw/board_*/*_routed_cont.kicad_pcb
+hw/board_*/drc_routed_prev.rpt
+hw/board_*/fab/gerber/
+*.kicad_prl
+fp-info-cache
+*-bak
+.freerouting/
+hw/report/site/img/
+
+# Sonnet project caches (regenerable, contain machine logs)
+**/sondata/

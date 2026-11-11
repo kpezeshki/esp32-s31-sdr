@@ -1,0 +1,516 @@
+#!/usr/bin/env python3
+"""Generate hw/pinouts.json for the ESP32-S31 SDR board (task T18).
+All data below was extracted from the datasheets in claude_db/esp32_sdr_datasheets/
+(see 'source' fields). 'UNVERIFIED' marks anything not confirmed from a primary document."""
+import json, sys
+
+DS = "claude_db/esp32_sdr_datasheets/"
+P = {}
+
+# ---------------------------------------------------------------- 1. RFFC5072
+P["RFFC5072"] = {
+  "mfr": "Qorvo (ex-RFMD)", "mpn": "RFFC5072TR13", "lcsc": "C3034742",
+  "function": "Wideband synthesizer/VCO (LO 85-4200 MHz, frac-N) + one double-balanced mixer (in 30-6000 MHz, out 30-4500 MHz)",
+  "source": DS + "RFFC5071_5072_RFMD.pdf (Prelim DS101020): spec p2-3, pin table p4, pinout p6, wideband app schematic p7, 3.7 GHz narrowband app schematic p8, package p19",
+  "package": {"name": "QFN-32 5x5 mm, 0.5 mm pitch, exposed paddle", "body_mm": [5.0, 5.0, 0.85],
+              "lead_width_mm": 0.23, "lead_length_mm": 0.35, "ep_mm": [3.70, 3.70], "source": "p19"},
+  "kicad_footprint": "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm",
+  "kicad_footprint_check": "Pads 1-32 CCW from top-left (pin 1 on left side, top), pad 33 = EP 3.7x3.7 -> matches DS p6/p19. Pads 0.8x0.25 at x=+-2.45 cover 0.35 mm leads. Use the _ThermalVias variant or add 3x3 or more GND vias in EP.",
+  "supply": "VDD 2.7-3.0-3.3 V (abs max 3.6 V); IDD ~100 mA (MIX_IDD=1) / 125 mA (MIX_IDD=6) with 1 GHz LO; 300 uA power-down",
+  "logic": "VIH 1.5 V..VDD, VIL <0.5 V (referenced to DIG_VDD) -> 3.3 V ESP32 GPIO OK when DIG_VDD=3.3 V",
+  "pins": {
+    "1":  {"name": "ENBL/GPO5", "function": "Device enable (high=on). Becomes GPO5 if SPI-controlled (SDI_CTRL.sipin=1)."},
+    "2":  {"name": "EXT_LO", "function": "External LO input - unused (left open on DS eval p7)"},
+    "3":  {"name": "EXT_LO_DEC", "function": "External-LO decoupling - unused; left open on DS eval p7 (add DNP 33 pF to GND, UNVERIFIED need)"},
+    "4":  {"name": "REXT", "function": "Bandgap bias resistor: 51 k to GND (LF-noise sensitive)"},
+    "5":  {"name": "ANA_VDD1", "function": "Analog supply (synth). Good RF decoupling"},
+    "6":  {"name": "LFILT1", "function": "Phase-detector output / loop-filter op-amp input (noise-sensitive)"},
+    "7":  {"name": "LFILT2", "function": "Loop-filter op-amp output (noise-sensitive)"},
+    "8":  {"name": "LFILT3", "function": "VCO tuning input (noise-sensitive)"},
+    "9":  {"name": "MODE/GPO6", "function": "Mode select (path 1/2 register bank in pin mode). GPO6 if SPI-controlled."},
+    "10": {"name": "REF_IN", "function": "Reference input 10-104 MHz, 0.5-1.5 Vpp, AC-coupled (labelled XTALP on eval sheet)"},
+    "11": {"name": "NC", "function": "No connect (labelled XTALN on eval sheet, unconnected)"},
+    "12": {"name": "TM", "function": "Test mode - connect to GND"},
+    "13": {"name": "NC", "function": "MIX1_IPN on RFFC5071; NC on RFFC5072"},
+    "14": {"name": "NC", "function": "MIX1_IPP on RFFC5071; NC on RFFC5072"},
+    "15": {"name": "GPO1/ADD1", "function": "General-purpose output / MultiSlice address bit 1 (eval: test point)"},
+    "16": {"name": "GPO2/ADD2", "function": "General-purpose output / MultiSlice address bit 2 (eval: test point)"},
+    "17": {"name": "NC", "function": "MIX1_OPN on RFFC5071; NC on RFFC5072"},
+    "18": {"name": "NC", "function": "MIX1_OPP on RFFC5071; NC on RFFC5072"},
+    "19": {"name": "DIG_VDD", "function": "Digital supply; decouple at pin"},
+    "20": {"name": "NC", "function": "No connect"},
+    "21": {"name": "NC", "function": "No connect"},
+    "22": {"name": "ANA_VDD2", "function": "Analog supply (mixer / LO buffers). Good RF decoupling. Also the DC source for the mixer open-collector outputs"},
+    "23": {"name": "MIX_IPP (MIX2_IPP)", "function": "Mixer RF input +, 100 ohm differential. NO DC may be applied (AC-couple or transformer)"},
+    "24": {"name": "MIX_IPN (MIX2_IPN)", "function": "Mixer RF input -, NO DC"},
+    "25": {"name": "GPO3/FM", "function": "GPO / frequency-control input (eval: test point)"},
+    "26": {"name": "GPO4/LD/DO", "function": "GPO / lock detect / serial data out (4-wire readback)"},
+    "27": {"name": "MIX_OPN (MIX2_OPN)", "function": "Mixer IF output - (open collector). Must get DC from ANA_VDD2 via RF choke or centre-tapped balun"},
+    "28": {"name": "MIX_OPP (MIX2_OPP)", "function": "Mixer IF output + (open collector), as pin 27"},
+    "29": {"name": "RESETX", "function": "Async reset, active low. Tie to DIG_VDD if not used"},
+    "30": {"name": "ENX", "function": "Serial interface select, active low"},
+    "31": {"name": "SCLK", "function": "Serial clock"},
+    "32": {"name": "SDATA", "function": "Serial data (bidirectional in 3-wire mode)"},
+    "33": {"name": "EP / GND", "function": "Exposed paddle = ground reference; low-impedance vias to GND"}
+  },
+  "app_circuit": [
+    {"ref_hint": "R_REXT", "value": "51k 1%", "package": "0402", "connects": ["U.4 REXT", "GND"], "source": "p4 note 3, p7 R1"},
+    {"ref_hint": "C_VA1a", "value": "33pF C0G", "package": "0402", "connects": ["U.5 ANA_VDD1", "GND"], "source": "p7 C5"},
+    {"ref_hint": "C_VA1b", "value": "10nF X7R", "package": "0402", "connects": ["U.5 ANA_VDD1", "GND"], "source": "p7 C34"},
+    {"ref_hint": "C_VA2a", "value": "33pF C0G", "package": "0402", "connects": ["U.22 ANA_VDD2", "GND"], "source": "p7 C2"},
+    {"ref_hint": "C_VA2b", "value": "10nF X7R", "package": "0402", "connects": ["U.22 ANA_VDD2", "GND"], "source": "p7 C18"},
+    {"ref_hint": "C_VDa", "value": "33pF C0G", "package": "0402", "connects": ["U.19 DIG_VDD", "GND"], "source": "p7 C3"},
+    {"ref_hint": "C_VDb", "value": "10nF X7R", "package": "0402", "connects": ["U.19 DIG_VDD", "GND"], "source": "p7 C19"},
+    {"ref_hint": "C_LF8", "value": "8.2pF C0G", "package": "0402", "connects": ["U.6 LFILT1", "U.7 LFILT2"], "source": "p7 C8 (op-amp feedback, parallel branch)"},
+    {"ref_hint": "R_LF3", "value": "22k", "package": "0402", "connects": ["U.6 LFILT1", "NET_LF_A (to C_LF9)"], "source": "p7 R3"},
+    {"ref_hint": "C_LF9", "value": "180pF C0G", "package": "0402", "connects": ["NET_LF_A", "U.7 LFILT2"], "source": "p7 C9 (R3+C9 in series, LFILT1->LFILT2)"},
+    {"ref_hint": "R_LF2", "value": "470R", "package": "0402", "connects": ["U.7 LFILT2", "NET_LF_B"], "source": "p7 R2"},
+    {"ref_hint": "C_LF10", "value": "330pF C0G", "package": "0402", "connects": ["NET_LF_B", "GND"], "source": "p7 C10"},
+    {"ref_hint": "R_LF6", "value": "470R", "package": "0402", "connects": ["NET_LF_B", "U.8 LFILT3"], "source": "p7 R6"},
+    {"ref_hint": "C_LF17", "value": "330pF C0G", "package": "0402", "connects": ["U.8 LFILT3", "GND"], "source": "p7 C17"},
+    {"ref_hint": "C_REF", "value": "10nF C0G/X7R (eval uses 1nF; Epson TCXO wants >=10nF DC-cut)", "package": "0402", "connects": ["TCXO OUT (or REF select 0R)", "U.10 REF_IN"], "source": "p7 C16=1nF; Epson DS Cc>=0.01uF"},
+    {"ref_hint": "C_ENBL", "value": "33pF", "package": "0402", "connects": ["U.1 ENBL", "GND"], "source": "p7 C35 (RC filter per note 1)"},
+    {"ref_hint": "C_MODE", "value": "33pF", "package": "0402", "connects": ["U.9 MODE", "GND"], "source": "p7 C36"},
+    {"ref_hint": "C_RST", "value": "33pF", "package": "0402", "connects": ["U.29 RESETX", "GND"], "source": "p7 C1"},
+    {"ref_hint": "C_ENX", "value": "33pF", "package": "0402", "connects": ["U.30 ENX", "GND"], "source": "p7 C13"},
+    {"ref_hint": "C_SCLK", "value": "33pF", "package": "0402", "connects": ["U.31 SCLK", "GND"], "source": "p7 C14"},
+    {"ref_hint": "C_SDATA", "value": "33pF", "package": "0402", "connects": ["U.32 SDATA", "GND"], "source": "p7 C15"},
+    {"ref_hint": "R_ser_x4", "value": "100R-1k series (optional RC with the 33pF, note 1)", "package": "0402", "connects": ["ESP32 GPIO", "U.29/30/31/32"], "source": "p4 note 1 (values not given; suggestion)"},
+    {"ref_hint": "R_RSTPU", "value": "10k (suggestion)", "package": "0402", "connects": ["U.29 RESETX", "DIG_VDD"], "source": "p4: tie to DIG_VDD if unused; pull-up so a GPIO can still reset"},
+    {"ref_hint": "R_LED", "value": "220R", "package": "0402", "connects": ["U.26 GPO4/LD", "D_LD anode"], "source": "p7 R25"},
+    {"ref_hint": "D_LD", "value": "green LED (lock detect)", "package": "0603", "connects": ["R_LED", "GND"], "source": "p7 D1; also route LD to an ESP32 GPIO"},
+    {"ref_hint": "C_TM", "value": "-", "package": "-", "connects": ["U.12 TM", "GND (direct)"], "source": "p4"},
+    {"ref_hint": "C_IN_P / C_IN_N", "value": "DC block, 100pF C0G 0402 each leg (our addition: TCM2 Config K windings DC-ground pin 6 and DC-link pin 4 to pin 3)", "package": "0402", "connects": ["T_IN secondary (pin 6 / pin 4)", "U.23 MIX_IPP / U.24 MIX_IPN"], "source": "p4 note 4 + TCM2-63WX+ schematic Config K"},
+    {"ref_hint": "T_IN", "value": "H3-TCM2-63WX+ (1:2, 50 ohm SE -> 100 ohm diff)", "package": "DB1627", "connects": ["pin3 <- RF from gain block (already DC-blocked)", "pins1,2 -> GND", "pin4,6 -> C_IN_N/C_IN_P", "pin5 NC"], "source": "eval p7 uses RFXF9503 with its pin 6 AC-grounded by C23 100pF and balanced CT open"},
+    {"ref_hint": "T_OUT", "value": "BD2425N50200AHF (50 ohm SE : 200 ohm balanced, 2.4-2.5 GHz)", "package": "0404", "connects": ["pin3 -> U.27 MIX_OPN (or 28; polarity irrelevant)", "pin4 -> U.28 MIX_OPP", "pin1 (DC feed / CT) -> ANA_VDD2 + bypass", "pin2 -> SAW in"], "source": "eval p7 uses RFXF8553 4:1 with CT (pin 2) to VDDA2 + C6 100pF"},
+    {"ref_hint": "C_CT", "value": "100pF C0G (eval C6); 10-15 pF 0402 self-resonates near 2.44 GHz and is a better IF ground (suggestion)", "package": "0402", "connects": ["T_OUT.1", "GND"], "source": "p7 C6"},
+    {"ref_hint": "C_CT2", "value": "100nF", "package": "0402", "connects": ["T_OUT.1 / ANA_VDD2 feed", "GND"], "source": "suggestion"}
+  ],
+  "loop_filter_note": "Topology (p7/p8 identical): active op-amp integrator between LFILT1 (in) and LFILT2 (out): C8 8.2pF in parallel with series R3 22k + C9 180pF; then 2-pole RC post-filter LFILT2 -R2 470R- (C10 330pF to GND) -R6 470R- LFILT3 with C17 330pF to GND. The synthesizer spec (p3) is quoted for 'loop bandwidth 200 kHz, 52 MHz reference'; typical plots (p9) use 26 MHz and 52 MHz TCXOs (NDK ENA3523A / ENA3560A). With our 40 MHz ref (PFD 40 MHz <= 52 MHz max) and the same charge-pump setting, loop BW scales ~ with f_PFD: ~200*40/52 = ~150 kHz, phase margin roughly kept. Fine to copy the values; charge-pump current is programmable (Slice2 register guide, not downloaded - UNVERIFIED).",
+  "control_note": "3-wire SPI: ENX, SCLK, SDATA to ESP32 GPIOs (+33pF each per eval). RESETX to GPIO with 10k pull-up to DIG_VDD. ENBL and MODE: route to ESP32 GPIOs (or 0R/10k to DIG_VDD/GND); do NOT hard-tie to a rail if firmware sets SDI_CTRL.sipin=1, because they then become outputs GPO5/GPO6 (HackRF-style SPI control). GPO4/LD -> ESP32 GPIO (lock detect) + optional LED. GPO1/2/3 -> test pads. Pins 2,3,11,13,14,17,18,20,21 open; 12 to GND.",
+  "notes": [
+    "DS pin table (p4) names pin 27 MIX2_OPN and pin 28 MIX2_OPP, while the eval schematic (p7) labels pin 27 MIX2_IOIP (net RF_OP2_P) and pin 28 MIX2_IOIN. Polarity only flips IF phase - irrelevant for a balun - but do not rely on the names.",
+    "Supply max 3.3 V operating: TPS7A2033 (3.3 V) is at the top of range; TPS7A2030 (3.0 V) is the safer nominal (C963429).",
+    "Mixer input return loss spec is for 100 ohm differential; output spec is 'driving 4:1 balun' (200 ohm) - matches BD2425N50200AHF.",
+    "UNVERIFIED: DC current through the BD2425 DC-feed pin (mixer output stage bias, set by MIX_IDD) vs the balun's DC rating (not stated in its DS)."
+  ]
+}
+
+# ---------------------------------------------------------------- 2. PSA4-5043+
+P["PSA4-5043+"] = {
+  "mfr": "Mini-Circuits", "mpn": "PSA4-5043+", "lcsc": "C5240848",
+  "function": "E-pHEMT LNA 50 MHz-4 GHz, internally matched, self-biased (no bias resistor)",
+  "source": DS + "PSA4-5043.pdf p2 (specs), p3 (pinout), p4 (Fig.2 app circuit); eval TB-653+ " + DS + "PSA4-5043_TB-653_P02.pdf; layout PL-361 " + DS + "PSA4-5043_PL-361_layout.pdf",
+  "package": {"name": "SOT-343 (SC-70-4), Mini-Circuits case MMM1362", "body_mm": [2.0, 1.25, 1.0], "pitch_mm": 1.3},
+  "kicad_footprint": "Package_TO_SOT_SMD:SOT-343_SC-70-4",
+  "kicad_footprint_check": "KiCad pad 1 (-0.95,-0.65) top-left, 2 bottom-left, 3 bottom-right, 4 top-right = DS p3 (1 RF-OUT top-left, 2 GND bottom-left, 3 RF-IN bottom-right, 4 GND top-right). Matches. DS drawing shows lead 2 (GND) wider; KiCad pads are all 0.65x0.4 - consider widening pad 2 to ~0.6 mm (UNVERIFIED lead width).",
+  "supply": "Vd 3 V/33 mA or 5 V/56-58 mA (max 66 mA @5 V); abs max 6 V, 76 mA. At 4.5 V rail expect ~50 mA (0.01 mA/mV).",
+  "pins": {
+    "1": {"name": "RF-OUT & DC-IN", "function": "RF output; Vd fed through RF choke L1; output DC block C2"},
+    "2": {"name": "GND", "function": "Ground (vias at pad)"},
+    "3": {"name": "RF-IN", "function": "RF input via DC block C1 (pin has DC bias)"},
+    "4": {"name": "GND", "function": "Ground"}
+  },
+  "app_circuit": [
+    {"ref_hint": "C1", "value": "1000pF C0G (TB-653+ value)", "package": "0402", "connects": ["RF in (SP3T RFx port)", "U.3"], "source": "TB-653+ BOM"},
+    {"ref_hint": "C2", "value": "1000pF C0G (TB-653+ uses the DC block inside a TCBT-14+ bias tee)", "package": "0402", "connects": ["U.1", "RF out (to LPF/BPF)"], "source": "Fig.2 + TB-653+"},
+    {"ref_hint": "L1a", "value": "33 nH high-SRF (e.g. 0402 wirewound, SRF > 2.5 GHz) next to pin 1", "package": "0402", "connects": ["U.1", "NET_CHOKE"], "source": "UNVERIFIED engineering choice: DS gives no value (eval uses TCBT-14+ bias tee, 10 MHz-10 GHz)"},
+    {"ref_hint": "L1b", "value": "1 uH (0603 wirewound or ferrite) to cover 50 MHz", "package": "0603", "connects": ["NET_CHOKE", "VDD_LNA (4.5 V)"], "source": "UNVERIFIED engineering choice: X_L(50 MHz)=314 ohm >> 50 ohm"},
+    {"ref_hint": "R_damp", "value": "10-22R in series with L1b (optional, damps L1a/L1b resonance)", "package": "0402", "connects": ["L1b", "VDD_LNA"], "source": "suggestion"},
+    {"ref_hint": "C3", "value": "100nF (TB-653+ C2=0.1uF bypass) + 100pF", "package": "0402", "connects": ["VDD_LNA at choke", "GND"], "source": "TB-653+ BOM (0.1 uF), FLTR 1500 pF feed-through"}
+  ],
+  "notes": ["No bias resistor: device is internally biased, Vd applied straight through the choke (Fig.2: 'Resistance of L1 0.1-0.2 ohm typically').",
+            "Specified only 50 MHz-4 GHz; gain 25.4 dB @50 MHz -> check low-frequency stability with the choke you choose.",
+            "ESD HBM 500 V (class 1B) - keep the SMA ESD diode."]
+}
+
+# ---------------------------------------------------------------- 3. QPL9503
+P["QPL9503"] = {
+  "mfr": "Qorvo", "mpn": "QPL9503TR7", "lcsc": "C470924",
+  "function": "Flat-gain ultra-low-noise LNA 0.6-6 GHz (optimised 3-6 GHz), shutdown pin",
+  "source": DS + "QPL9503.pdf (Apr 2018): specs p2, eval schematic + BOM p3 (QPL9503EVB-01, 5-6 GHz tuned), pinout p5, package + PCB pattern p6",
+  "package": {"name": "DFN-8 2x2x0.85 mm, 0.5 mm pitch, EP 0.80x1.60 mm", "body_mm": [2.0, 2.0, 0.85], "lead_mm": [0.25, 0.30]},
+  "kicad_footprint": "Package_DFN_QFN:DFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.6mm",
+  "kicad_footprint_check": "Pads 1-4 left (top->bottom), 5-8 right (bottom->top), pad 9 EP 0.8x1.6 -> standard JEDEC numbering = DS p5. Qorvo land (p6): pads 0.30x0.67 at x=+-0.885, EP land 0.70x1.60, 3 vias 0.254 mm. Do NOT use Qorvo_DFN-8-1EP_2x2mm_P0.5mm (its EP is 0.6x1.2, a different Qorvo part).",
+  "supply": "VDD 3.3-5.0-5.25 V (abs max 7 V); IDD 56 mA typ (35-90) @5 V; 3 mA in shutdown",
+  "pins": {
+    "1": {"name": "Vbias", "function": "Sets Icq: R4 4.3k from VDD"},
+    "2": {"name": "RF In", "function": "RF input, DC block required"},
+    "3": {"name": "NC", "function": "Not connected; solder to grounded land"},
+    "4": {"name": "GND", "function": "Ground"},
+    "5": {"name": "Shut Down", "function": ">1.17 V = OFF, <0.63 V or GND = ON (1.8 V logic; 140 uA at high)"},
+    "6": {"name": "GND", "function": "Ground"},
+    "7": {"name": "RF Out / DC bias", "function": "RF output; VDD via RF choke L1"},
+    "8": {"name": "NC", "function": "Not connected; solder to grounded land"},
+    "9": {"name": "EP", "function": "RF/DC ground, vias"}
+  },
+  "app_circuit": [
+    {"ref_hint": "C1", "value": "10pF (1%)", "package": "0402", "connects": ["RF in (from HPF2)", "U.2"], "source": "p3 BOM"},
+    {"ref_hint": "C8", "value": "0.2pF (DNP-able input tune)", "package": "0402", "connects": ["U.2", "GND"], "source": "p3 BOM (5-6 GHz tune)"},
+    {"ref_hint": "R4", "value": "4.3k", "package": "0402", "connects": ["VDD", "U.1 Vbias"], "source": "p3 BOM; note 7 sets current"},
+    {"ref_hint": "C5", "value": "100pF", "package": "0402", "connects": ["VDD/R4 node", "GND"], "source": "p3 BOM"},
+    {"ref_hint": "L1", "value": "18nH (Coilcraft 0402CS-18NXJL)", "package": "0402", "connects": ["U.7", "VDD"], "source": "p3 BOM"},
+    {"ref_hint": "C3", "value": "100pF", "package": "0402", "connects": ["VDD (L1 end)", "GND"], "source": "p3 BOM"},
+    {"ref_hint": "C4", "value": "1uF X5R", "package": "0402", "connects": ["VDD", "GND"], "source": "p3 BOM"},
+    {"ref_hint": "C2", "value": "5.6pF", "package": "0402", "connects": ["U.7", "RF out (to HB HPF)"], "source": "p3 BOM"},
+    {"ref_hint": "C9", "value": "0.4pF (DNP-able output tune)", "package": "0402", "connects": ["RF out after C2", "GND"], "source": "p3 BOM"},
+    {"ref_hint": "R2", "value": "20k pull-down", "package": "0402", "connects": ["U.5 SD", "GND"], "source": "p3 BOM (LNA on by default)"},
+    {"ref_hint": "R1", "value": "0R (or 1k) to ESP32 GPIO for shutdown (optional)", "package": "0402", "connects": ["U.5 SD", "ESP32 GPIO / NC"], "source": "p3 BOM R1=0R to J5 PD"}
+  ],
+  "notes": ["Eval is tuned for 5-6 GHz; for 3.1-6 GHz keep C8/C9 as DNP footprints and tune on rev A.",
+            "Eval at VDD=5 V; on the 4.5 V rail Idd drops slightly (R4 to VDD). Still in spec (min 3.3 V).",
+            "Shutdown pin: drive with 3.3 V GPIO OK (abs VEN up to VDD). Could be used to turn off the unused HB LNA."]
+}
+
+# ---------------------------------------------------------------- 4. GVA-62+
+P["GVA-62+"] = {
+  "mfr": "Mini-Circuits", "mpn": "GVA-62+", "lcsc": "C5445184",
+  "function": "Flat-gain InGaP HBT gain block 10 MHz-6 GHz, internally biased",
+  "source": DS + "GVA-62.pdf p2 (specs), p3 (pins), p4 (app circuit); eval " + DS + "GVA-62_WTB-410-62+_P02.pdf; layout " + DS + "GVA-62_98-pl255.pdf",
+  "package": {"name": "SOT-89 (Mini-Circuits DF782)", "body_mm": [4.5, 2.5, 1.5], "pitch_mm": 1.5},
+  "kicad_footprint": "Package_TO_SOT_SMD:SOT-89-3",
+  "kicad_footprint_check": "KiCad pad 1, 2 (centre lead merged with tab), 3. DS: 1 RF-IN, 2 GND (and tab, called pin 4), 3 RF-OUT&DC-IN. Matches. PL-255 adds 8 GND vias around/under the tab.",
+  "supply": "Device voltage 4.8-5.0-5.2 V, 82 mA (72-92); 0.035 mA/mV. No bias resistor in Mini-Circuits circuit (Vd = Vcc through choke).",
+  "pins": {
+    "1": {"name": "RF-IN", "function": "RF input; DC block required"},
+    "2": {"name": "GND", "function": "Ground (centre lead + tab '4')"},
+    "3": {"name": "RF-OUT & DC-IN", "function": "RF output + bias via RF choke; DC block required"}
+  },
+  "app_circuit": [
+    {"ref_hint": "C1", "value": "2400pF on eval (any low-ESL cap free of resonance to 6 GHz; e.g. 100pF 0201/0402 + accept LF roll-off, or 1nF 0402)", "package": "0402", "connects": ["RF in (SP3T_out common)", "U.1"], "source": "TB-410-62+ BOM note 4"},
+    {"ref_hint": "C2", "value": "2400pF on eval (same remark)", "package": "0402", "connects": ["U.3", "balun T_IN pin 3"], "source": "TB-410-62+"},
+    {"ref_hint": "CHK", "value": "eval: Mini-Circuits ADCH-80A+ wideband choke (50-8000 MHz). Discrete: 22 nH high-SRF 0402 at pin + 1 uH 0603 toward Vcc (UNVERIFIED)", "package": "0402+0603", "connects": ["U.3", "Vcc"], "source": "TB-410-62+ BOM"},
+    {"ref_hint": "C3", "value": "0.1uF bypass (+100pF)", "package": "0402", "connects": ["Vcc", "GND"], "source": "TB-410-62+ BOM"}
+  ],
+  "notes": ["Specified 4.8-5.2 V at the device. The 4.5 V LDO rail (TPS7A2045) is BELOW spec (Idd ~70 mA, lower P1dB). Either feed from VBUS through ferrite + LC pi filter, or accept. A series bias resistor is not used by Mini-Circuits; any choke DCR drops voltage (82 mA x R).",
+            "Choke must be broadband 10 MHz-6 GHz equivalent: two-section choke recommended (UNVERIFIED values)."]
+}
+
+# ---------------------------------------------------------------- 5. BGS13SN8
+P["BGS13SN8"] = {
+  "mfr": "Infineon", "mpn": "BGS13SN8E6327", "lcsc": "C3312946",
+  "function": "SP3T RF switch 0.1-6 GHz, GPIO control (x2: SP3T_in, SP3T_out)",
+  "source": DS + "BGS13SN8.pdf rev 2.4: features p1, abs max p4 (VRFDC=0), op ranges p5, RF p6, pins + truth table p9 (Fig.2/Tab.8/Tab.9), package + footprint p10 (Fig.3/Fig.4)",
+  "package": {"name": "PG-TSNP-8-1, 1.1x1.1x0.375 mm, 3x3 grid minus centre, 0.4 mm pitch, pads 0.2x0.2", "body_mm": [1.1, 1.1, 0.375]},
+  "kicad_footprint": None,
+  "custom_land_pattern": {
+    "name": "Infineon_PG-TSNP-8-1_1.1x1.1mm_P0.4mm",
+    "units": "mm", "origin": "package centre, top view, +x right, +y down (KiCad)",
+    "pad_shape": "rect 0.25 x 0.25 copper (Fig.4); stencil 0.25 round; solder mask: optional dam between pads (NSMD)",
+    "pads": {"1": [-0.4, -0.4], "8": [0.0, -0.4], "7": [0.4, -0.4], "2": [-0.4, 0.0], "6": [0.4, 0.0], "3": [-0.4, 0.4], "4": [0.0, 0.4], "5": [0.4, 0.4]},
+    "pad_size": [0.25, 0.25],
+    "courtyard": [1.6, 1.6],
+    "pin1_mark": "top-left (pin 1 VDD)",
+    "check": "Fig.2 (footprint top view) gives 1 VDD TL, 8 GND TM, 7 RF2 TR, 2 V2 ML, 6 RFin MR, 3 V1 BL, 4 RF3 BM, 5 RF1 BR; consistent with Fig.3 bottom view mirrored."
+  },
+  "supply": "VDD 1.65-3.4 V (abs max 3.6), IDD 80 uA; VCtrl_H 1.35 V..VDD+0.3, VCtrl_L <0.45 V -> 3.3 V ESP32 GPIO OK with VDD=3.3 V",
+  "pins": {
+    "1": {"name": "VDD", "function": "Supply 1.65-3.4 V"},
+    "2": {"name": "V2", "function": "Control 2"},
+    "3": {"name": "V1", "function": "Control 1"},
+    "4": {"name": "RF3", "function": "RF port 3"},
+    "5": {"name": "RF1", "function": "RF port 1"},
+    "6": {"name": "RFin", "function": "Common RF port"},
+    "7": {"name": "RF2", "function": "RF port 2"},
+    "8": {"name": "GND", "function": "Ground"}
+  },
+  "truth_table": {"V1=0,V2=0": "Isolation (all off)", "V1=1,V2=0": "RFin-RF1", "V1=0,V2=1": "RFin-RF2", "V1=1,V2=1": "RFin-RF3"},
+  "app_circuit": [
+    {"ref_hint": "C_VDD", "value": "100nF (+ optional 33pF) - not required by DS, recommended", "package": "0402", "connects": ["U.1", "GND"], "source": "DS shows none; suggestion"},
+    {"ref_hint": "DC blocks", "value": "Required on every RF port that sees DC (all of ours: LNA in/out, gain block, SMA). DS: 'No blocking capacitors required if no DC applied'; abs max VRFDC = 0 V; internal DC connection between switched paths.", "package": "0402", "connects": ["RFx / RFin", "neighbour"], "source": "p1, p4 Table 1 + footnote"},
+    {"ref_hint": "R/C on V1,V2", "value": "optional 1k series (ESP32 GPIO noise) - suggestion", "package": "0402", "connects": ["ESP32 GPIO", "U.3/U.2"], "source": "suggestion"}
+  ],
+  "notes": ["Both switches share V1/V2 (2 GPIOs) and VDD 3.3 V.",
+            "Specified 0.1-6 GHz only; 50-100 MHz unverified (see SIGNAL_CHAIN 12).",
+            "DS ESD SLT rating (+-8 kV) is with a 27 nH shunt inductor at the RF port - NOT usable here (8.5 ohm at 50 MHz)."]
+}
+
+# ---------------------------------------------------------------- 6. SAFEA SAW
+P["SAFEA2G45MC0F0AR00"] = {
+  "mfr": "Murata", "mpn": "SAFEA2G45MC0F0AR00", "lcsc": "C910550",
+  "function": "2.4 GHz ISM SAW bandpass, unbalanced in/out, 5-pad 1411",
+  "source": DS + "SAFEA2G45MC0F0AR00.pdf p1 (ratings), p2 (dimensions, land pattern, measurement circuit; doc page '2/7')",
+  "package": {"name": "1.35x1.05x0.5 mm max, 5 pads (bottom pads 0.25x0.325)", "body_mm": [1.35, 1.05, 0.5]},
+  "kicad_footprint": "Filter:Filter_1411-5_1.4x1.1mm",
+  "kicad_footprint_check": "KiCad: pad1 (-0.5,0), pad2 (0,+0.2875), pad3 (+0.5,+0.2875), pad4 (+0.5,-0.2875), pad5 (0,-0.2875) (KiCad +y down). Murata top view: 1 left, 5 top-middle, 4 top-right, 2 bottom-middle, 3 bottom-right -> numbering MATCHES. KiCad pads are 0.25x0.325 (= package pads); Murata's recommended land is larger - use the custom variant below if you want Murata's land.",
+  "custom_land_pattern": {
+    "name": "Murata_SAFEA_1411-5_RecommendedLand",
+    "units": "mm", "origin": "centre, top view, +y up (Murata drawing); flip y for KiCad",
+    "pads": {"1": {"at": [-0.5875, 0.0], "size": [0.425, 0.325]},
+             "5": {"at": [0.0, 0.3875], "size": [0.25, 0.525]},
+             "2": {"at": [0.0, -0.3875], "size": [0.25, 0.525]},
+             "4": {"at": [0.5875, 0.2875], "size": [0.425, 0.325]},
+             "3": {"at": [0.5875, -0.2875], "size": [0.425, 0.325]}},
+    "check": "From p2 land drawing: overall 1.600 wide, columns 0.425/0.250/0.250/0.250/0.425; right pads 0.325 tall, 0.900 outer span; middle pads 0.525 tall with 0.25 gap. Positions derived, tolerance +-0.02 (read from drawing)."
+  },
+  "pins": {
+    "1": {"name": "IN (unbalanced, 'PA side')", "function": "Input; DS: input power must be applied to terminal 1 -> mixer/balun side"},
+    "2": {"name": "GND", "function": "Ground"},
+    "3": {"name": "GND", "function": "Ground"},
+    "4": {"name": "OUT (unbalanced, 'Ant side')", "function": "Output -> ESP32 tee"},
+    "5": {"name": "GND", "function": "Ground"}
+  },
+  "impedance": "50 ohm nominal at both ports, BUT the characterisation (measurement circuit p2) uses a 4.3 nH ideal shunt inductor at each port (R1=R2=50 ohm, L1=L2=4.3 nH). So the specified response needs shunt-L matching on both sides.",
+  "app_circuit": [
+    {"ref_hint": "L_SAWin", "value": "4.3nH ideal -> start 3.9-4.3nH high-Q 0402, tune", "package": "0402", "connects": ["U.1", "GND"], "source": "p2 measurement circuit"},
+    {"ref_hint": "L_SAWout", "value": "4.3nH ideal -> start 3.9-4.3nH high-Q 0402, tune", "package": "0402", "connects": ["U.4", "GND"], "source": "p2 measurement circuit"},
+    {"ref_hint": "DC", "value": "max 3 V DC between terminals; shunt L shorts DC anyway - keep the BD2425 DC feed (pin 1) isolated from its unbalanced pin 2 (it is, inside the balun) and put no DC on SAW", "package": "-", "connects": [], "source": "p1"}
+  ],
+  "notes": ["Max input power +28 dBm.", "Shunt inductors also give an ESD/DC path to ground for the IF line."]
+}
+
+# ---------------------------------------------------------------- 7. BD2425N50200AHF
+P["BD2425N50200AHF"] = {
+  "mfr": "TTM (Anaren Xinger)", "mpn": "BD2425N50200AHF", "lcsc": "C502748",
+  "function": "2.4-2.5 GHz balun, 50 ohm unbalanced : 200 ohm balanced (2x100), with DC-feed / RF-ground pin",
+  "source": DS + "BD2425N50200AHF.pdf (Rev D, downloaded from cdn.ttm.com): specs + outline + pin table p1, mounting footprints (no DC bias / with DC bias) p4",
+  "package": {"name": "0404 LGA, 1.04x1.04x0.56 mm, 4 pads 0.25x0.25 on 0.51 mm pitch (bottom)", "body_mm": [1.04, 1.04, 0.56]},
+  "kicad_footprint": None,
+  "custom_land_pattern": {
+    "name": "Anaren_Xinger_0404_BD2425",
+    "units": "mm", "origin": "centre, TOP view, +x right, +y down",
+    "pads": {"2": {"at": [-0.255, -0.255], "size": [0.28, 0.28], "net_hint": "Unbalanced (50 ohm)"},
+             "1": {"at": [0.255, -0.255], "size": [0.36, 0.36], "net_hint": "GND / DC feed + RF GND (larger pad)"},
+             "3": {"at": [-0.255, 0.255], "size": [0.28, 0.28], "net_hint": "Balanced"},
+             "4": {"at": [0.255, 0.255], "size": [0.28, 0.28], "net_hint": "Balanced"}},
+    "solder_mask": "NSMD, mask openings ~0.05 mm larger; trace exits 0.28 mm (TTM example, retune for JLC stack)",
+    "check": "p1 bottom view: 1 TL, 2 TR, 4 BL, 3 BR; mirrored to top view -> 2 TL, 1 TR, 3 BL, 4 BR. p4 'with DC bias' footprint shows the large 0.36 pad (pin 1) at top-right with a trace to a bypass-cap pad and via - consistent."
+  },
+  "pins": {
+    "1": {"name": "GND / DC Feed + RF GND", "function": "Balanced-side centre tap. Apply DC here (ANA_VDD2) and RF-bypass it to GND close to the pad; DC then appears on both balanced pins 3/4. Without DC bias: connect straight to GND."},
+    "2": {"name": "Unbalanced port", "function": "50 ohm -> SAW input (pin 1)"},
+    "3": {"name": "Balanced port", "function": "-> RFFC5072 MIX_OPN (27)"},
+    "4": {"name": "Balanced port", "function": "-> RFFC5072 MIX_OPP (28)"}
+  },
+  "app_circuit": [
+    {"ref_hint": "C_CT", "value": "bypass at pin 1: 10-15pF (series-resonant ~2.4 GHz) + 100nF; eval-equivalent 100pF", "package": "0402", "connects": ["T.1", "GND"], "source": "p4 DC-bias footprint (cap value not given); RFFC eval C6=100pF"},
+    {"ref_hint": "FB/R_feed", "value": "0R or ferrite bead (optional)", "package": "0402", "connects": ["T.1 node", "ANA_VDD2 (3.3 V)"], "source": "suggestion"},
+    {"ref_hint": "no DC block", "value": "pins 3/4 connect directly to RFFC pins 27/28 (they must carry DC)", "package": "-", "connects": ["T.3-U.27", "T.4-U.28"], "source": "RFFC DS note 5"}
+  ],
+  "notes": ["DC current rating through pin 1 is not stated (power handling 1 W) - UNVERIFIED for the RFFC output bias current.",
+            "Only 25 in stock at LCSC (C502748). Fallback: two RF chokes from pins 27/28 to ANA_VDD2 + lumped LC balun.",
+            "IL 0.6 typ/0.7 max dB, RL >=18 dB, amplitude 0.5/1.0 dB, phase 2/6 deg (p1)."]
+}
+
+# ---------------------------------------------------------------- 8. H3-TCM2-63WX+
+P["H3-TCM2-63WX+"] = {
+  "mfr": "HenryTech (Chengdu) - clone of Mini-Circuits TCM2-63WX+", "mpn": "H3-TCM2-63WX+", "lcsc": "C22383437",
+  "function": "1:2 transmission-line balun 30-6000 MHz, 50 ohm SE -> 100 ohm balanced, NO centre tap (Config K)",
+  "source": DS + "H3-TCM2-63WX.pdf p1 (pins, dims, land); genuine " + DS + "TCM2-63WX.pdf p2 (schematic, pin connections, Config K), p3 (outline, land, demo board TB-676+ PL-380)",
+  "package": {"name": "Clone: 4.21x4.21x2.40 mm, 6-position top-hat (5 leads; position 5 'not used'); genuine DB1627: 4.06x3.81x(<=2.9?) mm", "pitch_mm": 1.27,
+              "clone_land_mm": {"pad": [0.76, 1.40], "pitch": 1.27, "row_outer_span": 4.83}},
+  "kicad_footprint": "RF_Mini-Circuits:Mini-Circuits_DB1627",
+  "kicad_footprint_check": "KiCad DB1627: pads 1,2,3 top row (x=-1.27,0,+1.27, y=-1.59), 4,5,6 bottom row (x=+1.27,0,-1.27) -> same as Mini-Circuits outline (1-2-3 top, 6-5-4 bottom, dot at pin 1). Pads 0.76x1.65 vs clone recommended 0.76x1.40, same 1.27 pitch and 4.83 span -> fits clone and genuine. Pad 5 = no net.",
+  "pins": {
+    "1": {"name": "PRIMARY (GND)", "function": "Primary return - GND"},
+    "2": {"name": "PRIMARY (GND)", "function": "Primary return - GND"},
+    "3": {"name": "PRIMARY DOT", "function": "50 ohm unbalanced input"},
+    "4": {"name": "SECONDARY", "function": "Balanced output (-)"},
+    "5": {"name": "NOT USED", "function": "No lead on clone / not used on genuine - leave unconnected"},
+    "6": {"name": "SECONDARY DOT", "function": "Balanced output (+)"}
+  },
+  "app_circuit": [
+    {"ref_hint": "C_dc_P", "value": "100pF C0G 0402 (DC block)", "package": "0402", "connects": ["T.6", "RFFC U.23 MIX_IPP"], "source": "Config K: SEC DOT is DC-tied to PRI GND through the third winding; RFFC note 4 forbids DC on mixer inputs"},
+    {"ref_hint": "C_dc_N", "value": "100pF C0G 0402 (DC block)", "package": "0402", "connects": ["T.4", "RFFC U.24 MIX_IPN"], "source": "Config K: SEC is DC-tied to PRI DOT"},
+    {"ref_hint": "C_comp x2", "value": "0.5pF shunt each secondary pin (genuine demo board; DNP footprints)", "package": "0402", "connects": ["T.4 / T.6", "GND"], "source": "TCM2-63WX+ p2 electrical schematic (C1, C2 0.5pF)"}
+  ],
+  "notes": ["The genuine part's schematic shows NO centre tap: pins 1,2 are primary/ground, 3 = primary dot (input), 4 = secondary, 6 = secondary dot, 5 not used. The clone pin table omits 5 (consistent).",
+            "Config K implies DC continuity between primary and secondary windings and to GND -> series DC-block caps on both mixer legs are mandatory (eval-board equivalent: RFMD AC-grounded the primary 'ground' via C23 100pF).",
+            "Clone RF data (IL 2.1/2.9 dB 30-5000 MHz, 3.2/3.9 dB 5-6 GHz) unverified vs genuine (0.9/1.5/2.5 dB typ)."]
+}
+
+# ---------------------------------------------------------------- 9. TCXO
+P["TG2520SMN-40M"] = {
+  "mfr": "Epson", "mpn": "X1G0054210307 (TG2520SMN 40.000000 MHz MCGNNM)", "lcsc": "C3007519",
+  "function": "40 MHz TCXO, +-0.5 ppm, clipped sine, no Vc",
+  "source": DS + "X1G0054210307.pdf: operating conditions + electrical p1, pin info p2, outline + recommended footprint p14",
+  "package": {"name": "2.5x2.0x0.8 mm, 4-pad ceramic", "body_mm": [2.5, 2.0, 0.8],
+              "epson_land_mm": {"pad": [0.8, 1.0], "pitch_long": 2.1, "pitch_short": 1.4}},
+  "kicad_footprint": "Oscillator:Oscillator_SMD_SeikoEpson_TG2520SMN-xxx-xxxxxx-4Pin_2.5x2.0mm",
+  "kicad_footprint_check": "KiCad footprint is rotated 90 deg (long axis vertical): pads 1.0x0.8 at (+-0.7, +-1.05), 1 TL, 2 BL, 3 BR, 4 TR (CCW) = Epson land (0.8x1.0 pads, 2.1 x 1.4 pitch, 1 BL, 2 BR, 3 TR, 4 TL CCW). Matches; it carries a keep-out between pads (Epson: no pattern between pads).",
+  "supply": "Vcc 2.66-3.465 V, Icc <=1.8 mA",
+  "output": "Clipped sine >=0.8 Vpp into 10 kohm || 10 pF (load spec 9-11 kohm, 9-11 pF); 3rd harmonic <= -5 dBc; DC-cut cap NOT included - external >=0.01 uF required",
+  "pins": {
+    "1": {"name": "N.C.", "function": "No connect (Vc on VC-TCXO). Leave OPEN or GND; it is not a ground pin"},
+    "2": {"name": "GND", "function": "Ground"},
+    "3": {"name": "OUT", "function": "Clipped-sine output; external DC-cut cap >=10 nF"},
+    "4": {"name": "VCC", "function": "Supply"}
+  },
+  "app_circuit": [
+    {"ref_hint": "C_byp", "value": "100nF (0.01-0.1 uF per DS), as close as possible", "package": "0402", "connects": ["X.4 VCC", "GND"], "source": "p14 note"},
+    {"ref_hint": "R/FB_vcc", "value": "optional 10-47R or ferrite from 3.3 V (RFFC eval feeds its TCXO through R31 120R + C44 10nF)", "package": "0402", "connects": ["3V3_RF", "X.4"], "source": "RFFC DS p7"},
+    {"ref_hint": "C_dc_RFFC", "value": "10nF", "package": "0402", "connects": ["X.3 OUT", "RFFC REF_IN"], "source": "p1 Cc>=0.01uF"},
+    {"ref_hint": "C_dc_ESP", "value": "10nF + series 24nH (ESP32 HW guide: series L on XTAL_P required)", "package": "0402/0201", "connects": ["X.3 OUT", "ESP32 XTAL_P"], "source": "S31 HW design guidelines 1.3.5; ESP32 drive level UNVERIFIED"}
+  ],
+  "notes": ["Driving two loads (RFFC REF_IN and ESP32 XTAL_P) exceeds the 10 kohm||10 pF load spec only if the inputs are low-impedance; input impedances UNVERIFIED - keep a buffer/resistive-split option (open issue 6 in PART_SELECTION).",
+            "Frequency vs load coefficient only +-0.1 ppm for +-10 % load."]
+}
+
+# ---------------------------------------------------------------- 10. LDOs
+LDO_PINS = {"1": {"name": "IN", "function": "Input 1.6-6.0 V"}, "2": {"name": "GND", "function": "Ground"},
+            "3": {"name": "EN", "function": "Enable: >0.9 V on, <0.3 V off; internal 500k pull-down (tie to IN or GPIO)"},
+            "4": {"name": "NC", "function": "No internal connection"}, "5": {"name": "OUT", "function": "Regulated output"}}
+LDO_APP = [
+  {"ref_hint": "C_in", "value": "1uF min (use 2.2-4.7uF X5R/X7R)", "package": "0603", "connects": ["U.1 IN", "GND"], "source": "TPS7A20 DS 5.3 Rec. op. cond. CIN 1 uF"},
+  {"ref_hint": "C_out", "value": "1uF min effective (1-200 uF, ESR<100 mohm); use 2.2-4.7uF X5R/X7R", "package": "0603", "connects": ["U.5 OUT", "GND"], "source": "DS 5.3 COUT"},
+  {"ref_hint": "EN", "value": "tie EN to IN, or ESP32 GPIO + 100k to IN", "package": "-", "connects": ["U.3", "U.1 or GPIO"], "source": "DS pin table"}]
+P["TPS7A2033PDBVR"] = {"mfr": "TI", "mpn": "TPS7A2033PDBVR", "lcsc": "C2862740", "function": "300 mA low-noise LDO, 3.3 V (RFFC5072 / RF 3.3 V rail)",
+  "source": DS + "TPS7A20.pdf (SBVS338H) Pin Functions X2SON/SOT-23 table (sec. 4), Rec. op. cond. (5.3), EN thresholds (5.5)",
+  "package": {"name": "SOT-23-5 (DBV) 2.9x2.8 mm"}, "kicad_footprint": "Package_TO_SOT_SMD:SOT-23-5",
+  "kicad_footprint_check": "Standard SOT-23-5 numbering (1-3 left top->bottom, 4-5 right bottom->top) = DBV pinout. Matches.",
+  "pins": LDO_PINS, "app_circuit": LDO_APP,
+  "notes": ["Dropout 145 mV max at 300 mA. 'P' suffix = active output discharge.", "Consider TPS7A2030 (3.0 V) for RFFC (VDD max 3.3 V)."]}
+P["TPS7A2045PDBVR"] = {"mfr": "TI", "mpn": "TPS7A2045PDBVR", "lcsc": "C2873627", "function": "300 mA low-noise LDO, 4.5 V (LNA / gain-block rail)",
+  "source": DS + "TPS7A20.pdf", "package": {"name": "SOT-23-5 (DBV)"}, "kicad_footprint": "Package_TO_SOT_SMD:SOT-23-5",
+  "kicad_footprint_check": "Same as TPS7A2033.", "pins": LDO_PINS, "app_circuit": LDO_APP,
+  "notes": ["Needs VIN >= ~4.65 V at 300 mA (145 mV dropout) - marginal on a sagging USB VBUS (4.4-4.75 V allowed by USB spec): it will drop out, not fail.",
+            "Load budget: PSA4 x2 (~50 mA each, only one arm on unless both powered) + QPL9503 56 mA + GVA-62 82 mA ~ 240 mA if all on - within 300 mA but check thermal ((5-4.5) x 0.24 = 0.12 W OK)."]}
+P["AMS1117-3.3"] = {"mfr": "Advanced Monolithic Systems", "mpn": "AMS1117-3.3", "lcsc": "C6186",
+  "function": "1 A LDO 3.3 V (digital rail: ESP32, PHY, flash)",
+  "source": DS + "AMS1117-3.3.pdf (LCSC copy) p1 pin connections, p4 'Stability' application note",
+  "package": {"name": "SOT-223 (tab = VOUT)"}, "kicad_footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+  "kicad_footprint_check": "Pad 1 GND/ADJ, 2 VOUT (+tab), 3 VIN = DS. Matches.",
+  "pins": {"1": {"name": "GND/ADJ", "function": "Ground (fixed version)"}, "2": {"name": "VOUT", "function": "Output (also tab)"},
+           "3": {"name": "VIN", "function": "Input"}, "TAB": {"name": "VOUT", "function": "Tab = output; use copper pour for heat"}},
+  "app_circuit": [
+    {"ref_hint": "C_out", "value": "22uF tantalum (DS: ensures stability for all conditions); 22uF ceramic + 0.5-1 ohm ESR is the usual substitute (UNVERIFIED with pure MLCC)", "package": "3528 tantalum or 1206 MLCC", "connects": ["U.2 VOUT", "GND"], "source": "DS p4 'Stability'"},
+    {"ref_hint": "C_in", "value": "10uF", "package": "0805/1206", "connects": ["U.3 VIN", "GND"], "source": "common practice; DS no explicit value (UNVERIFIED)"}],
+  "notes": ["Minimum load 5-10 mA.", "Dropout ~1.1 V @ 800 mA: 5.0 V -> 3.3 V OK only while VBUS > 4.4 V.", "Thermal: SOT-223 theta_JA 90 C/W (DS) - see PART_SELECTION thermal check."]}
+
+# ---------------------------------------------------------------- 11. USB-C + ESD
+P["TYPE-C-31-M-12"] = {"mfr": "Korean Hroparts (HRO)", "mpn": "TYPE-C-31-M-12", "lcsc": "C165948",
+  "function": "USB Type-C receptacle, USB 2.0 only (16 pins), SMD + 4 THT shell tabs",
+  "source": DS + "TYPE-C-31-M-12.pdf (HRO drawing): pin table, recommended PCB layout",
+  "package": {"name": "8.94 x 7.35 mm, top-mount SMD, 16 signal pads (12 positions), 4 THT shell tabs, 2 NPTH pegs d0.65"},
+  "kicad_footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+  "kicad_footprint_check": "Pad order left-to-right A1/B12, A4/B9, B8, A5, B7, A6, A7, B6, A8, B5, A9/B4, A12/B1 at x=-3.25..+3.25 = HRO layout. Matches. Shell = pad 'S1' (4 THT).",
+  "pins": {"A1,B1,A12,B12": {"name": "GND", "function": "Ground"}, "A4,B4,A9,B9": {"name": "VBUS", "function": "5 V"},
+           "A5": {"name": "CC1", "function": "5.1k Rd to GND (own resistor)"}, "B5": {"name": "CC2", "function": "5.1k Rd to GND (own resistor)"},
+           "A6,B6": {"name": "D+ (DP1/DP2)", "function": "Tie together -> USBLC6 -> ESP32 USB D+"}, "A7,B7": {"name": "D- (DN1/DN2)", "function": "Tie together -> USBLC6 -> ESP32 USB D-"},
+           "A8,B8": {"name": "SBU1/SBU2", "function": "NC"}, "S1": {"name": "SHIELD", "function": "Shell: to GND via 1M || 4.7nF, or direct GND"}},
+  "app_circuit": [
+    {"ref_hint": "R_CC1", "value": "5.1k 1%", "package": "0603", "connects": ["J.A5 CC1", "GND"], "source": "USB-C spec Rd (sink)"},
+    {"ref_hint": "R_CC2", "value": "5.1k 1%", "package": "0603", "connects": ["J.B5 CC2", "GND"], "source": "USB-C spec Rd - separate resistors, never one shared"},
+    {"ref_hint": "C_VBUS", "value": "10uF + 100nF", "package": "0805/0603", "connects": ["VBUS", "GND"], "source": "suggestion"},
+    {"ref_hint": "F/FB", "value": "optional PTC 500 mA-1 A / ferrite on VBUS", "package": "1206", "connects": ["VBUS connector", "VBUS board"], "source": "suggestion"}],
+  "notes": ["Rated 5 A / 20 V."]}
+P["USBLC6-2SC6"] = {"mfr": "ST", "mpn": "USBLC6-2SC6", "lcsc": "C7519", "function": "2-line USB ESD + VBUS clamp",
+  "source": DS + "USBLC6-2SC6.pdf (LCSC copy) p1 pinout, p2 characteristics (C I/O-GND 2.5-3.5 pF)",
+  "package": {"name": "SOT-23-6L"}, "kicad_footprint": "Package_TO_SOT_SMD:SOT-23-6",
+  "kicad_footprint_check": "Standard SOT-23-6 numbering (1-3 left, 4-6 right bottom->top) = ST pinout. Matches.",
+  "pins": {"1": {"name": "I/O1", "function": "Line 1 (pass-through to pin 6)"}, "2": {"name": "GND", "function": "Ground"},
+           "3": {"name": "I/O2", "function": "Line 2 (pass-through to pin 4)"}, "4": {"name": "I/O2", "function": "Line 2"},
+           "5": {"name": "VBUS", "function": "Connect to VBUS (5 V) - clamp reference"}, "6": {"name": "I/O1", "function": "Line 1"}},
+  "app_circuit": [{"ref_hint": "route", "value": "D+ through pins 1-6, D- through 3-4 (flow-through), pin 5 to VBUS, pin 2 to GND with via", "package": "-", "connects": [], "source": "DS"}],
+  "notes": ["Alternative JLC-cheaper parts exist (e.g. SRV05-4) - not checked."]}
+
+# ---------------------------------------------------------------- 12. KLXES15AAA1
+P["KLXES15AAA1"] = {"mfr": "KUU (clone of Murata LXES15AAA1)", "mpn": "KLXES15AAA1", "lcsc": "C2892490",
+  "function": "Polymer ESD suppressor, bidirectional, 0.05 pF typ, for the SMA RF inputs",
+  "source": DS + "KLXES15AAA1.pdf p1 (specs), p4 (dimensions, footprint)",
+  "package": {"name": "0402 (1.00x0.52x0.38 mm), 2 terminals, non-polar"},
+  "kicad_footprint": "Diode_SMD:D_0402_1005Metric", "kicad_footprint_alt": "Capacitor_SMD:C_0402_1005Metric",
+  "kicad_footprint_check": "DS footprint: pads 0.50x0.65 at 0.90 mm centre spacing; KiCad 0402 pads ~0.59x0.64 at +-0.48 - compatible. Non-polar: pin order irrelevant.",
+  "pins": {"1": {"name": "Line", "function": "RF line (shunt)"}, "2": {"name": "GND", "function": "Ground"}},
+  "app_circuit": [{"ref_hint": "D_ESD", "value": "KLXES15AAA1 shunt", "package": "0402", "connects": ["SMA centre / RF line right at connector", "GND (via at pad)"], "source": "DS sec. 9"},
+                  {"ref_hint": "C_dcblk", "value": "DC block after ESD (keep, gap-type suppressor triggers at ~450 V)", "package": "0402", "connects": ["RF line", "SP3T_in RFin"], "source": "PART_SELECTION 13"}],
+  "notes": ["Trigger 450 V, clamp 40 V (8 kV contact), VDC max 5 V, leakage <10 nA, C 0.05 pF @10 MHz. RF data at GHz unverified (clone)."]}
+
+# ---------------------------------------------------------------- 13. SMA
+P["BWSMA-KE-P001"] = {"mfr": "BAT WIRELESS", "mpn": "BWSMA-KE-P001", "lcsc": "C496550",
+  "function": "SMA female (jack, inner hole), board-edge straddle mount, 'offset pin', 0-6 GHz",
+  "source": DS + "BWSMA-KE-P001.pdf p4 (spec), p6 (mechanical drawing)",
+  "package": {"name": "6.5 mm square flange, 13.5 mm long; rear: centre pin d0.95 + 2 upper legs (same plane as centre pin) + 2 lower legs, legs 0.9 wide, 4 mm long; vertical gap between upper and lower legs 1.7 mm -> straddles a 1.6 mm board",
+              "dims_mm": {"leg_outer_span": 6.0, "leg_inner_span": 4.2, "leg_width": 0.9, "leg_centre_x": 2.55, "leg_length": 4.0, "centre_pin_d": 0.95, "board_gap": 1.7}},
+  "kicad_footprint": "Connector_Coaxial:SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount",
+  "kicad_footprint_check": "Footprint exists. Pads: centre 1.27x3.6 (F.Cu) at x=0; GND 1.35x4.2 at x=+-2.825 on F.Cu AND B.Cu. BWSMA legs span x=2.1..3.0 (pad spans 2.15..3.5) and 4 mm long (pad 4.2) -> geometric fit OK on paper (UNVERIFIED by test fit). Centre pin d0.95 lies on the top surface like the Samtec.",
+  "custom_land_pattern": {"name": "BWSMA-KE-P001_EdgeMount_1.6mm (if preferred)", "units": "mm", "origin": "board edge, centre line; +y into board",
+    "pads": {"1": {"layer": "F.Cu", "at": [0, 2.1], "size": [1.2, 4.2]},
+             "2a": {"layer": "F.Cu", "at": [-2.55, 2.1], "size": [1.3, 4.2]}, "2b": {"layer": "F.Cu", "at": [2.55, 2.1], "size": [1.3, 4.2]},
+             "2c": {"layer": "B.Cu", "at": [-2.55, 2.1], "size": [1.3, 4.2]}, "2d": {"layer": "B.Cu", "at": [2.55, 2.1], "size": [1.3, 4.2]}},
+    "note": "pads start at board edge; stitch GND pads F/B with >=4 vias each; void L2 (and L3 if needed) under pad 1 to keep ~50 ohm on the 1.2 mm wide pad; taper to the 50 ohm microstrip"},
+  "pins": {"1": {"name": "Centre", "function": "RF"}, "2": {"name": "Body (4 legs)", "function": "GND"}},
+  "app_circuit": [],
+  "notes": ["Earlier notes called it 'SMD edge/board-side'; the drawing confirms a straddle edge-mount for ~1.6 mm boards (gap 1.7 mm). Use 1.6 mm board thickness.",
+            "No RL data at 6 GHz in DS (only IL 0.15 dB @6 GHz). Alternatives listed in PART_SELECTION (C496549 Z001 THT, DreamLNK C914556)."]}
+
+# ---------------------------------------------------------------- 14. Flash
+P["GD25Q32ESIGR"] = {"mfr": "GigaDevice", "mpn": "GD25Q32ESIGR", "lcsc": "C2832998", "function": "32 Mbit (4 MB) QSPI NOR flash, 2.7-3.6 V",
+  "source": DS + "GD25Q32ESIGR.pdf (LCSC copy) p4-5 pin assignment, Table 1; LCSC package field 'SOP-8-208mil'",
+  "package": {"name": "SOP-8 208 mil (5.23 mm body width, 7.9 mm lead span), 1.27 mm pitch"},
+  "kicad_footprint": "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm",
+  "kicad_footprint_check": "The 'S' package code = SOP8 208mil (LCSC lists SOP-8-208mil). Do NOT use SOIC-8_3.9x4.9mm. Standard numbering 1-4 left, 5-8 right = DS.",
+  "pins": {"1": {"name": "CS#", "function": "Chip select (ESP32 SPICS0)"}, "2": {"name": "SO (IO1)", "function": "Data out / IO1 (SPIQ)"},
+           "3": {"name": "WP# (IO2)", "function": "Write protect / IO2 (SPIWP)"}, "4": {"name": "VSS", "function": "Ground"},
+           "5": {"name": "SI (IO0)", "function": "Data in / IO0 (SPID)"}, "6": {"name": "SCLK", "function": "Clock (SPICLK)"},
+           "7": {"name": "HOLD# (IO3)", "function": "Hold / IO3 (SPIHD)"}, "8": {"name": "VCC", "function": "2.7-3.6 V"}},
+  "app_circuit": [{"ref_hint": "C_flash", "value": "100nF (+1uF)", "package": "0402", "connects": ["U.8", "GND"], "source": "common practice"},
+                  {"ref_hint": "R_CS", "value": "10k pull-up (CS# must not float after power-up)", "package": "0402", "connects": ["U.1", "VCC"], "source": "DS Table 1 note"}],
+  "notes": ["ESP32-S31 flash pin mapping per Espressif HW guide/ref schematic (not extracted here)."]}
+
+# ---------------------------------------------------------------- 15. RJ45
+P["HR911130C"] = {"mfr": "HanRun", "mpn": "HR911130C", "lcsc": "C50933",
+  "function": "RJ45 jack, integrated 10/100/1000BASE-T magnetics (1CT:1CT), Bob-Smith termination, green+yellow LEDs, shielded, THT, tab-up",
+  "source": DS + "HR911130C.pdf p1 (schematic), p2 (mechanical, LED table), p3 (PCB layout, component-side view)",
+  "package": {"name": "THT 16.00 W x 21.20 D x 13.30 H mm", "body_mm": [16.0, 21.2, 13.3]},
+  "kicad_footprint": None,
+  "kicad_footprint_check": "No HR911130C in Connector_RJ. RJ45_Hanrun_HR911105A_Horizontal is a 10/100 jack with 8 signal pins (LEDs 9-12) - pin count/positions differ, NOT usable.",
+  "custom_land_pattern": {"name": "RJ45_Hanrun_HR911130C_Horizontal", "units": "mm",
+    "origin": "midpoint between the two d3.25 pegs, component side (top) view, +x right, +y toward the rear (away from the panel/opening)",
+    "front_face_y": -10.80, "rear_y": 10.40, "body_width": 16.00,
+    "holes": {
+      "PEG_L": {"at": [-5.715, 0.0], "drill": 3.25, "type": "NPTH"}, "PEG_R": {"at": [5.715, 0.0], "drill": 3.25, "type": "NPTH"},
+      "SH_L": {"at": [-7.745, 3.05], "drill": 1.63, "pad": 2.5, "type": "PTH shield"}, "SH_R": {"at": [7.745, 3.05], "drill": 1.63, "pad": 2.5, "type": "PTH shield"},
+      "14": {"at": [-6.625, -4.90], "drill": 1.02, "pad": 1.6}, "13": {"at": [-4.085, -4.90], "drill": 1.02, "pad": 1.6},
+      "12": {"at": [4.085, -4.90], "drill": 1.02, "pad": 1.6}, "11": {"at": [6.625, -4.90], "drill": 1.02, "pad": 1.6},
+      "1": {"at": [5.715, 8.89], "drill": 0.89, "pad": 1.4}, "2": {"at": [4.445, 6.35], "drill": 0.89, "pad": 1.4},
+      "3": {"at": [3.175, 8.89], "drill": 0.89, "pad": 1.4}, "4": {"at": [1.905, 6.35], "drill": 0.89, "pad": 1.4},
+      "5": {"at": [0.635, 8.89], "drill": 0.89, "pad": 1.4}, "6": {"at": [-0.635, 6.35], "drill": 0.89, "pad": 1.4},
+      "7": {"at": [-1.905, 8.89], "drill": 0.89, "pad": 1.4}, "8": {"at": [-3.175, 6.35], "drill": 0.89, "pad": 1.4},
+      "9": {"at": [-4.445, 8.89], "drill": 0.89, "pad": 1.4}, "10": {"at": [-5.715, 6.35], "drill": 0.89, "pad": 1.4}},
+    "check": "p3 dims: pegs 11.43 apart; shield 15.49 apart, 3.05 behind pegs; LED pins 13.25 (outer) / 2.54 inset, 4.90 in front of pegs; signal rows 6.35 and 8.89 behind pegs (8.89-2.54), 1.27 pitch staggered, pin 6/5 at -/+0.635 from centre line. Positions read from drawing: pin x values snapped to the 1.27 grid. Pad diameters are suggestions."},
+  "pins": {"1": {"name": "CT (common)", "function": "All four chip-side centre taps tied: decouple 100nF to GND (Espressif ref: 0.1uF/50V per TCT) - do not power for voltage-mode PHY (YT8531 / RTL8211F)"},
+           "2": {"name": "MDI0+ (TRD0+)", "function": "PHY MDI0_P"}, "3": {"name": "MDI0- (TRD0-)", "function": "PHY MDI0_N"},
+           "4": {"name": "MDI1+", "function": "PHY MDI1_P"}, "7": {"name": "MDI1-", "function": "PHY MDI1_N"},
+           "5": {"name": "MDI2+", "function": "PHY MDI2_P"}, "6": {"name": "MDI2-", "function": "PHY MDI2_N"},
+           "8": {"name": "MDI3+", "function": "PHY MDI3_P"}, "9": {"name": "MDI3-", "function": "PHY MDI3_N"},
+           "10": {"name": "CHS GND", "function": "Bob-Smith node (4x75R + internal 1000pF/2kV) - connect to chassis/shield GND or board GND"},
+           "11": {"name": "LED_G anode", "function": "Green LED (left) anode"}, "12": {"name": "LED_G cathode", "function": "Green LED cathode"},
+           "13": {"name": "LED_Y cathode", "function": "Yellow LED (right) cathode"}, "14": {"name": "LED_Y anode", "function": "Yellow LED anode"},
+           "SH": {"name": "Shield", "function": "Shell tabs -> chassis GND (to board GND via 0R/1nF 2kV)"}},
+  "app_circuit": [
+    {"ref_hint": "C_CT", "value": "100nF 50V", "package": "0603", "connects": ["J.1 CT", "GND"], "source": "Espressif CoreBoard schematic (C65-C69 0.1uF/50V on TCT1-4)"},
+    {"ref_hint": "R_LEDG", "value": "330R-1k (LED 20 mA max, VF 1.8-2.8 V)", "package": "0603", "connects": ["PHY LED pin / 3V3", "J.11 or J.12"], "source": "DS p2 LED table; polarity depends on PHY LED drive"},
+    {"ref_hint": "R_LEDY", "value": "330R-1k", "package": "0603", "connects": ["PHY LED pin / 3V3", "J.14 or J.13"], "source": "DS p2"},
+    {"ref_hint": "R_SH", "value": "0R or 1M || 1nF/2kV", "package": "1206", "connects": ["J.SH / J.10", "GND"], "source": "suggestion"}],
+  "notes": ["Signal pin numbering is HanRun's (1-10 incl. CT and CHS), not RJ45 contact numbering (J1-J8).",
+            "Operating 0-70 C."]}
+
+# ---------------------------------------------------------------- 16. UART header + tact switches
+P["UART_HEADER_1x3"] = {"mfr": "BOOMELE (any)", "mpn": "2.54-1*3P pin header", "lcsc": "C49257",
+  "function": "3-pin UART0 header (hand-soldered, D11)",
+  "source": "JLC parts API 2026-11-09 (C49257, extended); ESP32-S31 HW design guidelines 1.3.7 (U0TXD=GPIO58, U0RXD=GPIO59, 499R series on TX)",
+  "package": {"name": "1x3 2.54 mm THT"}, "kicad_footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+  "kicad_footprint_check": "exists",
+  "pins": {"1": {"name": "GND", "function": "Ground"}, "2": {"name": "TXD (from ESP32)", "function": "ESP32 U0TXD = GPIO58 via 499R"},
+           "3": {"name": "RXD (into ESP32)", "function": "ESP32 U0RXD = GPIO59"}},
+  "app_circuit": [{"ref_hint": "R_TX", "value": "499R", "package": "0603", "connects": ["ESP32 GPIO58", "J.2"], "source": "S31 HW guide 1.3.7"}],
+  "notes": ["Order/labels are a suggestion; silkscreen them."]}
+P["TACT_SW_TS-1187A-B-A-B"] = {"mfr": "XKB Connection", "mpn": "TS-1187A-B-A-B", "lcsc": "C318884",
+  "function": "SMD tact switch 5.1x5.1x1.5 mm, 4 pads (JLC BASIC part, 833k stock, $0.02) - x2: BOOT and RESET",
+  "source": DS + "TS-1187A-B-A-B.pdf (XKB drawing): PCB layout top view; JLC API: componentLibraryType 'base'",
+  "package": {"name": "SMD-4P 5.1x5.1 mm; land: pads 1.0x0.75 at x=+-3.0, y=+-1.875 (7.0/5.0 and 4.5/3.0 mm spans)"},
+  "kicad_footprint": "Button_Switch_SMD:SW_SPST_TL3342",
+  "kicad_footprint_check": "TL3342 pads 1.7x1.0 at (+-3.15, +-1.9) cover the XKB land (1.0x0.75 at +-3.0, +-1.875). TL3342 pad '1' = top pair, '2' = bottom pair; XKB: A-B (top pair) internally connected, C-D (bottom pair) connected, switch between pairs -> matches.",
+  "pins": {"1 (A,B)": {"name": "Contact 1", "function": "pair, internally shorted"}, "2 (C,D)": {"name": "Contact 2", "function": "pair, internally shorted"}},
+  "app_circuit": [
+    {"ref_hint": "SW_BOOT", "value": "TS-1187A-B-A-B", "package": "SMD", "connects": ["ESP32 GPIO61", "GND"], "source": "S31 HW guide Table 4: GPIO61=0 at reset release -> Joint Download Boot (GPIO60 must be 1)"},
+    {"ref_hint": "R_BOOT", "value": "10k pull-up (optional; check internal pull in S31 datasheet)", "package": "0402", "connects": ["GPIO61", "3V3"], "source": "UNVERIFIED default pull"},
+    {"ref_hint": "SW_RST", "value": "TS-1187A-B-A-B", "package": "SMD", "connects": ["ESP32 CHIP_PU", "GND"], "source": "S31 HW guide 1.3.x CHIP_PU"},
+    {"ref_hint": "R_PU", "value": "10k", "package": "0402", "connects": ["CHIP_PU", "3V3"], "source": "S31 HW guide: RC delay R=10k"},
+    {"ref_hint": "C_PU", "value": "1uF", "package": "0402", "connects": ["CHIP_PU", "GND"], "source": "S31 HW guide: C=1uF; CHIP_PU must not float"}],
+  "notes": ["The switch is a JLC basic part; at Standard PCBA the basic/extended loading fee is the same anyway (PART_SELECTION)."]}
+
+out = P
+json.dump(out, open(sys.argv[1], "w"), indent=1, ensure_ascii=False)
+print("parts:", len(P))

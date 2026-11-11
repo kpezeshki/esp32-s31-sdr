@@ -1,0 +1,273 @@
+{
+ "5": {
+  "A": {
+   "parts": 12.480300000000002,
+   "pcb": 3.0,
+   "stencil": 1.6,
+   "total": 17.0803
+  },
+  "B": {
+   "parts_jlc": 34.82549999999999,
+   "parts_hand": 2.6365,
+   "pcb": 3.0,
+   "pcba_fees": 22.804,
+   "total": 63.26599999999999
+  },
+  "ship_per_system": 7.0,
+  "system": 87.34629999999999,
+  "missing": [
+   [
+    "TP1"
+   ],
+   [
+    "TP1"
+   ],
+   [
+    "TP2"
+   ],
+   [
+    "TP3"
+   ]
+  ]
+ },
+ "top_A": [
+  {
+   "des": "U1",
+   "value": "ESP32-S31-WROOM-1U-N16R16V",
+   "code": "",
+   "each": 6.0,
+   "per_board": 6.0,
+   "src": "estimate",
+   "lib": null,
+   "stock": null
+  },
+  {
+   "des": "J201",
+   "value": "RJ45 1000BASE-T magjack, integrated magn",
+   "code": "C50933",
+   "each": 2.856,
+   "per_board": 2.86,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 7747
+  },
+  {
+   "des": "U201",
+   "value": "YT8531DC-CA",
+   "code": "C47544379",
+   "each": 1.491,
+   "per_board": 1.49,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 3406
+  },
+  {
+   "des": "J6",
+   "value": "To RF board",
+   "code": "C239361",
+   "each": 0.512,
+   "per_board": 0.51,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 1068
+  },
+  {
+   "des": "C101,C401,C601,C603",
+   "value": "22uF",
+   "code": "C45783",
+   "each": 0.105,
+   "per_board": 0.42,
+   "src": "lcsc",
+   "lib": "base",
+   "stock": 3790862
+  },
+  {
+   "des": "U6,U7",
+   "value": "AMS1117-3.3",
+   "code": "C6186",
+   "each": 0.194,
+   "per_board": 0.39,
+   "src": "lcsc",
+   "lib": "base",
+   "stock": 1510584
+  },
+  {
+   "des": "J4",
+   "value": "USB-C",
+   "code": "C165948",
+   "each": 0.187,
+   "per_board": 0.19,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 274363
+  },
+  {
+   "des": "U5",
+   "value": "USBLC6-2SC6",
+   "code": "C7519",
+   "each": 0.162,
+   "per_board": 0.16,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 27239
+  }
+ ],
+ "top_B": [
+  {
+   "des": "U3",
+   "value": "RFFC5072",
+   "code": "C3034742",
+   "each": 14.605,
+   "per_board": 14.61,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 66
+  },
+  {
+   "des": "U23",
+   "value": "QPL9503",
+   "code": "C470924",
+   "each": 5.754,
+   "per_board": 5.75,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 760
+  },
+  {
+   "des": "U21,U22",
+   "value": "PSA4-5043+",
+   "code": "C5240848",
+   "each": 1.908,
+   "per_board": 3.82,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 2755
+  },
+  {
+   "des": "T1",
+   "value": "H3-TCM2-63WX+",
+   "code": "C22383437",
+   "each": 3.134,
+   "per_board": 3.13,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 1084
+  },
+  {
+   "des": "U25",
+   "value": "GVA-62+",
+   "code": "C5445184",
+   "each": 2.877,
+   "per_board": 2.88,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 206
+  },
+  {
+   "des": "U10,U11,U12,U9",
+   "value": "TPS7A2045PDBVR",
+   "code": "C2873627",
+   "each": 0.233,
+   "per_board": 0.93,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 7264
+  },
+  {
+   "des": "T2",
+   "value": "BD2425N50200AHF",
+   "code": "C502748",
+   "each": 0.891,
+   "per_board": 0.89,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 25
+  },
+  {
+   "des": "U20,U24",
+   "value": "BGS13SN8",
+   "code": "C3312946",
+   "each": 0.301,
+   "per_board": 0.6,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 790
+  },
+  {
+   "des": "L311,L331,L361",
+   "value": "1uH",
+   "code": "C440216",
+   "each": 0.17,
+   "per_board": 0.51,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 2997
+  },
+  {
+   "des": "Y1",
+   "value": "TG2520SMN 40MHz",
+   "code": "C3007519",
+   "each": 0.427,
+   "per_board": 0.43,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 5288
+  },
+  {
+   "des": "J1",
+   "value": "SMA_MIX",
+   "code": "C496550",
+   "each": 0.409,
+   "per_board": 0.41,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 92770
+  },
+  {
+   "des": "FLB1,FLB4,FMB11,FMB8,L390,L391",
+   "value": "3.9nH",
+   "code": "C98062",
+   "each": 0.061,
+   "per_board": 0.37,
+   "src": "lcsc",
+   "lib": "expand",
+   "stock": 23412
+  }
+ ],
+ "types": {
+  "A": 31,
+  "B_jlc": 45,
+  "B_hand": 22
+ },
+ "10": {
+  "A": {
+   "parts": 11.700600000000001,
+   "pcb": 2.0,
+   "stencil": 0.8,
+   "total": 14.500600000000002
+  },
+  "B": {
+   "parts_jlc": 32.55829999999999,
+   "parts_hand": 2.5465999999999998,
+   "pcb": 2.0,
+   "pcba_fees": 12.541999999999998,
+   "total": 49.64689999999999
+  },
+  "ship_per_system": 3.5,
+  "system": 67.6475,
+  "missing": [
+   [
+    "TP1"
+   ],
+   [
+    "TP1"
+   ],
+   [
+    "TP2"
+   ],
+   [
+    "TP3"
+   ]
+  ]
+ }
+}

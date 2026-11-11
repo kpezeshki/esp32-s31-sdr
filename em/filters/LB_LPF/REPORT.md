@@ -1,0 +1,21 @@
+## LB_LPF: EM co-simulation (Sonnet, 20 ports, layout 10.2 x 4.5 mm)
+
+| Element | Palette value (lumped design) | After EM re-opt (palette only) |
+|---|---|---|
+| L1 | 2.8 nH | **2.1 nH** |
+| C2 | 1.6 pF | **1.8 pF** |
+| L3 | 5.1 nH | **5.6 nH** |
+| L4 | 2.8 nH | **3 nH** |
+| C5 | 1.2 pF | **1.4 pF** |
+| L6 | 5.1 nH | **6.2 nH** |
+| L7 | 2.8 nH | **2.5 nH** |
+| C8 | 1.2 pF | **1.3 pF** |
+| L9 | 2.3 nH | **4.7 nH** |
+
+| Metric | Lumped model | EM, lumped values | EM, re-optimized |
+|---|---|---|---|
+| IL max 0.03-1.75 GHz (<= 1.0) | 1.00 | 1.24 | 2.00 |
+| RL min 0.03-1.75 GHz (>= 14.0) | 17.24 | 22.66 | 13.97 |
+| Rej min 2.40-2.48 GHz (>= 42) | 52.47 | 25.30 | 38.51 |
+| Rej min 2.48-4.80 GHz (>= 30) | 36.55 | 30.62 | 42.16 |
+| Rej min 4.80-7.60 GHz (>= 47) | 54.63 | 47.77 | 47.31 |

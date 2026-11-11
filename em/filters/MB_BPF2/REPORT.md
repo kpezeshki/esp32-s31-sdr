@@ -1,0 +1,28 @@
+## MB_BPF2: EM co-simulation (Sonnet, 30 ports, layout 14.4 x 4.5 mm)
+
+| Element | Palette value (lumped design) | After EM re-opt (palette only) |
+|---|---|---|
+| C1 | 2.3 pF | **2.8 pF** |
+| L2 | 6.8 nH | **6.8 nH** |
+| C3 | 1.6 pF | **1.7 pF** |
+| C4 | 1.4 pF | **1.3 pF** |
+| L5 | 0.8 nH | **1.7 nH** |
+| C6 | 12 pF | **3.3 pF** |
+| C7 | 4.3 pF | **3 pF** |
+| L8 | 2.8 nH | **1.6 nH** |
+| L9 | 5.1 nH | **5.1 nH** |
+| C10 | 0.7 pF | **0.7 pF** |
+| L11 | 5.1 nH | **5.6 nH** |
+| L12 | 3.9 nH | **3.3 nH** |
+| C13 | 0.7 pF | **0.7 pF** |
+| L14 | 3.9 nH | **6.8 nH** |
+
+| Metric | Lumped model | EM, lumped values | EM, re-optimized |
+|---|---|---|---|
+| IL max 1.75-2.15 GHz (<= 2.5) | 3.24 | 10.19 | 4.73 |
+| RL min 1.75-2.15 GHz (>= 12.0) | 12.44 | 2.09 | 11.45 |
+| Rej min 0.03-1.50 GHz (>= 32) | 29.36 | 29.42 | 29.83 |
+| Rej min 2.40-2.48 GHz (>= 37) | 36.50 | 31.83 | 28.98 |
+| Rej min 2.70-3.15 GHz (>= 42) | 56.01 | 39.68 | 38.84 |
+| Rej min 3.15-4.60 GHz (>= 38) | 39.90 | 40.68 | 41.51 |
+| Rej min 4.60-7.00 GHz (>= 30) | 34.73 | 16.84 | 29.62 |

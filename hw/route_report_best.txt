@@ -1,0 +1,381 @@
+FAIL V1P8 [('U1', '34')]
+OK   V1P8 ('U1', '35')
+OK   V1P8 ('C114', '1')
+OK   V1P8 ('C115', '1')
+OK   V1P8 ('C116', '1')
+OK   PHY_VDDL ('C207', '1')
+OK   PHY_VDDL ('C203', '1')
+OK   PHY_VDDL ('C206', '1')
+OK   PHY_VDDL ('C204', '1')
+FAIL PHY_VDDL [('U201', '8')]
+FAIL PHY_VDDL [('U201', '3')]
+FAIL PHY_VDDL [('U201', '38')]
+OK   PHY_VDDL ('U201', '30')
+OK   PHY_VDDL ('U201', '21')
+OK   VDD_SPI ('U2', '8')
+OK   VDD_SPI ('C117', '1')
+FAIL VDD_SPI [('U1', '39')]
+OK   VDD_SPI ('C120', '1')
+OK   VDD_SPI ('R120', '1')
+OK   PHY_3V3 ('C211', '1')
+OK   PHY_3V3 ('C210', '1')
+OK   PHY_3V3 ('C209', '1')
+OK   PHY_3V3 ('C208', '1')
+OK   PHY_3V3 ('C212', '1')
+OK   PHY_3V3 ('C214', '1')
+OK   PHY_3V3 ('FB201', '2')
+OK   PHY_3V3 ('U201', '11')
+OK   PHY_3V3 ('U201', '40')
+FAIL PHY_3V3 [('U201', '29')]
+OK   PHY_3V3 ('U201', '28')
+OK   PHY_3V3 ('R216', '2')
+OK   PHY_3V3 ('R217', '2')
+OK   PHY_3V3 ('R219', '2')
+OK   PHY_3V3 ('R218', '2')
+OK   3V0_RF ('R390', '1')
+FAIL 3V0_RF [('U3', '22')]
+OK   3V0_RF ('U3', '19')
+OK   3V0_RF ('U3', '5')
+OK   3V0_RF ('C373', '1')
+OK   3V0_RF ('C377', '1')
+OK   3V0_RF ('C372', '1')
+OK   3V0_RF ('C375', '1')
+OK   3V0_RF ('C701', '1')
+OK   3V0_RF ('C374', '1')
+OK   3V0_RF ('C376', '1')
+OK   3V0_RF ('Y1', '4')
+OK   3V0_RF ('C606', '1')
+OK   3V0_RF ('U8', '5')
+OK   3V0_RF ('TP7', '1')
+FAIL PHY_CFG_EXT [('R216', '1')]
+FAIL PHY_RBIAS [('R201', '1')]
+OK   PHY_XO ('Y201', '3')
+FAIL PHY_XO [('U201', '37')]
+FAIL MDI0_P [('U201', '1')]
+FAIL PHY_XI [('U201', '36')]
+OK   PHY_XI ('C201', '1')
+FAIL MDI0_N [('U201', '2')]
+FAIL MDI2_P [('U201', '6')]
+FAIL MDI1_P [('U201', '4')]
+FAIL MDI1_N [('U201', '5')]
+FAIL MDI2_N [('U201', '7')]
+FAIL PHY_LED1 [('U201', '33')]
+OK   PHY_LED1 ('R221', '1')
+OK   RFFC_ENBL ('U1', '61')
+FAIL PHY_RX_CLK [('R213', '1')]
+FAIL PHY_LED2 [('U201', '34')]
+OK   PHY_LED2 ('R220', '1')
+FAIL RFFC_RESETX [('R387', '1')]
+OK   SPI_HD_C ('U1', '40')
+FAIL PHY_RX_CTL [('R212', '1')]
+FAIL MDI3_N [('U201', '10')]
+FAIL PHY_RXD3 [('U201', '22')]
+FAIL MDI3_P [('U201', '9')]
+OK   SPI_D_C ('U1', '42')
+FAIL PHY_RXD0 [('R208', '1')]
+FAIL PHY_RXD2 [('U201', '23')]
+FAIL PHY_RXD1 [('R209', '1')]
+OK   LDO_EN_MB ('R602', '1')
+OK   LDO_EN_MB ('U1', '6')
+FAIL SW_V2 [('U1', '8')]
+FAIL LDO_EN_LB [('R601', '1')]
+OK   LDO_EN_LB ('U9', '3')
+OK   JTAG_TMS ('U1', '72')
+OK   JTAG_TDI ('U1', '71')
+FAIL BOOT [('R102', '2')]
+OK   BOOT ('SW2', '1')
+OK   BOOT ('SW2', '2')
+OK   JTAG_TCK ('TP3', '1')
+OK   JTAG_TDO ('U1', '69')
+FAIL GPIO60 [('U1', '75')]
+FAIL U0RXD [('U1', '74')]
+FAIL U0TXD [('U1', '73')]
+OK   3V3 ('C302', '1')
+OK   3V3 ('U20', '1')
+OK   3V3 ('C360', '1')
+OK   3V3 ('U24', '1')
+FAIL VREF_ADC [('C112', '1')]
+OK   PHY_TX_CLK ('R207', '2')
+OK   VREF_TOUCH ('U1', '18')
+OK   RFFC_SDATA ('U1', '59')
+OK   RFFC_SCLK ('U1', '58')
+OK   ETH_INTN ('U201', '31')
+FAIL ETH_INTN [('R223', '1')]
+OK   ETH_TXD0 ('R202', '1')
+FAIL ETH_TXD1 [('R203', '1')]
+FAIL LED_STAT [('R103', '1')]
+OK   PHY_TXD2 ('R204', '2')
+OK   ETH_RXD2 ('U1', '24')
+OK   USB_DM ('U5', '4')
+OK   USB_DM ('J4', 'B7')
+OK   USB_DM ('J4', 'A7')
+OK   USB_DM ('U1', '45')
+OK   ETH_PHY_RST_N ('R219', '1')
+OK   ETH_PHY_RST_N ('U1', '13')
+FAIL ETH_MDC [('U1', '10')]
+FAIL SW_V1 [('U1', '7')]
+FAIL RFFC_LD [('U3', '26')]
+OK   RFFC_LD ('TP6', '1')
+OK   VGB ('C363', '1')
+OK   VGB ('L361', '2')
+OK   VGB ('C614', '1')
+OK   VGB ('TP8', '1')
+OK   XTAL_P ('L102', '2')
+OK   SPI_HD ('U2', '7')
+FAIL SPI_CLK_C [('U1', '41')]
+OK   SPI_WP_C ('U1', '38')
+FAIL RFFC_ENX [('R385', '1')]
+OK   SPI_CS ('U2', '1')
+OK   SPI_CS ('R120', '2')
+FAIL PHY_TX_CTL [('U201', '19')]
+FAIL ETH_TXD3 [('R205', '1')]
+OK   RFFC_ENX_I ('R385', '2')
+OK   RFFC_ENX_I ('C387', '1')
+OK   ETH_RXD3 ('U1', '23')
+OK   USB_DP ('U5', '6')
+OK   USB_DP ('J4', 'B6')
+OK   USB_DP ('J4', 'A6')
+FAIL USB_DP [('U1', '44')]
+OK   ETH_RX_CTL ('R212', '2')
+FAIL SW2_V2 [('U24', '2')]
+FAIL SW2_V1 [('U24', '3')]
+FAIL ETH_TX_CTL [('U1', '19')]
+OK   ETH_MDIO ('R218', '1')
+FAIL ETH_MDIO [('U1', '12')]
+OK   VDDA34 ('U1', '3')
+OK   VDDA34 ('L101', '2')
+OK   VDDA34 ('C107', '1')
+OK   VBUS ('J4', 'A9')
+OK   VBUS ('J4', 'A4')
+OK   VBUS ('FB401', '1')
+OK   VLNA_MB ('C332', '1')
+OK   VLNA_MB ('U10', '5')
+OK   VLNA_MB ('C610', '1')
+OK   3V3_PHY ('U7', '2')
+OK   3V3_PHY ('FB201', '1')
+OK   VLNA_LB ('C312', '1')
+OK   VLNA_LB ('U9', '5')
+OK   VLNA_LB ('C608', '1')
+OK   VLNA_HB ('C353', '1')
+OK   VLNA_HB ('U11', '5')
+OK   VLNA_HB ('C612', '1')
+OK   VLNA_HB ('L350', '2')
+OK   VLNA_HB ('R350', '1')
+OK   5V0 ('C609', '1')
+OK   5V0 ('C604', '1')
+OK   5V0 ('C611', '1')
+OK   5V0 ('C613', '1')
+OK   5V0 ('U12', '3')
+OK   5V0 ('U12', '1')
+OK   5V0 ('C605', '1')
+OK   5V0 ('C602', '1')
+OK   5V0 ('U8', '1')
+OK   5V0 ('U8', '3')
+OK   5V0 ('C607', '1')
+OK   5V0 ('U7', '3')
+OK   5V0 ('U6', '3')
+OK   5V0 ('U11', '1')
+OK   5V0 ('FB401', '2')
+OK   5V0 ('C401', '1')
+OK   5V0 ('U9', '1')
+OK   HB_HPF_O ('R352', '1')
+OK   LB_F_IN ('C313', '2')
+OK   HB_F_IN ('FHB1', '1')
+OK   MATCH_I ('C392', '2')
+OK   FHB_M1 ('FHB2', '2')
+OK   FHB_M3 ('FHB6', '1')
+OK   FLB_M3 ('FLB5', '1')
+OK   FLB_M5 ('FLB8', '1')
+OK   FMB_M1 ('FMB2', '2')
+OK   FMB_M7 ('FMB10', '1')
+OK   FMB_M9 ('FMB12', '2')
+OK   IF_SAW_O ('U4', '4')
+OK   LB_LNA_I ('U21', '3')
+OK   MB_LNA_I ('C330', '2')
+OK   SW1_COM ('U20', '6')
+OK   ESP_RF_SEL ('R393', '1')
+OK   MB_LNA_O ('L330', '1')
+OK   HB_LNA_I ('U23', '2')
+OK   GB_CHK ('L361', '1')
+OK   HB_IN ('FHP1', '1')
+OK   IF_OP_P ('U3', '28')
+OK   IF_OP_N ('U3', '27')
+OK   GB_O ('L360', '1')
+OK   ESP_ANT ('U1', '1')
+OK   IF_SE ('L390', '1')
+OK   IF_SE ('T2', '2')
+OK   FMB_N4 ('FMB8', '2')
+OK   FMB_N4 ('FMB11', '1')
+OK   FMB_N5 ('FMB12', '1')
+OK   FMB_N5 ('FMB11', '2')
+OK   FLB_N2 ('FLB3', '2')
+OK   FLB_N2 ('FLB6', '1')
+OK   FLB_N3 ('FLB6', '2')
+OK   FLB_N3 ('FLB9', '1')
+OK   FLB_N1 ('FLB2', '1')
+OK   FLB_N1 ('FLB3', '1')
+OK   FHB_N1 ('FHB2', '1')
+OK   FHB_N1 ('FHB1', '2')
+OK   FHB_N2 ('FHB4', '2')
+OK   FHB_N2 ('FHB7', '1')
+OK   FHB_N3 ('FHB8', '1')
+OK   FHB_N3 ('FHB7', '2')
+OK   FHP_N1 ('FHP1', '2')
+OK   FHP_N1 ('FHP3', '1')
+OK   FMB_N1 ('FMB1', '2')
+OK   FMB_N1 ('FMB4', '1')
+OK   FMB_N2 ('FMB4', '2')
+OK   FMB_N2 ('FMB6', '1')
+OK   FMB_N3 ('FMB6', '2')
+OK   FMB_N3 ('FMB8', '1')
+OK   LB_LNA_O ('L310', '1')
+OK   LB_LNA_O ('U21', '1')
+OK   LB_CHK ('L310', '2')
+OK   LB_CHK ('C311', '1')
+OK   MB_CHK ('L330', '2')
+OK   MB_CHK ('C331', '1')
+OK   MIX_IPP ('C370', '2')
+OK   MIX_IPN ('U3', '24')
+OK   LF_A ('C381', '1')
+OK   HB_LNA_O ('C355', '1')
+OK   HB_LNA_O ('U23', '7')
+OK   HB_SD ('U23', '5')
+OK   RF_IN_SMA ('D301', '1')
+OK   RF_IN_SMA ('J1', '1')
+OK   EXT_REF ('J3', '1')
+OK   RFFC_REXT ('R370', '1')
+OK   TCXO_OUT ('R701', '1')
+OK   TCXO_OUT ('Y1', '3')
+OK   IF_CT ('C390', '1')
+OK   IF_CT ('C391', '1')
+OK   IF_CT ('R390', '2')
+OK   MIX_DRV ('C364', '2')
+OK   MIX_DRV ('R360', '2')
+OK   EXT_LO_DEC ('C378', '1')
+OK   HB_OUT ('U24', '4')
+OK   NAT_RF ('J2', '1')
+OK   NAT_RF ('R392', '1')
+OK   LF1 ('C380', '1')
+OK   LF1 ('U3', '6')
+OK   HB_VBIAS ('R350', '2')
+OK   HB_VBIAS ('U23', '1')
+OK   CC1 ('J4', 'A5')
+OK   LB_IN ('U20', '5')
+OK   MB_IN ('C330', '1')
+OK   GND_CHASSIS ('R222', '1')
+OK   GND_CHASSIS ('C216', '1')
+OK   REF_IN ('C384', '2')
+OK   LED_GRN_A ('R220', '2')
+OK   RFFC_MODE ('R389', '1')
+OK   CC2 ('R402', '1')
+OK   SW2_COM ('C361', '1')
+OK   SW2_COM ('U24', '6')
+OK   RFFC_SDATA_I ('R384', '2')
+OK   RFFC_SDATA_I ('U3', '32')
+OK   LF3 ('R382', '2')
+OK   LF3 ('U3', '8')
+OK   LF2 ('C381', '2')
+OK   LF2 ('C380', '2')
+OK   LF2 ('U3', '7')
+FAIL SPI_Q_C [('U1', '37')]
+OK   SPI_D ('U2', '5')
+FAIL SPI_CS_C [('R110', '1')]
+OK   RFFC_SCLK_I ('C385', '1')
+OK   RFFC_SCLK_I ('U3', '31')
+OK   LB_OUT ('FLB9', '2')
+OK   RFFC_RESETX_I ('C389', '1')
+OK   RFFC_RESETX_I ('R387', '2')
+OK   RFFC_RESETX_I ('U3', '29')
+OK   MAG_CT ('C215', '1')
+OK   RFFC_ENBL_I ('C388', '1')
+OK   RFFC_ENBL_I ('U3', '1')
+OK   SPI_CLK ('U2', '6')
+FAIL ETH_TXD2 [('R204', '1')]
+OK   MB_OUT ('U24', '5')
+FAIL PHY_TXD3 [('R205', '2')]
+OK   LED_YEL_A ('R221', '2')
+FAIL SPI_Q [('U2', '2')]
+OK   SPI_WP ('U2', '3')
+OK   PHY_TXD1 ('R203', '2')
+OK   ETH_RXD1 ('R209', '2')
+OK   ETH_RXD0 ('R208', '2')
+OK   ETH_RX_CLK ('R213', '2')
+FAIL ETH_TX_CLK [('R207', '1')]
+OK   REFCLK_ESP ('R705', '2')
+OK   REFCLK_ESP ('C121', '1')
+OK   REFCLK_RF ('C384', '1')
+OK   REFCLK_RF ('R704', '2')
+OK   LF_B ('R382', '1')
+OK   LF_B ('C382', '1')
+OK   EXTREF_AC ('R705', '1')
+OK   EXTREF_AC ('R703', '1')
+OK   EXTREF_AC ('R704', '1')
+OK   LDO_EN_HB ('U1', '5')
+OK   LDO_EN_HB ('U11', '3')
+OK   LED_A ('R103', '2')
+OK   XTAL_P_C ('C121', '2')
+FAIL PHY_TXD0 [('R202', '2')]
+FAIL CHIP_PU [('U1', '4')]
+OK   CHIP_PU ('R101', '2')
+OK   CHIP_PU ('SW1', '1')
+OK   CHIP_PU ('SW1', '2')
+
+FAILED:
+V1P8: [('U1', '34')]
+PHY_VDDL: [('U201', '8')]
+PHY_VDDL: [('U201', '3')]
+PHY_VDDL: [('U201', '38')]
+VDD_SPI: [('U1', '39')]
+PHY_3V3: [('U201', '29')]
+3V0_RF: [('U3', '22')]
+PHY_CFG_EXT: [('R216', '1')]
+PHY_RBIAS: [('R201', '1')]
+PHY_XO: [('U201', '37')]
+MDI0_P: [('U201', '1')]
+PHY_XI: [('U201', '36')]
+MDI0_N: [('U201', '2')]
+MDI2_P: [('U201', '6')]
+MDI1_P: [('U201', '4')]
+MDI1_N: [('U201', '5')]
+MDI2_N: [('U201', '7')]
+PHY_LED1: [('U201', '33')]
+PHY_RX_CLK: [('R213', '1')]
+PHY_LED2: [('U201', '34')]
+RFFC_RESETX: [('R387', '1')]
+PHY_RX_CTL: [('R212', '1')]
+MDI3_N: [('U201', '10')]
+PHY_RXD3: [('U201', '22')]
+MDI3_P: [('U201', '9')]
+PHY_RXD0: [('R208', '1')]
+PHY_RXD2: [('U201', '23')]
+PHY_RXD1: [('R209', '1')]
+SW_V2: [('U1', '8')]
+LDO_EN_LB: [('R601', '1')]
+BOOT: [('R102', '2')]
+GPIO60: [('U1', '75')]
+U0RXD: [('U1', '74')]
+U0TXD: [('U1', '73')]
+VREF_ADC: [('C112', '1')]
+ETH_INTN: [('R223', '1')]
+ETH_TXD1: [('R203', '1')]
+LED_STAT: [('R103', '1')]
+ETH_MDC: [('U1', '10')]
+SW_V1: [('U1', '7')]
+RFFC_LD: [('U3', '26')]
+SPI_CLK_C: [('U1', '41')]
+RFFC_ENX: [('R385', '1')]
+PHY_TX_CTL: [('U201', '19')]
+ETH_TXD3: [('R205', '1')]
+USB_DP: [('U1', '44')]
+SW2_V2: [('U24', '2')]
+SW2_V1: [('U24', '3')]
+ETH_TX_CTL: [('U1', '19')]
+ETH_MDIO: [('U1', '12')]
+SPI_Q_C: [('U1', '37')]
+SPI_CS_C: [('R110', '1')]
+ETH_TXD2: [('R204', '1')]
+PHY_TXD3: [('R205', '2')]
+SPI_Q: [('U2', '2')]
+ETH_TX_CLK: [('R207', '1')]
+PHY_TXD0: [('R202', '2')]
+CHIP_PU: [('U1', '4')]

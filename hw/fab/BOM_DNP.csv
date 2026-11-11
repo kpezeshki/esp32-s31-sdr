@@ -1,0 +1,13 @@
+Designators,Value,Footprint,Note
+C113,100nF,C_0402_1005Metric,footprint only
+R120,10k,R_0603_1608Metric,CS pull-up footprint (ref NC)
+J3,SMA_REF,SMA_Amphenol_132289_EdgeMount,optional external reference input
+C702,100nF,C_0402_1005Metric,
+R703,49.9,R_0402_1005Metric,
+R704,0,R_0402_1005Metric,
+R705,0,R_0402_1005Metric,
+C216,1 nF 2 kV,C_1206_3216Metric,"DNP by default, footprint only, as the CoreBoard does with C72 'TBD(NC)'"
+R223,0R,R_0402_1005Metric,DNP: connects PHY INT_N to ESP32 GPIO4 as on the CoreBoard (R83). The esp-sdr FW does not use the interrupt. Whether GPI
+C351,0.2pF,C_0402_1005Metric,QPL9503 input tune (DNP)
+R360,0,R_0402_1005Metric,gain-block bypass (fit + remove C361/C364)
+R392,0,R_0402_1005Metric,0R tee: NATIVE ESP32 path

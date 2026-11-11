@@ -1,0 +1,1328 @@
+{
+ "title": "Gigabit Ethernet PHY circuit: ESP32-S31 (QFN80) RGMII -> YT8531DC-CA -> HR911130C",
+ "generated": "2026-11-09",
+ "task": "agentq T18",
+ "sources": {
+  "coreboard": "/home/kaveh/claude_out_remote/claude_db/esp32_sdr_datasheets/ESP32-S31-Function-CoreBoard-1_schematic.pdf (V1.0, 2026-05-13; page 3 '03_Ethernet', page 2 module GPIOs)",
+  "yt8531_ds": "/home/kaveh/claude_out_remote/claude_db/esp32_sdr_datasheets/YT8531C-CA_YT8531DC-CA_datasheet.pdf (Motorcomm YT8531(D)H-CA/(D)C-CA/P-CA datasheet, LCSC C22472312 copy)",
+  "hr911130c_ds": "/home/kaveh/claude_out_remote/claude_db/esp32_sdr_datasheets/HR911130C.pdf (HanRun, Rev B, LCSC C50933 copy)",
+  "s31_ds": "https://documentation.espressif.com/esp32-s31_datasheet_en.html (Table 2-1 pin list, Table 2-3 IO MUX, Table 2-8)",
+  "idf_emac_default": "ESP-IDF c712a0dd (2026-09-07) components/esp_eth/include/esp_eth_mac_esp.h ETH_ESP32_EMAC_DEFAULT_CONFIG for CONFIG_IDF_TARGET_ESP32S31",
+  "idf_emac_periph": "ESP-IDF c712a0dd components/esp_hal_emac/esp32s31/emac_periph.c (emac_rgmii_iomux_* tables)",
+  "fw": "esp-sdr main/targets/esp32s31/streaming/network.c network_init()"
+ },
+ "summary": {
+  "phy_address": "0 (all PHYAD straps at internal pull-down; FW auto-detects with phy_addr=-1)",
+  "rgmii_io_voltage": "3.3 V (CFG_EXT=1 via R216, CFG_LDO[1:0]=00 via R214/R215, DVDD_RGMII = PHY_3V3); matches ESP32-S31 VDDPST_1 3.0-3.6 V (GPIO8-19)",
+  "rgmii_delays": "PHY adds both delays and the ESP32 adds none. RX: RXDLY strap = 1 (internal pull-up) gives 2 ns, and FW also sets ext 0xA001 bit 8 (Rxc_dly_en). TX: FW writes ext 0xA003 [7:4] = [3:0] = 13, i.e. about 13 x 150 ps = 1.95 ns on TX_CLK for both 1000M and 10/100M. PCB clock traces get no extra delay; length-match each group.",
+  "clock": "25 MHz crystal on the PHY. The PHY does not take a ref clock from the ESP32, so GPIO35 is not used.",
+  "supply": "PHY_3V3 comes from the board +3V3 through FB201. YT8531DC draws about 226 mA typical and 250 mA max at 3.3 V (datasheet Tables 103/106; the internal 1.1 V LDO is fed from DVDD33). Budget 260 mA including LEDs. The internal LDO supplies PHY_VDDL (1.1 V); no external 1.1 V regulator.",
+  "reset": "GPIO7 drives RESET_N, with a 4.7k pull-up (R219). IDF generic PHY holds reset low for 10 ms; the datasheet needs >= 10 ms low and >= 10 ms after power is stable."
+ },
+ "rails": {
+  "+3V3": "board digital 3.3 V (AMS1117-3.3 per PART_SELECTION slot 12a)",
+  "PHY_3V3": "+3V3 after FB201; feeds AVDD33 (11,40), DVDD33 (29), DVDD_RGMII (28), pull-ups",
+  "PHY_VDDL": "1.1 V from YT8531DC LDO_O pin 30; feeds AVDDL (3,8,38), DVDDL (21). Do not load it externally.",
+  "GND": "logic ground, PHY EPAD",
+  "GND_CHASSIS": "RJ45 shield + HR911130C P10; joined to GND only via R222 (0R) / C216 (DNP)"
+ },
+ "components": [
+  {
+   "ref_hint": "U201",
+   "part": "Motorcomm YT8531DC-CA",
+   "value": "YT8531DC-CA",
+   "package": "QFN-40 5x5 mm, 0.4 mm pitch, EP 3.7x3.7 mm (KiCad: Package_DFN_QFN:QFN-40-1EP_5x5mm_P0.4mm_EP3.7x3.7mm or custom; footprint name UNVERIFIED)",
+   "lcsc": "C47544379",
+   "jlc_library": "extended",
+   "dnp": false,
+   "pins": {
+    "1": "MDI0_P",
+    "2": "MDI0_N",
+    "3": "PHY_VDDL",
+    "4": "MDI1_P",
+    "5": "MDI1_N",
+    "6": "MDI2_P",
+    "7": "MDI2_N",
+    "8": "PHY_VDDL",
+    "9": "MDI3_P",
+    "10": "MDI3_N",
+    "11": "PHY_3V3",
+    "12": "ETH_PHY_RST_N",
+    "13": "ETH_MDC",
+    "14": "ETH_MDIO",
+    "15": "PHY_TXD3",
+    "16": "PHY_TXD2",
+    "17": "PHY_TXD1",
+    "18": "PHY_TXD0",
+    "19": "PHY_TX_CTL",
+    "20": "PHY_TX_CLK",
+    "21": "PHY_VDDL",
+    "22": "PHY_RXD3",
+    "23": "PHY_RXD2",
+    "24": "PHY_RXD1",
+    "25": "PHY_RXD0",
+    "26": "PHY_RX_CTL",
+    "27": "PHY_RX_CLK",
+    "28": "PHY_3V3",
+    "29": "PHY_3V3",
+    "30": "PHY_VDDL",
+    "31": "ETH_INTN",
+    "32": "PHY_CFG_EXT",
+    "33": "PHY_LED1",
+    "34": "PHY_LED2",
+    "35": "NC",
+    "36": "PHY_XI",
+    "37": "PHY_XO",
+    "38": "PHY_VDDL",
+    "39": "PHY_RBIAS",
+    "40": "PHY_3V3",
+    "41": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "U8",
+   "note": "JLC record is named '【邮寄专用】' ('for mailing only') and has no LCSC page link, unlike normal parts. Check before ordering that JLC PCBA will place it. 3412 in stock 2026-11-09, $1.49 at qty 1.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "Y201",
+   "part": "YXC X322525MOB4SI",
+   "value": "25 MHz, CL 12 pF, +/-10 ppm",
+   "package": "SMD3225-4P",
+   "lcsc": "C9006",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_XI",
+    "2": "GND",
+    "3": "PHY_XO",
+    "4": "GND"
+   },
+   "placement": "<= 5 mm from pins 36/37, GND guard, no traces beneath",
+   "coreboard_equiv": "Y2 (25MHz)",
+   "note": "YT8531 requires +/-50 ppm, ESR <= 50 ohm, drive <= 0.5 mW. ESR of C9006 is not checked (UNVERIFIED). CoreBoard Y2 uses 8.2 pF load caps, so its crystal has a lower CL that is not stated.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C201",
+   "part": "CC0G",
+   "value": "15 pF 50V C0G",
+   "package": "0402",
+   "lcsc": "C1548",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_XI",
+    "2": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "C22 8.2pF",
+   "note": "Load cap for CL = 12 pF: 15/2 + ~4 pF stray = ~11.5 pF. CoreBoard uses 8.2 pF (C22) for its own crystal.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C202",
+   "part": "CC0G",
+   "value": "15 pF 50V C0G",
+   "package": "0402",
+   "lcsc": "C1548",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_XO",
+    "2": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "C25 8.2pF",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R201",
+   "part": "RBIAS",
+   "value": "2.49k 1%",
+   "package": "0402",
+   "lcsc": "C25884",
+   "jlc_library": "extended",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_RBIAS",
+    "2": "GND"
+   },
+   "placement": "at pin 39",
+   "coreboard_equiv": "R41",
+   "note": "Datasheet: 2.49k +/-1% required",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C203",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_VDDL",
+    "2": "GND"
+   },
+   "placement": "at pin 3",
+   "coreboard_equiv": "C44 (close to pins 3,8,38)",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C204",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_VDDL",
+    "2": "GND"
+   },
+   "placement": "at pin 8",
+   "coreboard_equiv": "C46 (close to pins 3,8,38)",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C205",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_VDDL",
+    "2": "GND"
+   },
+   "placement": "at pin 38",
+   "coreboard_equiv": "C48 (close to pins 3,8,38)",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C206",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_VDDL",
+    "2": "GND"
+   },
+   "placement": "at pin 21",
+   "coreboard_equiv": "C52 (close to pin 21)",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C207",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_VDDL",
+    "2": "GND"
+   },
+   "placement": "at pin 30",
+   "coreboard_equiv": "C58 (LDO_OUT)",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C208",
+   "part": "MLCC X5R",
+   "value": "10 uF 10V",
+   "package": "0603",
+   "lcsc": "C19702",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_3V3",
+    "2": "GND"
+   },
+   "placement": "pin 28",
+   "coreboard_equiv": "C45 4.7uF",
+   "note": "The CoreBoard uses 4.7 uF here. We use 10 uF so the board shares one bulk value.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C209",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_3V3",
+    "2": "GND"
+   },
+   "placement": "pin 28",
+   "coreboard_equiv": "C47",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C210",
+   "part": "MLCC X5R",
+   "value": "10 uF 10V",
+   "package": "0603",
+   "lcsc": "C19702",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_3V3",
+    "2": "GND"
+   },
+   "placement": "pin 29",
+   "coreboard_equiv": "C50 4.7uF",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C211",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_3V3",
+    "2": "GND"
+   },
+   "placement": "pin 29",
+   "coreboard_equiv": "C53",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C212",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_3V3",
+    "2": "GND"
+   },
+   "placement": "pin 29",
+   "coreboard_equiv": "C54",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C213",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_3V3",
+    "2": "GND"
+   },
+   "placement": "pin 11",
+   "coreboard_equiv": "C55 (pins 11,40)",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C214",
+   "part": "MLCC X7R",
+   "value": "100 nF 16V",
+   "package": "0402",
+   "lcsc": "C1525",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_3V3",
+    "2": "GND"
+   },
+   "placement": "pin 40",
+   "coreboard_equiv": "C56 (pins 11,40)",
+   "note": "",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "FB201",
+   "part": "Murata BLM18PG121SN1D",
+   "value": "120 ohm @100 MHz, 2 A",
+   "package": "0603",
+   "lcsc": "C14709",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "+3V3",
+    "2": "PHY_3V3"
+   },
+   "placement": "",
+   "coreboard_equiv": "L4 BLM18PG330SN1D",
+   "note": "The CoreBoard uses BLM18PG330SN1D (33 ohm, 3 A; C88984, extended). Either works. The PHY draws about 230 mA typical and 250 mA max at 3.3 V.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R202",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_TXD0",
+    "2": "PHY_TXD0"
+   },
+   "placement": "next to ESP32 pins",
+   "coreboard_equiv": "R59 33R",
+   "note": "TX line (MAC drives). Pin 1 is the ESP32 side. Place at the ESP32 (source termination). The CoreBoard note says 'Resistors close to PHY' for this group (see PHY_CIRCUIT.md).",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R203",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_TXD1",
+    "2": "PHY_TXD1"
+   },
+   "placement": "next to ESP32 pins",
+   "coreboard_equiv": "R58 33R",
+   "note": "TX line (MAC drives). Pin 1 is the ESP32 side. Place at the ESP32 (source termination). The CoreBoard note says 'Resistors close to PHY' for this group (see PHY_CIRCUIT.md).",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R204",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_TXD2",
+    "2": "PHY_TXD2"
+   },
+   "placement": "next to ESP32 pins",
+   "coreboard_equiv": "R56 33R",
+   "note": "TX line (MAC drives). Pin 1 is the ESP32 side. Place at the ESP32 (source termination). The CoreBoard note says 'Resistors close to PHY' for this group (see PHY_CIRCUIT.md).",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R205",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_TXD3",
+    "2": "PHY_TXD3"
+   },
+   "placement": "next to ESP32 pins",
+   "coreboard_equiv": "R55 33R",
+   "note": "TX line (MAC drives). Pin 1 is the ESP32 side. Place at the ESP32 (source termination). The CoreBoard note says 'Resistors close to PHY' for this group (see PHY_CIRCUIT.md).",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R206",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_TX_CTL",
+    "2": "PHY_TX_CTL"
+   },
+   "placement": "next to ESP32 pins",
+   "coreboard_equiv": "R61 33R",
+   "note": "TX line (MAC drives). Pin 1 is the ESP32 side. Place at the ESP32 (source termination). The CoreBoard note says 'Resistors close to PHY' for this group (see PHY_CIRCUIT.md).",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R207",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_TX_CLK",
+    "2": "PHY_TX_CLK"
+   },
+   "placement": "next to ESP32 pins",
+   "coreboard_equiv": "R62 33R",
+   "note": "TX line (MAC drives). Pin 1 is the ESP32 side. Place at the ESP32 (source termination). The CoreBoard note says 'Resistors close to PHY' for this group (see PHY_CIRCUIT.md).",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R208",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_RXD0",
+    "2": "ETH_RXD0"
+   },
+   "placement": "next to PHY pins 22-27",
+   "coreboard_equiv": "R48 33R",
+   "note": "RX line (PHY drives). Pin 1 is the PHY side. Place at the PHY (source termination). The CoreBoard note says 'Resistors close to MAC' for this group.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R209",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_RXD1",
+    "2": "ETH_RXD1"
+   },
+   "placement": "next to PHY pins 22-27",
+   "coreboard_equiv": "R49 33R",
+   "note": "RX line (PHY drives). Pin 1 is the PHY side. Place at the PHY (source termination). The CoreBoard note says 'Resistors close to MAC' for this group.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R210",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_RXD2",
+    "2": "ETH_RXD2"
+   },
+   "placement": "next to PHY pins 22-27",
+   "coreboard_equiv": "R50 33R",
+   "note": "RX line (PHY drives). Pin 1 is the PHY side. Place at the PHY (source termination). The CoreBoard note says 'Resistors close to MAC' for this group.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R211",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_RXD3",
+    "2": "ETH_RXD3"
+   },
+   "placement": "next to PHY pins 22-27",
+   "coreboard_equiv": "R51 33R",
+   "note": "RX line (PHY drives). Pin 1 is the PHY side. Place at the PHY (source termination). The CoreBoard note says 'Resistors close to MAC' for this group.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R212",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_RX_CTL",
+    "2": "ETH_RX_CTL"
+   },
+   "placement": "next to PHY pins 22-27",
+   "coreboard_equiv": "R47 33R",
+   "note": "RX line (PHY drives). Pin 1 is the PHY side. Place at the PHY (source termination). The CoreBoard note says 'Resistors close to MAC' for this group.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R213",
+   "part": "series R",
+   "value": "33R 1%",
+   "package": "0402",
+   "lcsc": "C25105",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_RX_CLK",
+    "2": "ETH_RX_CLK"
+   },
+   "placement": "next to PHY pins 22-27",
+   "coreboard_equiv": "R46 33R",
+   "note": "RX line (PHY drives). Pin 1 is the PHY side. Place at the PHY (source termination). The CoreBoard note says 'Resistors close to MAC' for this group.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R214",
+   "part": "strap",
+   "value": "4.7k 1%",
+   "package": "0402",
+   "lcsc": "C25900",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_LED2",
+    "2": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "R35",
+   "note": "CFG_LDO1 = 0",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R215",
+   "part": "strap",
+   "value": "4.7k 1%",
+   "package": "0402",
+   "lcsc": "C25900",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_LED1",
+    "2": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "R36",
+   "note": "CFG_LDO0 = 0. This overrides the internal pull-up; with CFG_EXT = 1 it selects 3.3 V external RGMII I/O.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R216",
+   "part": "strap",
+   "value": "4.7k 1%",
+   "package": "0402",
+   "lcsc": "C25900",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_CFG_EXT",
+    "2": "PHY_3V3"
+   },
+   "placement": "",
+   "coreboard_equiv": "R38",
+   "note": "CFG_EXT = 1: RGMII pads use the external 3.3 V on DVDD_RGMII",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R217",
+   "part": "pull-up",
+   "value": "4.7k 1%",
+   "package": "0402",
+   "lcsc": "C25900",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_INTN",
+    "2": "PHY_3V3"
+   },
+   "placement": "",
+   "coreboard_equiv": "R40",
+   "note": "INT_N is open drain",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R218",
+   "part": "pull-up",
+   "value": "4.7k 1%",
+   "package": "0402",
+   "lcsc": "C25900",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_MDIO",
+    "2": "PHY_3V3"
+   },
+   "placement": "",
+   "coreboard_equiv": "R66",
+   "note": "MDIO pull-up to the I/O voltage (3.3 V)",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R219",
+   "part": "pull-up",
+   "value": "4.7k 1%",
+   "package": "0402",
+   "lcsc": "C25900",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "ETH_PHY_RST_N",
+    "2": "PHY_3V3"
+   },
+   "placement": "",
+   "coreboard_equiv": "none",
+   "note": "NOT on the CoreBoard: its ETH_PHY_RST goes straight to GPIO7 with no resistor or cap. The datasheet says 'Requires an external pull-up resistor', so we add one. Firmware (IDF generic PHY) holds reset low for 10 ms and then releases it.",
+   "status": "UNVERIFIED"
+  },
+  {
+   "ref_hint": "R220",
+   "part": "LED R",
+   "value": "330R 1%",
+   "package": "0603",
+   "lcsc": "C23138",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_LED2",
+    "2": "LED_GRN_A"
+   },
+   "placement": "",
+   "coreboard_equiv": "R77 330R",
+   "note": "LED2 = 1000M link/activity, drives green LED (J201 pin 11). Active high, as on the CoreBoard.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R221",
+   "part": "LED R",
+   "value": "330R 1%",
+   "package": "0603",
+   "lcsc": "C23138",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "PHY_LED1",
+    "2": "LED_YEL_A"
+   },
+   "placement": "",
+   "coreboard_equiv": "R81 330R",
+   "note": "LED1 = 100M link/activity, drives yellow LED (J201 pin 14)",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C215",
+   "part": "MLCC X7R",
+   "value": "100 nF 50V",
+   "package": "0603",
+   "lcsc": "C14663",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "MAG_CT",
+    "2": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "C65,C66,C67,C69",
+   "note": "Chip-side centre-tap decoupling. The HR911130C ties all 4 CTs to P1, so one cap replaces CoreBoard C65/C66/C67/C69 (0.1uF/50V each). The YT8531 is voltage-mode: the CT must not go to 3.3 V.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "J201",
+   "part": "HanRun HR911130C",
+   "value": "RJ45 1000BASE-T magjack, integrated magnetics + Bob Smith, G/Y LEDs",
+   "package": "THT right-angle, body 16.0 W x 21.2 D x 13.3 H mm, dim D = 3.5 mm front overhang (check against mech page 2 before setting the board-edge position) (10 signal + 4 LED + 2 shield PTH, 2 NPTH pegs dia 3.25)",
+   "lcsc": "C50933",
+   "jlc_library": "extended",
+   "dnp": false,
+   "pins": {
+    "1": "MAG_CT",
+    "2": "MDI0_P",
+    "3": "MDI0_N",
+    "4": "MDI1_P",
+    "7": "MDI1_N",
+    "5": "MDI2_P",
+    "6": "MDI2_N",
+    "8": "MDI3_P",
+    "9": "MDI3_N",
+    "10": "GND_CHASSIS",
+    "11": "LED_GRN_A",
+    "12": "GND",
+    "14": "LED_YEL_A",
+    "13": "GND",
+    "SH1": "GND_CHASSIS",
+    "SH2": "GND_CHASSIS"
+   },
+   "placement": "",
+   "coreboard_equiv": "T1+J8+R75..R80+C71",
+   "note": "Replaces CoreBoard T1 (ML-G24P02S) + J8 (MRD(W)A101A2) + R75/76/78/80 (75R) + C71 (1000pF/2kV), which are all inside the HR911130C.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R222",
+   "part": "chassis link",
+   "value": "0R",
+   "package": "0603",
+   "lcsc": "C21189",
+   "jlc_library": "basic",
+   "dnp": false,
+   "pins": {
+    "1": "GND_CHASSIS",
+    "2": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "R82 0R",
+   "note": "Joins chassis to logic GND at a single point near the jack. Fit 0R (as on the CoreBoard), or leave it off and fit C216 instead.",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "C216",
+   "part": "MLCC X7R HV",
+   "value": "1 nF 2 kV",
+   "package": "1206",
+   "lcsc": "C9196",
+   "jlc_library": "basic",
+   "dnp": true,
+   "pins": {
+    "1": "GND_CHASSIS",
+    "2": "GND"
+   },
+   "placement": "",
+   "coreboard_equiv": "C72 TBD(NC)",
+   "note": "DNP by default, footprint only, as the CoreBoard does with C72 'TBD(NC)'",
+   "status": "verified"
+  },
+  {
+   "ref_hint": "R223",
+   "part": "INT link",
+   "value": "0R",
+   "package": "0402",
+   "lcsc": "C17168",
+   "jlc_library": "basic",
+   "dnp": true,
+   "pins": {
+    "1": "ETH_INTN",
+    "2": "ETH_INTN_GPIO"
+   },
+   "placement": "",
+   "coreboard_equiv": "R83 0R",
+   "note": "DNP: connects PHY INT_N to ESP32 GPIO4 as on the CoreBoard (R83). The esp-sdr FW does not use the interrupt. Whether GPIO4 is free on our board is UNVERIFIED.",
+   "status": "verified"
+  }
+ ],
+ "omitted_from_coreboard": [
+  {
+   "coreboard": "R53,R54,R57,R60,R63,R65 (4.7k, all NC)",
+   "what": "PHYAD0-2, RXDLY, TXDLY, PLLOFF strap resistors",
+   "why": "All are NC on the CoreBoard, so internal defaults apply: PHY address 0, RXDLY = 1, TXDLY = 0, PLLOFF = 0. The FW finds the address by scanning (phy_addr = -1) and sets both RGMII delays over MDIO, so no straps are needed."
+  },
+  {
+   "coreboard": "R75,R76,R78,R80 (75R), C71 (1000pF/2kV), T1 transformer",
+   "what": "Bob Smith termination + discrete magnetics",
+   "why": "Built into the HR911130C (4 x 75R + 1000 pF/2 kV to P10 CHS GND), per the datasheet schematic"
+  },
+  {
+   "coreboard": "CLKOUT pin 35",
+   "what": "left unconnected",
+   "why": "Datasheet says to leave it floating when unused. The ESP32 does not need a 25/125 MHz ref (IDF clock_phy_ref_gpio = -1), so GPIO35 REF_GMAC_CLK is not needed."
+  }
+ ],
+ "nets": {
+  "U201_YT8531DC": {
+   "1": {
+    "name": "TRXP0",
+    "type": "IO",
+    "function": "MDI pair 0 +",
+    "net": "MDI0_P"
+   },
+   "2": {
+    "name": "TRXN0",
+    "type": "IO",
+    "function": "MDI pair 0 -",
+    "net": "MDI0_N"
+   },
+   "3": {
+    "name": "AVDDL",
+    "type": "P",
+    "function": "Analog 1.1 V (from LDO_O)",
+    "net": "PHY_VDDL"
+   },
+   "4": {
+    "name": "TRXP1",
+    "type": "IO",
+    "function": "MDI pair 1 +",
+    "net": "MDI1_P"
+   },
+   "5": {
+    "name": "TRXN1",
+    "type": "IO",
+    "function": "MDI pair 1 -",
+    "net": "MDI1_N"
+   },
+   "6": {
+    "name": "TRXP2",
+    "type": "IO",
+    "function": "MDI pair 2 +",
+    "net": "MDI2_P"
+   },
+   "7": {
+    "name": "TRXN2",
+    "type": "IO",
+    "function": "MDI pair 2 -",
+    "net": "MDI2_N"
+   },
+   "8": {
+    "name": "AVDDL",
+    "type": "P",
+    "function": "Analog 1.1 V",
+    "net": "PHY_VDDL"
+   },
+   "9": {
+    "name": "TRXP3",
+    "type": "IO",
+    "function": "MDI pair 3 +",
+    "net": "MDI3_P"
+   },
+   "10": {
+    "name": "TRXN3",
+    "type": "IO",
+    "function": "MDI pair 3 -",
+    "net": "MDI3_N"
+   },
+   "11": {
+    "name": "AVDD33",
+    "type": "P",
+    "function": "Analog 3.3 V",
+    "net": "PHY_3V3"
+   },
+   "12": {
+    "name": "RESET_N",
+    "type": "I/PU",
+    "function": "HW reset, active low (>=10 ms)",
+    "net": "ETH_PHY_RST_N"
+   },
+   "13": {
+    "name": "MDC",
+    "type": "I/PD",
+    "function": "Management clock",
+    "net": "ETH_MDC"
+   },
+   "14": {
+    "name": "MDIO",
+    "type": "IO/PU",
+    "function": "Management data (4.7k pull-up)",
+    "net": "ETH_MDIO"
+   },
+   "15": {
+    "name": "TXD3",
+    "type": "I/PD",
+    "function": "RGMII TXD3 from MAC",
+    "net": "PHY_TXD3"
+   },
+   "16": {
+    "name": "TXD2",
+    "type": "I/PD",
+    "function": "RGMII TXD2",
+    "net": "PHY_TXD2"
+   },
+   "17": {
+    "name": "TXD1",
+    "type": "I/PD",
+    "function": "RGMII TXD1",
+    "net": "PHY_TXD1"
+   },
+   "18": {
+    "name": "TXD0",
+    "type": "I/PD",
+    "function": "RGMII TXD0",
+    "net": "PHY_TXD0"
+   },
+   "19": {
+    "name": "TX_CTL",
+    "type": "I/PD",
+    "function": "RGMII TX_CTL (TX_EN)",
+    "net": "PHY_TX_CTL"
+   },
+   "20": {
+    "name": "TX_CLK",
+    "type": "I/PD",
+    "function": "RGMII TX clock from MAC (GTX_CLK, 125/25/2.5 MHz)",
+    "net": "PHY_TX_CLK"
+   },
+   "21": {
+    "name": "DVDDL",
+    "type": "P",
+    "function": "Digital 1.1 V (from LDO_O)",
+    "net": "PHY_VDDL"
+   },
+   "22": {
+    "name": "RXD3/PHYAD0",
+    "type": "O/LI/PD",
+    "function": "RGMII RXD3; strap PHYAD0 (internal PD -> 0)",
+    "net": "PHY_RXD3"
+   },
+   "23": {
+    "name": "RXD2/PLLOFF",
+    "type": "O/LI/PD",
+    "function": "RGMII RXD2; strap PLLOFF (internal PD -> 0)",
+    "net": "PHY_RXD2"
+   },
+   "24": {
+    "name": "RXD1/TXDLY",
+    "type": "O/LI/PD",
+    "function": "RGMII RXD1; strap TXDLY (internal PD -> no TX delay at strap; FW sets it)",
+    "net": "PHY_RXD1"
+   },
+   "25": {
+    "name": "RXD0/RXDLY",
+    "type": "O/LI/PU",
+    "function": "RGMII RXD0; strap RXDLY (internal PU -> 2 ns RX_CLK delay)",
+    "net": "PHY_RXD0"
+   },
+   "26": {
+    "name": "RX_CTL/PHYAD2",
+    "type": "O/LI/PD",
+    "function": "RGMII RX_CTL (RX_DV); strap PHYAD2 (PD -> 0)",
+    "net": "PHY_RX_CTL"
+   },
+   "27": {
+    "name": "RX_CLK/PHYAD1",
+    "type": "O/LI/PD",
+    "function": "RGMII RX clock to MAC; strap PHYAD1 (PD -> 0)",
+    "net": "PHY_RX_CLK"
+   },
+   "28": {
+    "name": "DVDD_RGMII",
+    "type": "P",
+    "function": "RGMII/MDC/MDIO I/O supply, external 3.3 V (CFG_EXT=1, CFG_LDO=00)",
+    "net": "PHY_3V3"
+   },
+   "29": {
+    "name": "DVDD33",
+    "type": "P",
+    "function": "Digital 3.3 V (also feeds internal 1.1 V LDO)",
+    "net": "PHY_3V3"
+   },
+   "30": {
+    "name": "LDO_O",
+    "type": "P/O",
+    "function": "Internal LDO 1.1 V output (DC variant) -> PHY_VDDL",
+    "net": "PHY_VDDL"
+   },
+   "31": {
+    "name": "INT_N/PME_N",
+    "type": "O/OD",
+    "function": "Interrupt, active low, open drain (4.7k pull-up)",
+    "net": "ETH_INTN"
+   },
+   "32": {
+    "name": "LED0/CFG_EXT",
+    "type": "O/LI/PU",
+    "function": "LED0 unused; strap CFG_EXT=1 (4.7k pull-up) -> external I/O supply",
+    "net": "PHY_CFG_EXT"
+   },
+   "33": {
+    "name": "LED1/CFG_LDO0",
+    "type": "O/LI/PU",
+    "function": "LED1 (100M link/act) -> yellow LED; strap CFG_LDO0=0 (4.7k PD)",
+    "net": "PHY_LED1"
+   },
+   "34": {
+    "name": "LED2/CFG_LDO1",
+    "type": "O/LI/PD",
+    "function": "LED2 (1000M link/act) -> green LED; strap CFG_LDO1=0 (4.7k PD)",
+    "net": "PHY_LED2"
+   },
+   "35": {
+    "name": "CLKOUT",
+    "type": "O",
+    "function": "Reference clock out, unused -> no connect",
+    "net": "NC"
+   },
+   "36": {
+    "name": "XTAL_I",
+    "type": "XT",
+    "function": "25 MHz crystal in",
+    "net": "PHY_XI"
+   },
+   "37": {
+    "name": "XTAL_O",
+    "type": "XT",
+    "function": "25 MHz crystal out",
+    "net": "PHY_XO"
+   },
+   "38": {
+    "name": "AVDDL",
+    "type": "P",
+    "function": "Analog 1.1 V",
+    "net": "PHY_VDDL"
+   },
+   "39": {
+    "name": "RBIAS",
+    "type": "O",
+    "function": "Bias resistor 2.49k 1% to GND",
+    "net": "PHY_RBIAS"
+   },
+   "40": {
+    "name": "AVDD33",
+    "type": "P",
+    "function": "Analog 3.3 V",
+    "net": "PHY_3V3"
+   },
+   "41": {
+    "name": "GND (EPAD)",
+    "type": "G",
+    "function": "Exposed pad 3.7x3.7 mm, thermal vias to GND",
+    "net": "GND"
+   }
+  },
+  "J201_HR911130C": {
+   "1": {
+    "function": "P1 chip-side common centre tap (all 4 CTs)",
+    "net": "MAG_CT"
+   },
+   "2": {
+    "function": "MDI0+",
+    "net": "MDI0_P"
+   },
+   "3": {
+    "function": "MDI0-",
+    "net": "MDI0_N"
+   },
+   "4": {
+    "function": "MDI1+",
+    "net": "MDI1_P"
+   },
+   "7": {
+    "function": "MDI1-",
+    "net": "MDI1_N"
+   },
+   "5": {
+    "function": "MDI2+",
+    "net": "MDI2_P"
+   },
+   "6": {
+    "function": "MDI2-",
+    "net": "MDI2_N"
+   },
+   "8": {
+    "function": "MDI3+",
+    "net": "MDI3_P"
+   },
+   "9": {
+    "function": "MDI3-",
+    "net": "MDI3_N"
+   },
+   "10": {
+    "function": "CHS GND (internal 4x75R + 1000pF/2kV Bob Smith node)",
+    "net": "GND_CHASSIS"
+   },
+   "11": {
+    "function": "Green LED anode",
+    "net": "LED_GRN_A"
+   },
+   "12": {
+    "function": "Green LED cathode",
+    "net": "GND"
+   },
+   "14": {
+    "function": "Yellow LED anode",
+    "net": "LED_YEL_A"
+   },
+   "13": {
+    "function": "Yellow LED cathode",
+    "net": "GND"
+   },
+   "SH1": {
+    "function": "Shield tab (dia 1.63 mm PTH)",
+    "net": "GND_CHASSIS"
+   },
+   "SH2": {
+    "function": "Shield tab (dia 1.63 mm PTH)",
+    "net": "GND_CHASSIS"
+   }
+  },
+  "ESP32-S31_QFN80": {
+   "GPIO4": {
+    "qfn80_pin": 9,
+    "signal": "PHY INT_N (optional, not used by FW)",
+    "net": "ETH_INTN_GPIO",
+    "iomux": "GPIO",
+    "source": "CoreBoard p2 (R83 0R to GPIO4); FW does not use it"
+   },
+   "GPIO5": {
+    "qfn80_pin": 10,
+    "signal": "MDC",
+    "net": "ETH_MDC",
+    "iomux": "GPIO matrix",
+    "source": "fw ec.smi_gpio.mdc_num=5; IDF default"
+   },
+   "GPIO6": {
+    "qfn80_pin": 12,
+    "signal": "MDIO",
+    "net": "ETH_MDIO",
+    "iomux": "GPIO matrix",
+    "source": "fw ec.smi_gpio.mdio_num=6; IDF default"
+   },
+   "GPIO7": {
+    "qfn80_pin": 13,
+    "signal": "PHY RESET_N",
+    "net": "ETH_PHY_RST_N",
+    "iomux": "GPIO",
+    "source": "fw pc.reset_gpio_num=7"
+   },
+   "GPIO8": {
+    "qfn80_pin": 14,
+    "signal": "RGMII TXD0",
+    "net": "ETH_TXD0",
+    "iomux": "F2 GMAC_PHY_TXD0_PAD",
+    "source": "S31 DS Table 2-3; IDF txd0_num=8"
+   },
+   "GPIO9": {
+    "qfn80_pin": 15,
+    "signal": "RGMII TXD1",
+    "net": "ETH_TXD1",
+    "iomux": "F2 GMAC_PHY_TXD1_PAD",
+    "source": "S31 DS; IDF txd1_num=9"
+   },
+   "GPIO10": {
+    "qfn80_pin": 16,
+    "signal": "RGMII TXD2",
+    "net": "ETH_TXD2",
+    "iomux": "F2 GMAC_PHY_TXD2_PAD",
+    "source": "S31 DS; IDF txd2_num=10"
+   },
+   "GPIO11": {
+    "qfn80_pin": 17,
+    "signal": "RGMII TXD3",
+    "net": "ETH_TXD3",
+    "iomux": "F2 GMAC_PHY_TXD3_PAD",
+    "source": "S31 DS; IDF txd3_num=11"
+   },
+   "GPIO12": {
+    "qfn80_pin": 19,
+    "signal": "RGMII TX_CTL",
+    "net": "ETH_TX_CTL",
+    "iomux": "F2 GMAC_PHY_TXEN_PAD",
+    "source": "S31 DS; IDF tx_ctl_num=12"
+   },
+   "GPIO13": {
+    "qfn80_pin": 20,
+    "signal": "RGMII TX_CLK (GTX_CLK, MAC output)",
+    "net": "ETH_TX_CLK",
+    "iomux": "F2 GMAC_RMII_CLK_PAD (used as RGMII clock out)",
+    "source": "IDF emac_rgmii_iomux_clko {13,43}; clock_tx_gpio=13"
+   },
+   "GPIO14": {
+    "qfn80_pin": 21,
+    "signal": "RGMII RX_CLK (MAC input)",
+    "net": "ETH_RX_CLK",
+    "iomux": "F2 GMAC_RX_CLK_PAD",
+    "source": "S31 DS; IDF clock_rx_gpio=14"
+   },
+   "GPIO15": {
+    "qfn80_pin": 22,
+    "signal": "RGMII RX_CTL",
+    "net": "ETH_RX_CTL",
+    "iomux": "F2 GMAC_PHY_RXDV_PAD",
+    "source": "S31 DS; IDF rx_ctl_num=15"
+   },
+   "GPIO16": {
+    "qfn80_pin": 23,
+    "signal": "RGMII RXD3",
+    "net": "ETH_RXD3",
+    "iomux": "F2 GMAC_PHY_RXD3_PAD",
+    "source": "S31 DS; IDF rxd3_num=16"
+   },
+   "GPIO17": {
+    "qfn80_pin": 24,
+    "signal": "RGMII RXD2",
+    "net": "ETH_RXD2",
+    "iomux": "F2 GMAC_PHY_RXD2_PAD",
+    "source": "S31 DS; IDF rxd2_num=17"
+   },
+   "GPIO18": {
+    "qfn80_pin": 25,
+    "signal": "RGMII RXD1",
+    "net": "ETH_RXD1",
+    "iomux": "F2 GMAC_PHY_RXD1_PAD",
+    "source": "S31 DS; IDF rxd1_num=18"
+   },
+   "GPIO19": {
+    "qfn80_pin": 26,
+    "signal": "RGMII RXD0",
+    "net": "ETH_RXD0",
+    "iomux": "F2 GMAC_PHY_RXD0_PAD",
+    "source": "S31 DS; IDF rxd0_num=19"
+   }
+  }
+ },
+ "mdi_pair_map": [
+  {
+   "pair": 0,
+   "phy_pins": "1 (+) / 2 (-)",
+   "magjack_pins": "2 (+) / 3 (-)",
+   "rj45_contacts": "1/2 (A+/A-)"
+  },
+  {
+   "pair": 1,
+   "phy_pins": "4 (+) / 5 (-)",
+   "magjack_pins": "4 (+) / 7 (-)",
+   "rj45_contacts": "3/6 (B+/B-)"
+  },
+  {
+   "pair": 2,
+   "phy_pins": "6 (+) / 7 (-)",
+   "magjack_pins": "5 (+) / 6 (-)",
+   "rj45_contacts": "4/5 (C+/C-)"
+  },
+  {
+   "pair": 3,
+   "phy_pins": "9 (+) / 10 (-)",
+   "magjack_pins": "8 (+) / 9 (-)",
+   "rj45_contacts": "7/8 (D+/D-)"
+  }
+ ],
+ "firmware_register_writes": [
+  "esp_eth_ioctl ETH_CMD_S_AUTONEGO = true (IDF note: YT8531 needs autoneg re-enabled after reset)",
+  "MII 0x1E = 0xA001; MII 0x1F |= 1<<8  -> ext 0xA001 Rxc_dly_en = 1 (RX_CLK +2 ns)",
+  "MII 0x1E = 0xA003; MII 0x1F = (v & ~0xFF) | (13<<4) | 13 -> Tx_delay_sel_fe = Tx_delay_sel = 13 (~1.95 ns)"
+ ],
+ "layout": {
+  "rgmii": [
+   "50 ohm single-ended over an unbroken GND plane. Keep all 12 lines short: put the PHY within about 25-40 mm of ESP32 GPIO8-19 (QFN80 pins 14-26, on one side of the package).",
+   "Length-match within each group: TXD0-3 + TX_CTL to TX_CLK, and RXD0-3 + RX_CTL to RX_CLK, to +/-1.3 mm (about 8 ps). Do not add a delay serpentine on the clocks, because the PHY adds the 2 ns internally.",
+   "Space the clocks (ETH_TX_CLK / PHY_RX_CLK, 125 MHz) at least 3x the trace width from other lines, keep them away from the RF section and the TCXO, and avoid vias on them.",
+   "Series 33R at the driving end: TX resistors at the ESP32, RX resistors at the PHY."
+  ],
+  "mdi": [
+   "100 ohm differential pairs PHY pins 1-10 -> J201 pins 2-9. Match P/N within a pair to 0.15 mm. Pair-to-pair matching is not critical (keep within about 10 mm). Keep the pairs as short as possible, ideally < 50 mm.",
+   "J201 pin order: MDI1 sits on pins 4 and 7, which straddle MDI2 on pins 5 and 6. One of these pairs must change layer (2 vias per line, same for P and N) or be routed under the jack body.",
+   "No stubs. Keep 3x spacing between pairs and away from RGMII, the crystal and the RF section."
+  ],
+  "magjack": [
+   "The magnetics and Bob Smith network are inside the jack, so pins 1-9 can be referenced to the logic GND plane up to the jack pins.",
+   "GND_CHASSIS (shield tabs + pin 10) gets its own copper island under the front (cable) half of the jack. Leave >= 2 mm clearance to logic GND/signals (isolation 1500-2250 V). Join it to GND only at R222/C216.",
+   "Keep logic-GND copper and all signals out from under the front of the jack (the shield/cable area).",
+   "Dia 3.25 mm holes are NPTH plastic pegs. Dia 1.63 mm holes are shield PTH. Dia 1.02 mm holes are LED pins. Dia 0.89 mm holes are signal pins."
+  ],
+  "phy": [
+   "EPAD 3.7x3.7 mm: 3x3 to 4x4 thermal vias (0.3 mm) into GND. Typical dissipation is about 0.75 W; at theta_JA 33 C/W that is about a 25 C rise.",
+   "Put each 100 nF cap right at its pin (pins 3/8/38/21/30 on PHY_VDDL; 11/40/28/29 on PHY_3V3). Put the 10 uF bulk caps at pins 28/29. Run the PHY_VDDL trace from pin 30 to the AVDDL/DVDDL pins short and wide (>= 0.3 mm).",
+   "Put the crystal and its 15 pF caps right at pins 36/37 with a GND guard ring, and route no other traces under the crystal.",
+   "RBIAS resistor at pin 39, with a short return to GND."
+  ]
+ },
+ "unverified": [
+  "Whether JLC PCBA can place C47544379 ('【邮寄专用】' = mailing only); confirm on the JLC site",
+  "C9006 crystal ESR <= 50 ohm (YT8531 requirement) and the 15 pF load-cap value for CL = 12 pF; the CoreBoard crystal part number is not given on its schematic",
+  "R219 RESET_N pull-up: not on the CoreBoard; added per the YT8531 datasheet",
+  "YT8531 LED polarity is not documented in the datasheet. The CoreBoard drives the LEDs active high (anode via 330R from the PHY pin, cathode to GND) with 4.7k pull-down straps. This copies that.",
+  "Whether GPIO4 is free for INT_N (R223 DNP)",
+  "KiCad footprint name for QFN-40 5x5 0.4 mm EP 3.7 mm"
+ ]
+}

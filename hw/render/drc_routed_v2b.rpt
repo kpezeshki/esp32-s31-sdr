@@ -1,0 +1,2484 @@
+** Drc report for esp32_sdr_routed_v2.kicad_pcb **
+** Created on 2026-11-10T04:01:56 **
+** Report includes: Errors, Warnings **
+
+** Found 563 DRC violations **
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(129.7750 mm, 130.9250 mm): Track [VGB] on F.Cu, length 0.9000 mm
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(129.8250 mm, 130.9750 mm): Track [VGB] on F.Cu, length 0.0707 mm
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0939 mm)
+    Local override; error
+    @(150.6750 mm, 111.5750 mm): Track [RFFC_SCLK_I] on B.Cu, length 0.1414 mm
+    @(150.5050 mm, 111.2325 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0756 mm)
+    Local override; error
+    @(143.9500 mm, 154.7500 mm): Via [GND] on F.Cu - B.Cu
+    @(143.9750 mm, 154.2250 mm): Via [PHY_LED2] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0756 mm)
+    Local override; error
+    @(143.9500 mm, 154.7500 mm): Via [GND] on F.Cu - B.Cu
+    @(143.9750 mm, 154.2250 mm): Via [PHY_LED2] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0756 mm)
+    Local override; error
+    @(143.9500 mm, 154.7500 mm): Via [GND] on F.Cu - B.Cu
+    @(143.9750 mm, 154.2250 mm): Via [PHY_LED2] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0756 mm)
+    Local override; error
+    @(143.9500 mm, 154.7500 mm): Via [GND] on F.Cu - B.Cu
+    @(143.9750 mm, 154.2250 mm): Via [PHY_LED2] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(131.6000 mm, 130.5000 mm): Via [GND] on F.Cu - B.Cu
+    @(131.9750 mm, 130.6750 mm): Track [REFCLK_ESP] on F.Cu, length 2.6000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0965 mm)
+    Local override; error
+    @(163.6400 mm, 120.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(164.0250 mm, 119.7250 mm): Track [SPI_CS_C] on F.Cu, length 0.4500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0914 mm)
+    Local override; error
+    @(156.3850 mm, 111.5675 mm): Via [GND] on F.Cu - B.Cu
+    @(156.5750 mm, 111.9250 mm): Track [RFFC_SCLK] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0977 mm)
+    Local override; error
+    @(161.4612 mm, 139.8472 mm): Via [GND] on F.Cu - B.Cu
+    @(161.0750 mm, 139.4750 mm): Track [USB_DP] on B.Cu, length 0.7500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0936 mm)
+    Local override; error
+    @(138.1811 mm, 103.2414 mm): Via [GND] on F.Cu - B.Cu
+    @(138.5250 mm, 103.0750 mm): Track [REF_IN] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(156.5750 mm, 137.1250 mm): Track [CC2] on F.Cu, length 0.8000 mm
+    @(156.3541 mm, 136.8237 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(126.6000 mm, 128.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(126.7750 mm, 127.6250 mm): Track [LDO_EN_LB] on B.Cu, length 0.4000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0980 mm)
+    Local override; error
+    @(144.1250 mm, 141.4250 mm): Track [PHY_TXD3] on B.Cu, length 0.0707 mm
+    @(143.7662 mm, 141.5686 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0872 mm)
+    Local override; error
+    @(161.3007 mm, 132.9597 mm): Via [GND] on F.Cu - B.Cu
+    @(160.9250 mm, 132.3750 mm): Track [USB_DM] on F.Cu, length 1.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0814 mm)
+    Local override; error
+    @(145.3462 mm, 142.5306 mm): Via [GND] on F.Cu - B.Cu
+    @(145.8250 mm, 142.5750 mm): Track [ETH_MDIO] on B.Cu, length 0.5657 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0803 mm)
+    Local override; error
+    @(164.6000 mm, 103.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(164.5250 mm, 102.4750 mm): Via [ETH_MDIO] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0965 mm)
+    Local override; error
+    @(160.1400 mm, 122.5000 mm): Via [GND] on F.Cu - B.Cu
+    @(160.5250 mm, 121.5250 mm): Track [ETH_RXD0] on F.Cu, length 1.2500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0803 mm)
+    Local override; error
+    @(164.6000 mm, 103.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(164.5250 mm, 102.4750 mm): Via [ETH_MDIO] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0973 mm)
+    Local override; error
+    @(160.1400 mm, 122.5000 mm): Via [GND] on F.Cu - B.Cu
+    @(159.7750 mm, 122.3750 mm): Track [ETH_RXD3] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0803 mm)
+    Local override; error
+    @(164.6000 mm, 103.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(164.5250 mm, 102.4750 mm): Via [ETH_MDIO] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0803 mm)
+    Local override; error
+    @(164.6000 mm, 103.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(164.5250 mm, 102.4750 mm): Via [ETH_MDIO] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0792 mm)
+    Local override; error
+    @(145.2931 mm, 102.0131 mm): Via [GND] on F.Cu - B.Cu
+    @(145.8250 mm, 102.0250 mm): Track [LF2] on F.Cu, length 0.7071 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0942 mm)
+    Local override; error
+    @(129.1605 mm, 122.4551 mm): Via [GND] on F.Cu - B.Cu
+    @(129.5750 mm, 122.6750 mm): Track [5V0] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0874 mm)
+    Local override; error
+    @(166.1400 mm, 120.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(166.0250 mm, 119.4750 mm): Via [SPI_HD_C] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0965 mm)
+    Local override; error
+    @(166.5250 mm, 123.0750 mm): Track [SPI_Q] on B.Cu, length 3.4500 mm
+    @(166.1400 mm, 120.0000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0965 mm)
+    Local override; error
+    @(147.9250 mm, 113.4750 mm): Track [3V0_RF] on F.Cu, length 0.0500 mm
+    @(148.1550 mm, 113.0350 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0951 mm)
+    Local override; error
+    @(148.1550 mm, 113.0350 mm): Via [GND] on F.Cu - B.Cu
+    @(147.6250 mm, 112.8250 mm): Via [IF_CT] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0874 mm)
+    Local override; error
+    @(166.1400 mm, 120.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(166.0250 mm, 119.4750 mm): Via [SPI_HD_C] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0951 mm)
+    Local override; error
+    @(148.1550 mm, 113.0350 mm): Via [GND] on F.Cu - B.Cu
+    @(147.6250 mm, 112.8250 mm): Via [IF_CT] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0951 mm)
+    Local override; error
+    @(148.1550 mm, 113.0350 mm): Via [GND] on F.Cu - B.Cu
+    @(147.6250 mm, 112.8250 mm): Via [IF_CT] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0874 mm)
+    Local override; error
+    @(166.1400 mm, 120.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(166.0250 mm, 119.4750 mm): Via [SPI_HD_C] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0906 mm)
+    Local override; error
+    @(155.4250 mm, 111.8250 mm): Track [RFFC_ENBL_I] on B.Cu, length 0.2828 mm
+    @(154.8250 mm, 111.5675 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(135.1000 mm, 128.0000 mm): Via [GND] on F.Cu - B.Cu
+    @(135.4750 mm, 128.1750 mm): Track [RFFC_LD] on F.Cu, length 0.4500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0717 mm)
+    Local override; error
+    @(133.0083 mm, 107.8357 mm): Via [GND] on F.Cu - B.Cu
+    @(133.4000 mm, 105.8000 mm): Track [LB_OUT] on F.Cu, length 4.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0964 mm)
+    Local override; error
+    @(133.0083 mm, 107.8357 mm): Via [GND] on F.Cu - B.Cu
+    @(132.6250 mm, 108.2250 mm): Via [RFFC_MODE] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0964 mm)
+    Local override; error
+    @(133.0083 mm, 107.8357 mm): Via [GND] on F.Cu - B.Cu
+    @(132.6250 mm, 108.2250 mm): Via [RFFC_MODE] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0964 mm)
+    Local override; error
+    @(133.0083 mm, 107.8357 mm): Via [GND] on F.Cu - B.Cu
+    @(132.6250 mm, 108.2250 mm): Via [RFFC_MODE] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0897 mm)
+    Local override; error
+    @(152.5250 mm, 134.9750 mm): Via [ETH_RX_CTL] on F.Cu - B.Cu
+    @(152.6500 mm, 135.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0940 mm)
+    Local override; error
+    @(161.3007 mm, 132.5403 mm): Via [GND] on F.Cu - B.Cu
+    @(163.1250 mm, 130.1750 mm): Track [USB_DM] on F.Cu, length 3.1113 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0960 mm)
+    Local override; error
+    @(128.7250 mm, 126.9750 mm): Via [5V0] on F.Cu - B.Cu
+    @(128.8750 mm, 127.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0897 mm)
+    Local override; error
+    @(152.5250 mm, 134.9750 mm): Via [ETH_RX_CTL] on F.Cu - B.Cu
+    @(152.6500 mm, 135.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0960 mm)
+    Local override; error
+    @(128.7250 mm, 126.9750 mm): Via [5V0] on F.Cu - B.Cu
+    @(128.8750 mm, 127.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0897 mm)
+    Local override; error
+    @(152.5250 mm, 134.9750 mm): Via [ETH_RX_CTL] on F.Cu - B.Cu
+    @(152.6500 mm, 135.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0897 mm)
+    Local override; error
+    @(152.5250 mm, 134.9750 mm): Via [ETH_RX_CTL] on F.Cu - B.Cu
+    @(152.6500 mm, 135.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0974 mm)
+    Local override; error
+    @(161.3007 mm, 132.5403 mm): Via [GND] on F.Cu - B.Cu
+    @(161.3750 mm, 132.1250 mm): Track [LED_A] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0960 mm)
+    Local override; error
+    @(128.7250 mm, 126.9750 mm): Via [5V0] on F.Cu - B.Cu
+    @(128.8750 mm, 127.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0960 mm)
+    Local override; error
+    @(128.7250 mm, 126.9750 mm): Via [5V0] on F.Cu - B.Cu
+    @(128.8750 mm, 127.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0947 mm)
+    Local override; error
+    @(104.5500 mm, 116.3250 mm): Via [GND] on F.Cu - B.Cu
+    @(105.1250 mm, 116.3750 mm): Track [VLNA_LB] on F.Cu, length 0.2121 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0921 mm)
+    Local override; error
+    @(150.9750 mm, 106.5250 mm): Track [RFFC_ENX_I] on B.Cu, length 0.1414 mm
+    @(150.7589 mm, 106.8383 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0985 mm)
+    Local override; error
+    @(119.0750 mm, 115.8750 mm): Track [3V3] on F.Cu, length 1.1314 mm
+    @(120.0900 mm, 116.1850 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0827 mm)
+    Local override; error
+    @(161.4250 mm, 120.6250 mm): Track [ETH_RXD0] on F.Cu, length 1.2728 mm
+    @(161.0250 mm, 120.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0827 mm)
+    Local override; error
+    @(160.7250 mm, 121.3250 mm): Track [ETH_RXD2] on B.Cu, length 0.9899 mm
+    @(161.0250 mm, 120.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(161.0250 mm, 119.9750 mm): Via [ETH_RXD2] on F.Cu - B.Cu
+    @(161.0250 mm, 120.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(161.0250 mm, 119.9750 mm): Via [ETH_RXD2] on F.Cu - B.Cu
+    @(161.0250 mm, 120.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0947 mm)
+    Local override; error
+    @(138.5750 mm, 124.0750 mm): Track [5V0] on F.Cu, length 0.0707 mm
+    @(138.3750 mm, 124.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0827 mm)
+    Local override; error
+    @(137.3250 mm, 126.0750 mm): Track [RFFC_LD] on B.Cu, length 4.3841 mm
+    @(138.3750 mm, 124.5000 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0961 mm)
+    Local override; error
+    @(141.9750 mm, 142.3250 mm): Track [LDO_EN_HB] on B.Cu, length 0.3000 mm
+    @(141.8082 mm, 141.9404 mm): Via [GND] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(141.1250 mm, 105.9750 mm): Track [3V0_RF] on F.Cu, length 0.6000 mm
+    @(141.8750 mm, 106.4250 mm): Via [LF2] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(143.3750 mm, 107.2250 mm): Track [3V0_RF] on F.Cu, length 0.0500 mm
+    @(143.7750 mm, 106.9750 mm): Via [RFFC_REXT] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(146.4750 mm, 113.1250 mm): Track [3V0_RF] on F.Cu, length 0.6500 mm
+    @(146.1750 mm, 112.6750 mm): Via [RFFC_LD] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(139.5750 mm, 105.0250 mm): Track [3V0_RF] on F.Cu, length 0.7071 mm
+    @(139.9250 mm, 105.9750 mm): Via [LF3] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(142.2250 mm, 133.3250 mm): Track [3V0_RF] on F.Cu, length 3.6500 mm
+    @(142.6750 mm, 131.5250 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(145.2250 mm, 127.4750 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+    @(144.6250 mm, 127.4750 mm): Track [3V0_RF] on F.Cu, length 0.2121 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(140.0750 mm, 105.5250 mm): Track [3V0_RF] on F.Cu, length 0.5000 mm
+    @(139.9250 mm, 105.9750 mm): Via [LF3] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(145.2250 mm, 127.4750 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+    @(144.8250 mm, 127.2250 mm): Track [3V0_RF] on F.Cu, length 0.2500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(145.2250 mm, 127.4750 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+    @(144.7750 mm, 127.3250 mm): Track [3V0_RF] on F.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(138.5750 mm, 105.1750 mm): Via [REF_IN] on F.Cu - B.Cu
+    @(138.1750 mm, 104.7250 mm): Track [3V0_RF] on F.Cu, length 0.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(145.2250 mm, 127.4750 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+    @(144.7750 mm, 127.2750 mm): Track [3V0_RF] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0956 mm)
+    Local override; error
+    @(145.2750 mm, 116.5750 mm): Track [RFFC_LD] on F.Cu, length 0.5657 mm
+    @(145.1000 mm, 115.3200 mm): Pad 5 [<no net>] of T1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0977 mm)
+    Local override; error
+    @(146.0500 mm, 110.3500 mm): Track [IF_OP_P] on F.Cu, length 1.4950 mm
+    @(146.7250 mm, 109.9250 mm): Via [RFFC_RESETX_I] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0500 mm)
+    Local override; error
+    @(145.6750 mm, 113.9250 mm): Via [RFFC_LD] on F.Cu - B.Cu
+    @(146.3700 mm, 113.5500 mm): Track [MIX_IPN] on F.Cu, length 1.0200 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(149.6250 mm, 107.0750 mm): Track [RFFC_ENX_I] on B.Cu, length 1.4849 mm
+    @(150.4250 mm, 107.4250 mm): Track [RFFC_SDATA_I] on B.Cu, length 0.8500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(149.5750 mm, 107.4250 mm): Track [RFFC_SDATA_I] on B.Cu, length 1.7678 mm
+    @(148.5750 mm, 108.1250 mm): Track [RFFC_ENX_I] on B.Cu, length 0.2500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0985 mm)
+    Local override; error
+    @(165.2750 mm, 101.4750 mm): Track [RFFC_ENX_I] on F.Cu, length 0.5657 mm
+    @(165.4900 mm, 102.0000 mm): Pad 1 [ETH_MDIO] of R218 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(153.4250 mm, 139.7750 mm): Via [LDO_EN_HB] on F.Cu - B.Cu
+    @(152.9750 mm, 138.5750 mm): Track [PHY_3V3] on F.Cu, length 2.5000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(155.0750 mm, 125.0750 mm): Track [PHY_3V3] on F.Cu, length 2.9500 mm
+    @(155.5250 mm, 126.3750 mm): Via [ETH_RX_CLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(154.3750 mm, 128.9250 mm): Track [PHY_3V3] on F.Cu, length 5.3500 mm
+    @(154.8250 mm, 132.9750 mm): Via [ETH_RX_CTL] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(140.6750 mm, 146.7250 mm): Via [PHY_TXD0] on F.Cu - B.Cu
+    @(141.1250 mm, 147.2750 mm): Track [PHY_3V3] on F.Cu, length 1.3500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(161.6250 mm, 108.7750 mm): Via [RFFC_SCLK] on F.Cu - B.Cu
+    @(162.2250 mm, 108.7750 mm): Track [PHY_3V3] on B.Cu, length 0.2121 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(155.3250 mm, 124.0250 mm): Via [ETH_RX_CLK] on F.Cu - B.Cu
+    @(155.7750 mm, 123.4750 mm): Track [PHY_3V3] on B.Cu, length 0.9000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(161.6250 mm, 108.7750 mm): Via [RFFC_SCLK] on F.Cu - B.Cu
+    @(162.0750 mm, 108.9250 mm): Track [PHY_3V3] on B.Cu, length 0.6000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(159.4250 mm, 118.1250 mm): Track [PHY_3V3] on B.Cu, length 1.5500 mm
+    @(158.9750 mm, 118.4250 mm): Via [ETH_RX_CTL] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0946 mm)
+    Local override; error
+    @(157.7287 mm, 131.3610 mm): Via [3V3] on F.Cu - B.Cu
+    @(158.0750 mm, 131.5250 mm): Track [ETH_RX_CTL] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0933 mm)
+    Local override; error
+    @(159.4250 mm, 105.7750 mm): Track [XTAL_P] on B.Cu, length 3.3000 mm
+    @(159.0432 mm, 104.9114 mm): Via [3V3] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0951 mm)
+    Local override; error
+    @(165.4200 mm, 108.7825 mm): Via [3V3] on F.Cu - B.Cu
+    @(164.8750 mm, 108.7750 mm): Via [RFFC_SCLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(149.0000 mm, 121.5000 mm): Via [3V3] on F.Cu - B.Cu
+    @(149.3750 mm, 121.7250 mm): Track [XTAL_P_C] on B.Cu, length 6.6000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0951 mm)
+    Local override; error
+    @(165.4200 mm, 108.7825 mm): Via [3V3] on F.Cu - B.Cu
+    @(164.8750 mm, 108.7750 mm): Via [RFFC_SCLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0940 mm)
+    Local override; error
+    @(158.5450 mm, 113.5575 mm): Via [3V3] on F.Cu - B.Cu
+    @(158.7750 mm, 113.1750 mm): Track [ETH_MDC] on F.Cu, length 0.4000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0951 mm)
+    Local override; error
+    @(165.4200 mm, 108.7825 mm): Via [3V3] on F.Cu - B.Cu
+    @(164.8750 mm, 108.7750 mm): Via [RFFC_SCLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0940 mm)
+    Local override; error
+    @(167.7450 mm, 116.0075 mm): Via [3V3] on F.Cu - B.Cu
+    @(167.6750 mm, 115.6250 mm): Track [USB_DM] on F.Cu, length 0.2500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0951 mm)
+    Local override; error
+    @(165.4200 mm, 108.7825 mm): Via [3V3] on F.Cu - B.Cu
+    @(164.8750 mm, 108.7750 mm): Via [RFFC_SCLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(158.2250 mm, 135.7250 mm): Track [CC2] on F.Cu, length 0.0707 mm
+    @(158.2750 mm, 135.9750 mm): Track [USB_DP] on F.Cu, length 0.7778 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0915 mm)
+    Local override; error
+    @(158.5450 mm, 113.5575 mm): Via [3V3] on F.Cu - B.Cu
+    @(158.9250 mm, 113.7250 mm): Track [LDO_EN_MB] on B.Cu, length 0.5500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(158.2750 mm, 135.9750 mm): Track [USB_DP] on F.Cu, length 0.7778 mm
+    @(158.1750 mm, 135.7750 mm): Track [CC2] on F.Cu, length 0.4500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0947 mm)
+    Local override; error
+    @(158.5450 mm, 113.5575 mm): Via [3V3] on F.Cu - B.Cu
+    @(158.3750 mm, 114.0750 mm): Via [ETH_MDIO] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(159.6250 mm, 135.7250 mm): Track [CC2] on F.Cu, length 0.5500 mm
+    @(160.3750 mm, 135.2750 mm): Track [USB_DP] on F.Cu, length 0.9899 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0947 mm)
+    Local override; error
+    @(158.5450 mm, 113.5575 mm): Via [3V3] on F.Cu - B.Cu
+    @(158.3750 mm, 114.0750 mm): Via [ETH_MDIO] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0940 mm)
+    Local override; error
+    @(158.8750 mm, 113.2750 mm): Track [ETH_MDC] on F.Cu, length 0.1414 mm
+    @(159.2450 mm, 113.5575 mm): Track [3V3] on F.Cu, length 0.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(138.6250 mm, 135.3250 mm): Track [5V0] on F.Cu, length 1.5500 mm
+    @(138.4250 mm, 135.7750 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0623 mm)
+    Local override; error
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+    @(129.8250 mm, 131.0250 mm): Track [VGB] on F.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0900 mm)
+    Local override; error
+    @(129.8250 mm, 129.9750 mm): Track [VGB] on F.Cu, length 0.0500 mm
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+[shorting_items]: Items shorting two nets (nets VGB and VLNA_MB)
+    Local override; error
+    @(129.7750 mm, 130.9250 mm): Track [VGB] on F.Cu, length 0.9000 mm
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0900 mm)
+    Local override; error
+    @(129.8750 mm, 131.0750 mm): Track [VGB] on F.Cu, length 0.0707 mm
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+[shorting_items]: Items shorting two nets (nets VGB and VLNA_MB)
+    Local override; error
+    @(129.8250 mm, 130.9750 mm): Track [VGB] on F.Cu, length 0.0707 mm
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0985 mm)
+    Local override; error
+    @(155.4900 mm, 108.5000 mm): Pad 1 [RFFC_SDATA] of R384 on F.Cu
+    @(155.2750 mm, 107.9750 mm): Track [CHIP_PU] on F.Cu, length 0.3536 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(144.2750 mm, 132.4750 mm): Track [PHY_TXD3] on F.Cu, length 0.0500 mm
+    @(144.3250 mm, 132.7750 mm): Track [CHIP_PU] on F.Cu, length 4.7376 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(144.3250 mm, 133.7250 mm): Track [CHIP_PU] on F.Cu, length 0.9500 mm
+    @(144.2750 mm, 132.5250 mm): Track [PHY_TXD3] on F.Cu, length 0.2828 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0985 mm)
+    Local override; error
+    @(157.0100 mm, 106.5000 mm): Pad 2 [RFFC_ENX_I] of R385 on F.Cu
+    @(158.3750 mm, 105.8750 mm): Track [CHIP_PU] on F.Cu, length 1.6971 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(129.3750 mm, 127.6250 mm): Track [VLNA_MB] on F.Cu, length 0.6500 mm
+    @(129.8250 mm, 127.2250 mm): Via [5V0] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0985 mm)
+    Local override; error
+    @(155.4900 mm, 114.5000 mm): Pad 1 [RFFC_ENBL] of R386 on F.Cu
+    @(155.2750 mm, 113.9750 mm): Track [CHIP_PU] on F.Cu, length 2.1920 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0203 mm)
+    Local override; error
+    @(129.2250 mm, 130.5000 mm): Pad 1 [VLNA_MB] of C610 on F.Cu
+    @(129.7750 mm, 130.0250 mm): Track [VGB] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(168.0250 mm, 118.3750 mm): Track [SPI_CLK] on F.Cu, length 0.9500 mm
+    @(167.8250 mm, 117.3250 mm): Track [USB_DM] on F.Cu, length 0.2828 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(168.0750 mm, 116.9750 mm): Track [USB_DM] on F.Cu, length 0.3536 mm
+    @(168.0750 mm, 117.3750 mm): Track [SPI_CLK] on F.Cu, length 0.1000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(167.8250 mm, 117.3250 mm): Track [USB_DM] on F.Cu, length 0.2828 mm
+    @(168.0250 mm, 117.4250 mm): Track [SPI_CLK] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(168.1750 mm, 115.8750 mm): Track [USB_DM] on F.Cu, length 0.3000 mm
+    @(168.3250 mm, 116.3250 mm): Track [SPI_CLK] on F.Cu, length 0.2828 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(168.0750 mm, 116.9750 mm): Track [USB_DM] on F.Cu, length 0.3536 mm
+    @(168.0750 mm, 117.2750 mm): Track [SPI_CLK] on F.Cu, length 0.3536 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(168.1750 mm, 115.8750 mm): Track [USB_DM] on F.Cu, length 0.3000 mm
+    @(168.3250 mm, 117.0250 mm): Track [SPI_CLK] on F.Cu, length 0.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(168.9750 mm, 106.2250 mm): Track [SPI_CLK] on F.Cu, length 1.3435 mm
+    @(169.2250 mm, 106.1750 mm): Track [SPI_WP] on F.Cu, length 0.4950 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0950 mm)
+    Local override; error
+    @(107.0600 mm, 113.1000 mm): Track [LB_IN] on F.Cu, length 8.6000 mm
+    @(107.4750 mm, 108.7750 mm): Via [VLNA_LB] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(140.5250 mm, 146.3250 mm): Track [PHY_TX_CLK] on B.Cu, length 0.9192 mm
+    @(140.5750 mm, 146.0750 mm): Track [MAG_CT] on B.Cu, length 1.3000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(137.5250 mm, 143.1750 mm): Track [PHY_TX_CLK] on F.Cu, length 0.0500 mm
+    @(136.6750 mm, 142.6250 mm): Track [LF_B] on F.Cu, length 1.0607 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(139.8250 mm, 145.4750 mm): Track [PHY_TX_CLK] on F.Cu, length 3.2527 mm
+    @(136.6750 mm, 142.6250 mm): Track [LF_B] on F.Cu, length 1.0607 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(141.8750 mm, 146.3750 mm): Track [PHY_TX_CLK] on B.Cu, length 0.0707 mm
+    @(141.8750 mm, 146.0750 mm): Track [MAG_CT] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(142.1750 mm, 146.2250 mm): Track [MAG_CT] on B.Cu, length 0.3500 mm
+    @(142.4750 mm, 146.8250 mm): Track [PHY_TX_CLK] on B.Cu, length 0.5657 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(142.1750 mm, 146.2250 mm): Track [MAG_CT] on B.Cu, length 0.3500 mm
+    @(142.0750 mm, 146.4250 mm): Track [PHY_TX_CLK] on B.Cu, length 0.1000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(141.8250 mm, 146.3250 mm): Track [PHY_TX_CLK] on B.Cu, length 1.3000 mm
+    @(141.8750 mm, 146.0750 mm): Track [MAG_CT] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(160.5250 mm, 121.7750 mm): Track [ETH_RXD2] on B.Cu, length 0.2828 mm
+    @(160.4750 mm, 121.5250 mm): Track [ETH_RXD3] on B.Cu, length 0.9899 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(155.4250 mm, 136.3750 mm): Track [ETH_RX_CLK] on B.Cu, length 0.1000 mm
+    @(155.2750 mm, 136.1250 mm): Track [ETH_RXD3] on B.Cu, length 0.8485 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(140.2750 mm, 141.6250 mm): Track [PHY_TXD0] on F.Cu, length 2.1213 mm
+    @(141.2750 mm, 140.3250 mm): Track [BOOT] on F.Cu, length 2.8000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(142.6750 mm, 128.1250 mm): Track [BOOT] on B.Cu, length 0.5657 mm
+    @(142.5250 mm, 127.6750 mm): Track [PHY_TXD0] on B.Cu, length 0.4000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(158.0750 mm, 149.7750 mm): Track [MDI1_N] on F.Cu, length 0.2828 mm
+    @(160.1750 mm, 149.4250 mm): Track [MDI3_N] on F.Cu, length 2.1500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(155.2750 mm, 149.2250 mm): Track [MDI1_N] on F.Cu, length 0.1000 mm
+    @(155.0750 mm, 149.4250 mm): Track [MDI2_P] on F.Cu, length 3.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(157.8750 mm, 149.5750 mm): Track [MDI1_N] on F.Cu, length 0.0500 mm
+    @(160.1750 mm, 149.4250 mm): Track [MDI3_N] on F.Cu, length 2.1500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(155.1750 mm, 149.2250 mm): Track [MDI1_N] on F.Cu, length 0.0707 mm
+    @(155.0750 mm, 149.4250 mm): Track [MDI2_P] on F.Cu, length 3.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(157.6250 mm, 149.4250 mm): Track [MDI1_N] on F.Cu, length 2.1500 mm
+    @(155.5250 mm, 149.7750 mm): Track [MDI2_P] on F.Cu, length 0.4243 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(154.6750 mm, 118.2250 mm): Track [ETH_MDC] on F.Cu, length 0.0500 mm
+    @(154.9250 mm, 118.3250 mm): Track [ETH_PHY_RST_N] on F.Cu, length 0.3536 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(157.8250 mm, 149.5750 mm): Track [MDI1_N] on F.Cu, length 0.1414 mm
+    @(157.9250 mm, 149.3250 mm): Track [MDI3_N] on F.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(149.9250 mm, 134.4250 mm): Track [ETH_MDIO] on F.Cu, length 0.2500 mm
+    @(151.1250 mm, 132.9250 mm): Track [ETH_MDC] on F.Cu, length 2.1920 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(143.8250 mm, 132.6750 mm): Track [PHY_TXD2] on F.Cu, length 0.9500 mm
+    @(144.0250 mm, 133.7250 mm): Track [PHY_TXD3] on F.Cu, length 2.9500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(144.0250 mm, 132.4750 mm): Track [PHY_TXD2] on F.Cu, length 0.2828 mm
+    @(144.0750 mm, 132.7250 mm): Track [PHY_TXD3] on F.Cu, length 0.9500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(144.0250 mm, 131.5750 mm): Track [PHY_TXD2] on F.Cu, length 0.9000 mm
+    @(144.2750 mm, 132.5250 mm): Track [PHY_TXD3] on F.Cu, length 0.2828 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(143.8250 mm, 132.6750 mm): Track [PHY_TXD2] on F.Cu, length 0.9500 mm
+    @(144.0750 mm, 133.6750 mm): Track [PHY_TXD3] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(151.8750 mm, 133.7250 mm): Track [ETH_RXD0] on F.Cu, length 0.2500 mm
+    @(151.4750 mm, 133.8250 mm): Track [LDO_EN_MB] on F.Cu, length 2.7577 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(161.3250 mm, 138.9250 mm): Track [LED_A] on B.Cu, length 0.7071 mm
+    @(161.0750 mm, 139.4750 mm): Track [USB_DP] on B.Cu, length 0.7500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(161.5750 mm, 138.9250 mm): Track [USB_DP] on B.Cu, length 0.0500 mm
+    @(161.7250 mm, 138.4750 mm): Track [LED_A] on B.Cu, length 0.5657 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(161.7250 mm, 132.4750 mm): Track [LED_A] on B.Cu, length 6.0000 mm
+    @(161.9250 mm, 132.3750 mm): Track [USB_DP] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(161.3250 mm, 138.9250 mm): Track [LED_A] on B.Cu, length 0.7071 mm
+    @(161.5750 mm, 138.9750 mm): Track [USB_DP] on B.Cu, length 0.7071 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(161.7250 mm, 138.4750 mm): Track [LED_A] on B.Cu, length 0.5657 mm
+    @(161.9750 mm, 138.5250 mm): Track [USB_DP] on B.Cu, length 0.5657 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(161.9250 mm, 132.3250 mm): Track [USB_DP] on B.Cu, length 0.0500 mm
+    @(161.7250 mm, 132.4750 mm): Track [LED_A] on B.Cu, length 6.0000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(161.4250 mm, 131.8750 mm): Track [USB_DP] on B.Cu, length 0.0707 mm
+    @(161.3750 mm, 132.1250 mm): Track [LED_A] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(161.4750 mm, 131.9250 mm): Track [USB_DP] on B.Cu, length 0.0500 mm
+    @(161.3750 mm, 132.1250 mm): Track [LED_A] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(151.4750 mm, 133.8250 mm): Track [LDO_EN_MB] on F.Cu, length 2.7577 mm
+    @(153.6750 mm, 131.9250 mm): Track [ETH_RXD0] on F.Cu, length 2.5456 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(161.5250 mm, 131.9250 mm): Track [USB_DP] on B.Cu, length 0.5657 mm
+    @(161.4250 mm, 132.1750 mm): Track [LED_A] on B.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.1750 mm, 144.6750 mm): Track [PHY_TXD3] on B.Cu, length 0.0707 mm
+    @(144.6750 mm, 144.4750 mm): Track [ETH_MDIO] on B.Cu, length 0.4243 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.1750 mm, 144.6750 mm): Track [PHY_TXD3] on B.Cu, length 0.0707 mm
+    @(144.3750 mm, 144.7750 mm): Track [ETH_MDIO] on B.Cu, length 0.6500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(159.9750 mm, 134.8250 mm): Track [USB_DM] on B.Cu, length 0.4500 mm
+    @(159.7250 mm, 135.3250 mm): Track [CC1] on B.Cu, length 0.6364 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(160.1750 mm, 135.7750 mm): Track [CC1] on B.Cu, length 0.2500 mm
+    @(159.9750 mm, 135.2750 mm): Track [USB_DM] on B.Cu, length 0.8485 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0918 mm)
+    Local override; error
+    @(139.8500 mm, 131.7000 mm): Pad 1 [GND] of U7 on F.Cu
+    @(139.4750 mm, 133.0750 mm): Track [LDO_EN_LB] on F.Cu, length 1.6971 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.0750 mm, 145.4250 mm): Track [PHY_TXD3] on B.Cu, length 0.2828 mm
+    @(144.2750 mm, 145.5250 mm): Track [ETH_MDIO] on B.Cu, length 0.5500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.0750 mm, 145.4250 mm): Track [PHY_TXD3] on B.Cu, length 0.2828 mm
+    @(144.3750 mm, 145.4250 mm): Track [ETH_MDIO] on B.Cu, length 0.1414 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(153.5750 mm, 128.0250 mm): Track [LDO_EN_MB] on F.Cu, length 2.8000 mm
+    @(153.3750 mm, 125.1250 mm): Track [ETH_MDIO] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(135.2250 mm, 108.5750 mm): Track [LF_B] on F.Cu, length 0.8485 mm
+    @(135.1250 mm, 109.4250 mm): Track [REFCLK_RF] on F.Cu, length 0.6500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(163.6750 mm, 129.4250 mm): Track [SPI_HD] on B.Cu, length 0.3500 mm
+    @(164.8250 mm, 128.5750 mm): Track [SPI_D] on B.Cu, length 1.5556 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(164.8250 mm, 128.5750 mm): Track [SPI_D] on B.Cu, length 1.5556 mm
+    @(163.9250 mm, 129.1750 mm): Track [SPI_HD] on B.Cu, length 0.3536 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(153.5750 mm, 128.0250 mm): Track [LDO_EN_MB] on F.Cu, length 2.8000 mm
+    @(153.3750 mm, 122.5750 mm): Track [ETH_MDIO] on F.Cu, length 2.5500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0906 mm)
+    Local override; error
+    @(147.3750 mm, 140.3250 mm): Track [3V3_PHY] on F.Cu, length 0.5500 mm
+    @(146.5250 mm, 140.6250 mm): Track [ETH_RX_CLK] on F.Cu, length 0.2500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(158.9750 mm, 117.8250 mm): Track [ETH_RX_CLK] on F.Cu, length 0.4500 mm
+    @(159.6250 mm, 117.9250 mm): Track [ETH_RX_CTL] on F.Cu, length 0.3500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(159.4250 mm, 117.8250 mm): Track [ETH_RX_CLK] on F.Cu, length 0.2121 mm
+    @(159.6250 mm, 117.9250 mm): Track [ETH_RX_CTL] on F.Cu, length 0.3500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(148.5250 mm, 140.6750 mm): Track [ETH_RX_CLK] on F.Cu, length 0.2121 mm
+    @(148.9250 mm, 140.3750 mm): Track [3V3_PHY] on F.Cu, length 1.5000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(157.5250 mm, 119.6250 mm): Track [ETH_RX_CTL] on F.Cu, length 0.1000 mm
+    @(157.0750 mm, 119.7750 mm): Track [ETH_RX_CLK] on F.Cu, length 1.6971 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(148.6750 mm, 140.8250 mm): Via [ETH_RX_CLK] on F.Cu - B.Cu
+    @(148.9250 mm, 140.3750 mm): Track [3V3_PHY] on F.Cu, length 1.5000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0906 mm)
+    Local override; error
+    @(147.3750 mm, 140.3250 mm): Track [3V3_PHY] on F.Cu, length 0.5500 mm
+    @(146.7750 mm, 140.6250 mm): Track [ETH_RX_CLK] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(168.1750 mm, 109.6750 mm): Track [SPI_WP_C] on B.Cu, length 0.2121 mm
+    @(168.0750 mm, 110.8750 mm): Track [SPI_Q_C] on B.Cu, length 1.0000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(164.8250 mm, 128.5750 mm): Track [SPI_D] on B.Cu, length 1.5556 mm
+    @(163.9250 mm, 128.8750 mm): Track [SPI_HD] on B.Cu, length 0.3000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(165.9750 mm, 116.6750 mm): Track [SPI_WP_C] on B.Cu, length 1.3000 mm
+    @(165.7250 mm, 116.6250 mm): Track [SPI_Q_C] on B.Cu, length 0.6364 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(168.1750 mm, 109.4250 mm): Track [SPI_WP_C] on B.Cu, length 0.2500 mm
+    @(168.0750 mm, 110.8750 mm): Track [SPI_Q_C] on B.Cu, length 1.0000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0985 mm)
+    Local override; error
+    @(161.4900 mm, 129.5000 mm): Pad 1 [SPI_HD_C] of R113 on F.Cu
+    @(161.2750 mm, 130.0250 mm): Track [SPI_D] on F.Cu, length 1.2728 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0956 mm)
+    Local override; error
+    @(159.4750 mm, 153.2250 mm): Track [LED_A] on F.Cu, length 2.0506 mm
+    @(158.6350 mm, 152.8500 mm): PTH pad 6 [MDI2_N] of J201
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0973 mm)
+    Local override; error
+    @(156.4250 mm, 132.6750 mm): Via [LED_A] on F.Cu - B.Cu
+    @(155.6500 mm, 130.5000 mm): Pad 2 [3V3] of U6 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0973 mm)
+    Local override; error
+    @(155.6500 mm, 130.5000 mm): Pad 2 [3V3] of U6 on F.Cu
+    @(156.4250 mm, 128.3250 mm): Via [LED_A] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(166.4250 mm, 116.2250 mm): Track [SPI_WP_C] on B.Cu, length 0.6364 mm
+    @(165.7250 mm, 116.6250 mm): Track [SPI_Q_C] on B.Cu, length 0.6364 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(136.5250 mm, 144.7750 mm): Track [REFCLK_RF] on F.Cu, length 2.0000 mm
+    @(136.6750 mm, 136.8250 mm): Track [LF_B] on F.Cu, length 5.8000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(147.4250 mm, 140.3750 mm): Track [3V3_PHY] on F.Cu, length 0.0707 mm
+    @(146.8250 mm, 140.6750 mm): Track [ETH_RX_CLK] on F.Cu, length 1.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(136.5250 mm, 144.7750 mm): Track [REFCLK_RF] on F.Cu, length 2.0000 mm
+    @(136.6750 mm, 142.6250 mm): Track [LF_B] on F.Cu, length 1.0607 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(135.2250 mm, 105.8250 mm): Track [LF_B] on F.Cu, length 2.7500 mm
+    @(135.1250 mm, 109.4250 mm): Track [REFCLK_RF] on F.Cu, length 0.6500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0918 mm)
+    Local override; error
+    @(135.9000 mm, 106.1500 mm): Pad 1 [<no net>] of Y1 on F.Cu
+    @(135.3750 mm, 105.0750 mm): Track [LF_B] on F.Cu, length 0.6000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0901 mm)
+    Local override; error
+    @(135.3750 mm, 105.6750 mm): Track [LF_B] on F.Cu, length 0.2121 mm
+    @(135.9000 mm, 106.1500 mm): Pad 1 [<no net>] of Y1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(153.4250 mm, 128.1750 mm): Track [LDO_EN_MB] on F.Cu, length 0.2121 mm
+    @(153.3250 mm, 125.1750 mm): Track [ETH_MDIO] on F.Cu, length 2.8000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(153.3250 mm, 127.9750 mm): Track [ETH_MDIO] on F.Cu, length 1.6263 mm
+    @(153.4250 mm, 128.1750 mm): Track [LDO_EN_MB] on F.Cu, length 0.2121 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(144.6750 mm, 144.4250 mm): Track [ETH_MDIO] on B.Cu, length 0.0500 mm
+    @(144.9250 mm, 144.5250 mm): Track [ETH_MDC] on B.Cu, length 0.4243 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(145.3750 mm, 143.8750 mm): Track [ETH_MDC] on B.Cu, length 0.1500 mm
+    @(145.4250 mm, 143.5250 mm): Track [ETH_MDIO] on B.Cu, length 0.4243 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(144.9250 mm, 144.1750 mm): Track [ETH_MDIO] on B.Cu, length 0.3536 mm
+    @(144.9250 mm, 144.4750 mm): Track [ETH_MDC] on B.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(147.3750 mm, 140.3250 mm): Track [3V3_PHY] on F.Cu, length 0.5500 mm
+    @(147.6250 mm, 139.9250 mm): Via [ETH_MDC] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(145.3750 mm, 144.0250 mm): Track [ETH_MDC] on B.Cu, length 0.6364 mm
+    @(144.9250 mm, 144.0750 mm): Track [ETH_MDIO] on B.Cu, length 0.1000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(144.6250 mm, 144.8250 mm): Track [ETH_MDC] on B.Cu, length 0.5500 mm
+    @(144.6750 mm, 144.4750 mm): Track [ETH_MDIO] on B.Cu, length 0.4243 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(146.2250 mm, 143.0250 mm): Track [ETH_MDC] on B.Cu, length 1.2021 mm
+    @(145.4250 mm, 143.5250 mm): Track [ETH_MDIO] on B.Cu, length 0.4243 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(151.1250 mm, 132.8750 mm): Track [ETH_MDC] on F.Cu, length 0.0500 mm
+    @(151.5250 mm, 132.8250 mm): Track [ETH_MDIO] on F.Cu, length 2.2627 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(154.6750 mm, 118.5750 mm): Track [ETH_PHY_RST_N] on F.Cu, length 0.4500 mm
+    @(154.6750 mm, 118.2750 mm): Track [ETH_MDC] on F.Cu, length 0.5657 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(155.2250 mm, 149.4750 mm): Track [MDI2_P] on F.Cu, length 0.1000 mm
+    @(155.4750 mm, 149.4250 mm): Track [MDI1_N] on F.Cu, length 0.2828 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(157.7750 mm, 149.2250 mm): Track [MDI3_N] on F.Cu, length 0.0500 mm
+    @(157.6750 mm, 149.4750 mm): Track [MDI1_N] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(157.9250 mm, 149.3250 mm): Track [MDI3_N] on F.Cu, length 0.0500 mm
+    @(157.7250 mm, 149.4750 mm): Track [MDI1_N] on F.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(142.2750 mm, 127.2250 mm): Track [BOOT] on B.Cu, length 4.1012 mm
+    @(142.5250 mm, 127.2750 mm): Track [PHY_TXD0] on B.Cu, length 5.3740 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(143.0750 mm, 128.2250 mm): Track [PHY_TXD0] on B.Cu, length 0.7778 mm
+    @(142.6750 mm, 128.1250 mm): Track [BOOT] on B.Cu, length 0.5657 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(140.2750 mm, 144.7750 mm): Track [PHY_TXD0] on F.Cu, length 3.1500 mm
+    @(140.0250 mm, 141.5750 mm): Track [BOOT] on F.Cu, length 1.7678 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0932 mm)
+    Local override; error
+    @(143.8250 mm, 155.5750 mm): Via [PHY_XO] on F.Cu - B.Cu
+    @(142.9000 mm, 154.7500 mm): Pad 4 [GND] of Y201 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(140.2250 mm, 145.0250 mm): Track [BOOT] on F.Cu, length 0.2828 mm
+    @(140.6250 mm, 145.1250 mm): Track [PHY_TXD0] on F.Cu, length 0.4950 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.3750 mm, 155.3750 mm): Track [PHY_XO] on F.Cu, length 0.0707 mm
+    @(144.4750 mm, 155.5750 mm): Track [PHY_XI] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.3750 mm, 155.3750 mm): Track [PHY_XO] on F.Cu, length 0.0707 mm
+    @(146.0750 mm, 155.5750 mm): Track [PHY_XI] on F.Cu, length 1.6000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(160.5250 mm, 121.7750 mm): Track [ETH_RXD2] on B.Cu, length 0.2828 mm
+    @(160.4750 mm, 119.4750 mm): Track [ETH_RXD3] on B.Cu, length 2.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(155.2750 mm, 135.4250 mm): Track [ETH_RXD3] on B.Cu, length 0.7000 mm
+    @(155.4250 mm, 136.3750 mm): Track [ETH_RX_CLK] on B.Cu, length 0.1000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0950 mm)
+    Local override; error
+    @(165.0700 mm, 117.2825 mm): Pad 36 [SPI_CS_C] of U1 on F.Cu
+    @(164.7250 mm, 117.2750 mm): Track [V1P8] on F.Cu, length 0.2500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(142.6250 mm, 158.8750 mm): Track [PHY_LED1] on F.Cu, length 0.3536 mm
+    @(142.6250 mm, 158.5750 mm): Track [ETH_INTN] on F.Cu, length 0.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(143.1250 mm, 159.0750 mm): Track [ETH_INTN] on F.Cu, length 0.7071 mm
+    @(142.6250 mm, 159.4750 mm): Track [PHY_LED1] on F.Cu, length 0.6000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0923 mm)
+    Local override; error
+    @(142.5750 mm, 157.8250 mm): Track [ETH_INTN] on F.Cu, length 0.1000 mm
+    @(142.9250 mm, 157.5750 mm): Via [LED_A] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(168.9750 mm, 106.7750 mm): Track [SPI_CLK] on F.Cu, length 0.5500 mm
+    @(169.2250 mm, 106.1750 mm): Track [SPI_WP] on F.Cu, length 0.4950 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0923 mm)
+    Local override; error
+    @(142.5750 mm, 157.7250 mm): Track [ETH_INTN] on F.Cu, length 0.8485 mm
+    @(142.9250 mm, 157.5750 mm): Via [LED_A] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0985 mm)
+    Local override; error
+    @(168.5750 mm, 107.1750 mm): Track [SPI_CLK] on F.Cu, length 0.5657 mm
+    @(168.5100 mm, 106.5000 mm): Pad 2 [SPI_Q] of R111 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0825 mm)
+    Local override; error
+    @(159.2250 mm, 110.7750 mm): Track [VDDA34] on F.Cu, length 0.2500 mm
+    @(159.2450 mm, 111.1075 mm): Pad 4 [CHIP_PU] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0923 mm)
+    Local override; error
+    @(136.1750 mm, 111.5250 mm): Track [LF_B] on F.Cu, length 4.1500 mm
+    @(136.5250 mm, 111.3750 mm): Via [REFCLK_ESP] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(129.2250 mm, 128.7750 mm): Track [VLNA_MB] on F.Cu, length 0.0707 mm
+    @(128.7250 mm, 128.8750 mm): Via [LDO_EN_MB] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0550 mm)
+    Local override; error
+    @(134.4000 mm, 110.9000 mm): Track [SW2_COM] on F.Cu, length 7.6000 mm
+    @(134.0250 mm, 114.0250 mm): Via [REFCLK_ESP] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(129.1750 mm, 128.7250 mm): Track [VLNA_MB] on F.Cu, length 0.8500 mm
+    @(128.7250 mm, 128.8750 mm): Via [LDO_EN_MB] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.2750 mm, 133.7750 mm): Track [CHIP_PU] on F.Cu, length 0.0707 mm
+    @(144.0750 mm, 133.6750 mm): Track [PHY_TXD3] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0966 mm)
+    Local override; error
+    @(144.2750 mm, 136.9750 mm): Track [CHIP_PU] on F.Cu, length 3.2000 mm
+    @(144.0750 mm, 133.6750 mm): Track [PHY_TXD3] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(154.6250 mm, 126.7250 mm): Track [ETH_RX_CLK] on B.Cu, length 0.3000 mm
+    @(153.8250 mm, 126.5250 mm): Track [SPI_CS] on B.Cu, length 0.6364 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(157.7750 mm, 127.5250 mm): Track [SPI_CS] on F.Cu, length 1.2500 mm
+    @(159.1750 mm, 127.8250 mm): Track [VDD_SPI] on F.Cu, length 0.2000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(159.1750 mm, 127.8250 mm): Track [VDD_SPI] on F.Cu, length 0.2000 mm
+    @(159.0250 mm, 127.5250 mm): Track [SPI_CS] on F.Cu, length 0.9899 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(154.0750 mm, 126.1750 mm): Track [ETH_RX_CLK] on B.Cu, length 0.6364 mm
+    @(154.1750 mm, 124.6750 mm): Track [SPI_CS] on B.Cu, length 1.1000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(154.1750 mm, 125.7750 mm): Track [SPI_CS] on B.Cu, length 0.4950 mm
+    @(154.0750 mm, 126.1750 mm): Track [ETH_RX_CLK] on B.Cu, length 0.6364 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(160.0250 mm, 126.8250 mm): Track [SPI_CS] on F.Cu, length 0.0707 mm
+    @(160.1750 mm, 127.1250 mm): Track [VDD_SPI] on F.Cu, length 0.3000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(159.7250 mm, 126.8250 mm): Track [SPI_CS] on F.Cu, length 0.3000 mm
+    @(160.1750 mm, 127.1250 mm): Track [VDD_SPI] on F.Cu, length 0.3000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(160.0750 mm, 126.7750 mm): Track [SPI_CS] on F.Cu, length 0.5000 mm
+    @(160.9750 mm, 127.0750 mm): Track [VDD_SPI] on F.Cu, length 0.7500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0923 mm)
+    Local override; error
+    @(152.5250 mm, 119.0250 mm): Track [ETH_TX_CLK] on B.Cu, length 0.6364 mm
+    @(152.8750 mm, 119.1750 mm): Via [VDD_SPI] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(160.0750 mm, 126.7750 mm): Track [SPI_CS] on F.Cu, length 0.5000 mm
+    @(160.2250 mm, 127.0750 mm): Track [VDD_SPI] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0778 mm)
+    Local override; error
+    @(109.6750 mm, 110.1250 mm): Track [VLNA_HB] on F.Cu, length 0.5500 mm
+    @(109.6250 mm, 109.6750 mm): Via [HB_VBIAS] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0778 mm)
+    Local override; error
+    @(109.6250 mm, 110.1750 mm): Track [VLNA_HB] on F.Cu, length 0.0707 mm
+    @(109.6250 mm, 109.6750 mm): Via [HB_VBIAS] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(126.8750 mm, 126.3750 mm): Via [LDO_EN_HB] on F.Cu - B.Cu
+    @(127.1250 mm, 125.9250 mm): Track [VLNA_MB] on F.Cu, length 0.8500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(111.8250 mm, 113.7250 mm): Track [5V0] on B.Cu, length 0.1500 mm
+    @(111.8250 mm, 114.0250 mm): Track [LDO_EN_LB] on B.Cu, length 0.1500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(113.0750 mm, 114.9750 mm): Track [LDO_EN_LB] on B.Cu, length 0.6364 mm
+    @(112.5750 mm, 114.2250 mm): Track [5V0] on B.Cu, length 7.7500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0906 mm)
+    Local override; error
+    @(112.4250 mm, 114.5250 mm): Track [LDO_EN_LB] on B.Cu, length 0.0707 mm
+    @(111.9750 mm, 113.7250 mm): Track [5V0] on B.Cu, length 0.6364 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(111.5750 mm, 113.4750 mm): Track [5V0] on B.Cu, length 0.3536 mm
+    @(111.8250 mm, 114.0250 mm): Track [LDO_EN_LB] on B.Cu, length 0.1500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0906 mm)
+    Local override; error
+    @(112.4250 mm, 114.5250 mm): Track [LDO_EN_LB] on B.Cu, length 0.0707 mm
+    @(112.4250 mm, 114.1750 mm): Track [5V0] on B.Cu, length 0.1000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0906 mm)
+    Local override; error
+    @(113.0750 mm, 114.9750 mm): Track [LDO_EN_LB] on B.Cu, length 0.6364 mm
+    @(112.5250 mm, 114.1750 mm): Track [5V0] on B.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(136.0750 mm, 124.1250 mm): Track [LF_B] on F.Cu, length 1.9500 mm
+    @(136.3750 mm, 124.8250 mm): Track [5V0] on F.Cu, length 0.4950 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(138.6750 mm, 123.5750 mm): Via [VGB] on F.Cu - B.Cu
+    @(138.4250 mm, 123.9750 mm): Track [5V0] on F.Cu, length 0.2000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(105.5750 mm, 108.1250 mm): Via [LDO_EN_LB] on F.Cu - B.Cu
+    @(104.8750 mm, 108.5750 mm): Track [5V0] on F.Cu, length 1.7000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(138.4250 mm, 135.7750 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+    @(138.8750 mm, 135.3750 mm): Track [5V0] on F.Cu, length 0.2000 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(135.7250 mm, 132.5250 mm): Track [5V0] on F.Cu, length 1.5500 mm
+    @(136.1750 mm, 131.7250 mm): Via [LDO_EN_LB] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(136.4250 mm, 124.2250 mm): Track [5V0] on F.Cu, length 0.0707 mm
+    @(136.0750 mm, 124.1250 mm): Track [LF_B] on F.Cu, length 1.9500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0865 mm)
+    Local override; error
+    @(136.3750 mm, 124.2750 mm): Track [5V0] on F.Cu, length 0.5500 mm
+    @(136.0750 mm, 124.1250 mm): Track [LF_B] on F.Cu, length 1.9500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(138.6750 mm, 123.5750 mm): Via [VGB] on F.Cu - B.Cu
+    @(138.5750 mm, 124.0750 mm): Track [5V0] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0750 mm)
+    Local override; error
+    @(129.3250 mm, 121.9250 mm): Track [5V0] on F.Cu, length 2.2000 mm
+    @(129.7750 mm, 121.1250 mm): Via [VLNA_HB] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0993 mm)
+    Local override; error
+    @(138.5250 mm, 124.0250 mm): Track [5V0] on F.Cu, length 0.0500 mm
+    @(138.6750 mm, 123.5750 mm): Via [VGB] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(138.6750 mm, 123.5750 mm): Via [VGB] on F.Cu - B.Cu
+    @(138.4750 mm, 124.0250 mm): Track [5V0] on F.Cu, length 0.0707 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0967 mm)
+    Local override; error
+    @(138.6750 mm, 135.3750 mm): Track [5V0] on F.Cu, length 0.0707 mm
+    @(138.4250 mm, 135.7750 mm): Via [ETH_TX_CLK] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(160.3750 mm, 135.2750 mm): Track [USB_DP] on F.Cu, length 0.9899 mm
+    @(159.8250 mm, 135.5250 mm): Track [CC2] on F.Cu, length 0.2828 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(160.3750 mm, 135.2750 mm): Track [USB_DP] on F.Cu, length 0.9899 mm
+    @(160.1250 mm, 135.2250 mm): Track [CC2] on F.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(160.3750 mm, 135.2750 mm): Track [USB_DP] on F.Cu, length 0.9899 mm
+    @(159.8250 mm, 135.4750 mm): Track [CC2] on F.Cu, length 0.0500 mm
+[clearance]: Clearance violation ( clearance 0.1000 mm; actual 0.0851 mm)
+    Local override; error
+    @(162.3750 mm, 135.2750 mm): Track [USB_DP] on F.Cu, length 2.0000 mm
+    @(160.3250 mm, 135.0250 mm): Track [CC2] on F.Cu, length 0.2828 mm
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.4300 mm, 122.6400 mm): Reference field of FMB1
+    @(111.3700 mm, 122.5000 mm): Pad 2 [GND] of U22 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.4300 mm, 122.6400 mm): Reference field of FMB1
+    @(113.3400 mm, 123.1800 mm): Pad 1 [FMB_N1] of FMB2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.1400 mm, 124.9000 mm): Reference field of L330
+    @(113.3400 mm, 123.1800 mm): Pad 1 [FMB_N1] of FMB2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.1700 mm, 122.6950 mm): Reference field of FMB2
+    @(111.9700 mm, 124.4150 mm): Pad 1 [MB_LNA_O] of L330 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.1700 mm, 122.6950 mm): Reference field of FMB2
+    @(111.3700 mm, 123.8000 mm): Pad 1 [MB_LNA_O] of U22 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.1700 mm, 122.6950 mm): Reference field of FMB2
+    @(111.9500 mm, 123.8000 mm): Pad 1 [MB_LNA_O] of FMB1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.1700 mm, 122.6950 mm): Reference field of FMB2
+    @(112.9100 mm, 123.8000 mm): Pad 2 [FMB_N1] of FMB1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.1400 mm, 124.9000 mm): Reference field of L330
+    @(112.9100 mm, 123.8000 mm): Pad 2 [FMB_N1] of FMB1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.1700 mm, 122.6950 mm): Reference field of FMB2
+    @(111.3700 mm, 122.5000 mm): Pad 2 [GND] of U22 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.5500 mm, 122.6400 mm): Reference field of FMB4
+    @(113.3400 mm, 123.1800 mm): Pad 1 [FMB_N1] of FMB2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.5500 mm, 122.6400 mm): Reference field of FMB4
+    @(113.3400 mm, 122.2100 mm): Pad 2 [FMB_M1] of FMB2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.4300 mm, 122.6400 mm): Reference field of FMB1
+    @(113.3400 mm, 122.2100 mm): Pad 2 [FMB_M1] of FMB2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.9300 mm, 126.0000 mm): Reference field of C331
+    @(111.9700 mm, 126.3375 mm): Pad 1 [MB_CHK] of L331 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.1400 mm, 124.9000 mm): Reference field of L330
+    @(111.9700 mm, 126.3375 mm): Pad 1 [MB_CHK] of L331 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.9300 mm, 126.0000 mm): Reference field of C331
+    @(111.9700 mm, 125.3850 mm): Pad 2 [MB_CHK] of L330 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.9300 mm, 126.0000 mm): Reference field of C331
+    @(111.9700 mm, 124.4150 mm): Pad 1 [MB_LNA_O] of L330 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.5000 mm, 124.2600 mm): Polygon of U22 on F.Silkscreen
+    @(111.9700 mm, 124.4150 mm): Pad 1 [MB_LNA_O] of L330 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.4200 mm, 125.4000 mm): Reference field of U22
+    @(111.9700 mm, 125.3850 mm): Pad 2 [MB_CHK] of L330 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.4200 mm, 125.4000 mm): Reference field of U22
+    @(111.9700 mm, 126.3375 mm): Pad 1 [MB_CHK] of L331 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.4200 mm, 125.4000 mm): Reference field of U22
+    @(110.7700 mm, 125.5200 mm): Pad 1 [MB_CHK] of C331 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.4200 mm, 107.4000 mm): Reference field of U21
+    @(110.7700 mm, 107.5200 mm): Pad 1 [LB_CHK] of C311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.4200 mm, 107.4000 mm): Reference field of U21
+    @(111.9700 mm, 108.3375 mm): Pad 1 [LB_CHK] of L311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.5000 mm, 106.2600 mm): Polygon of U21 on F.Silkscreen
+    @(111.9700 mm, 106.4150 mm): Pad 1 [LB_LNA_O] of L310 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.3600 mm, 113.5000 mm): Segment of J1 on F.Silkscreen
+    @(104.2000 mm, 113.4950 mm): Pad 1 [RF_IN_SMA] of D301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.3600 mm, 113.5000 mm): Segment of J1 on F.Silkscreen
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.8600 mm, 113.7500 mm): Segment of J1 on F.Silkscreen
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(105.3700 mm, 113.9800 mm): Reference field of D301
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.8600 mm, 113.2500 mm): Segment of J1 on F.Silkscreen
+    @(104.2000 mm, 113.4950 mm): Pad 1 [RF_IN_SMA] of D301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.8600 mm, 113.2500 mm): Segment of J1 on F.Silkscreen
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(108.1400 mm, 103.3400 mm): Reference field of C310
+    @(106.9800 mm, 103.0000 mm): Pad 2 [GND] of C312 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(105.6000 mm, 113.5000 mm): Reference field of J1
+    @(104.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(105.6000 mm, 113.5000 mm): Reference field of J1
+    @(105.8600 mm, 113.5000 mm): Pad 2 [SW1_COM] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.3800 mm, 109.5700 mm): Reference field of R350
+    @(108.2400 mm, 109.1200 mm): Pad 1 [HB_VBIAS] of C352 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.3800 mm, 109.5700 mm): Reference field of R350
+    @(109.2000 mm, 109.1200 mm): Pad 2 [GND] of C352 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.8800 mm, 111.0400 mm): Reference field of C350
+    @(109.8900 mm, 110.7400 mm): Pad 2 [HB_VBIAS] of R350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.8800 mm, 111.0400 mm): Reference field of C350
+    @(111.9700 mm, 110.4625 mm): Pad 2 [VLNA_LB] of L311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(107.4600 mm, 115.1000 mm): Reference field of U20
+    @(108.7300 mm, 115.6000 mm): Pad 1 [3V3] of C302 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(105.3700 mm, 113.9800 mm): Reference field of D301
+    @(105.8600 mm, 113.5000 mm): Pad 2 [SW1_COM] of C301 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(120.9100 mm, 122.6300 mm): Reference field of FMB11
+    @(119.7000 mm, 123.1800 mm): Pad 1 [FMB_N4] of FMB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(120.9100 mm, 122.6300 mm): Reference field of FMB11
+    @(119.7000 mm, 122.2100 mm): Pad 2 [FMB_M7] of FMB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.6700 mm, 122.6400 mm): Reference field of FMB6
+    @(115.4600 mm, 122.2100 mm): Pad 2 [GND] of FMB5 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.5500 mm, 122.6400 mm): Reference field of FMB4
+    @(115.4600 mm, 122.2100 mm): Pad 2 [GND] of FMB5 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.6700 mm, 122.6400 mm): Reference field of FMB6
+    @(117.5800 mm, 123.1750 mm): Pad 1 [FMB_N3] of FMB7 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.6700 mm, 122.6400 mm): Reference field of FMB6
+    @(115.4600 mm, 123.1800 mm): Pad 1 [FMB_N2] of FMB5 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.5500 mm, 122.6400 mm): Reference field of FMB4
+    @(115.4600 mm, 123.1800 mm): Pad 1 [FMB_N2] of FMB5 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.2900 mm, 122.6950 mm): Reference field of FMB5
+    @(114.0700 mm, 123.8000 mm): Pad 1 [FMB_N1] of FMB4 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.2900 mm, 122.6950 mm): Reference field of FMB5
+    @(115.0300 mm, 123.8000 mm): Pad 2 [FMB_N2] of FMB4 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.4200 mm, 122.6950 mm): Reference field of FMB7
+    @(116.1900 mm, 123.8000 mm): Pad 1 [FMB_N2] of FMB6 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.4200 mm, 122.6950 mm): Reference field of FMB7
+    @(117.1500 mm, 123.8000 mm): Pad 2 [FMB_N3] of FMB6 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.6700 mm, 122.6400 mm): Reference field of FMB6
+    @(117.5800 mm, 122.2150 mm): Pad 2 [GND] of FMB7 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(118.5300 mm, 122.6950 mm): Reference field of FMB9
+    @(118.3050 mm, 123.8000 mm): Pad 1 [FMB_N3] of FMB8 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(118.5300 mm, 122.6950 mm): Reference field of FMB9
+    @(119.2750 mm, 123.8000 mm): Pad 2 [FMB_N4] of FMB8 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(120.6500 mm, 122.6950 mm): Reference field of FMB12
+    @(120.4250 mm, 123.8000 mm): Pad 1 [FMB_N4] of FMB11 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(120.6500 mm, 122.6950 mm): Reference field of FMB12
+    @(121.3950 mm, 123.8000 mm): Pad 2 [FMB_N5] of FMB11 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(102.1000 mm, 132.7900 mm): Segment of J3 on F.Silkscreen
+    @(102.4800 mm, 132.0000 mm): Pad 2 [EXTREF_AC] of C702 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(102.3500 mm, 132.2900 mm): Segment of J3 on F.Silkscreen
+    @(102.4800 mm, 132.0000 mm): Pad 2 [EXTREF_AC] of C702 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(140.3500 mm, 115.7300 mm): Reference field of L360
+    @(139.0000 mm, 116.9000 mm): Pad 3 [GB_O] of U25 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(140.3500 mm, 115.7300 mm): Reference field of L360
+    @(140.9350 mm, 115.8625 mm): Pad 1 [GB_CHK] of L361 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(141.6950 mm, 115.7400 mm): Reference field of C362
+    @(140.9350 mm, 115.8625 mm): Pad 1 [GB_CHK] of L361 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(141.8855 mm, 104.6655 mm): Reference field of C373
+    @(141.4177 mm, 104.3788 mm): Pad 2 [GND] of R370 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(141.8855 mm, 104.6655 mm): Reference field of C373
+    @(141.4177 mm, 105.3988 mm): Pad 1 [RFFC_REXT] of R370 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.2533 mm, 104.5335 mm): Reference field of C374
+    @(137.3000 mm, 106.1500 mm): Pad 4 [3V0_RF] of Y1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.2533 mm, 104.5335 mm): Reference field of C374
+    @(137.5211 mm, 104.2014 mm): Pad 1 [3V0_RF] of C376 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.2533 mm, 104.5335 mm): Reference field of C374
+    @(137.5211 mm, 103.2414 mm): Pad 2 [GND] of C376 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(141.6950 mm, 115.7400 mm): Reference field of C362
+    @(143.8300 mm, 115.3200 mm): Pad 4 [MIX_IN_P] of T1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(144.8220 mm, 102.5080 mm): Reference field of C380
+    @(144.6331 mm, 102.9731 mm): Pad 1 [3V0_RF] of C377 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(144.8220 mm, 102.5080 mm): Reference field of C380
+    @(144.6331 mm, 102.0131 mm): Pad 2 [GND] of C377 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(146.3115 mm, 103.7113 mm): Reference field of C375
+    @(145.9820 mm, 102.9880 mm): Pad 1 [LF1] of C380 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(146.3115 mm, 103.7113 mm): Reference field of C375
+    @(145.9820 mm, 102.0280 mm): Pad 2 [LF2] of C380 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(148.9389 mm, 107.3183 mm): Reference field of C378
+    @(148.6206 mm, 106.5870 mm): Pad 1 [3V0_RF] of C701 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(148.9389 mm, 107.3183 mm): Reference field of C378
+    @(148.6206 mm, 105.6270 mm): Pad 2 [GND] of C701 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(146.3115 mm, 103.7113 mm): Reference field of C375
+    @(145.7823 mm, 104.4088 mm): Pad 2 [GND] of C372 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.3611 mm, 103.7214 mm): Reference field of C376
+    @(135.8749 mm, 103.4201 mm): Pad 2 [LF3] of R382 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.3611 mm, 103.7214 mm): Reference field of C376
+    @(136.9252 mm, 101.8875 mm): Pad 1 [REFCLK_RF] of C384 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.2259 mm, 101.8600 mm): Reference field of R381
+    @(137.8852 mm, 101.8875 mm): Pad 2 [REF_IN] of C384 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.3611 mm, 103.7214 mm): Reference field of C376
+    @(135.8749 mm, 104.4401 mm): Pad 1 [LF_B] of R382 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.6000 mm, 104.7000 mm): Reference field of Y1
+    @(135.8749 mm, 104.4401 mm): Pad 1 [LF_B] of R382 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.4052 mm, 100.7275 mm): Reference field of C384
+    @(139.3959 mm, 101.3500 mm): Pad 2 [LF_B] of R381 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(141.9376 mm, 102.3421 mm): Reference field of R380
+    @(141.6810 mm, 101.8981 mm): Pad 2 [LF2] of C381 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(141.8855 mm, 104.6655 mm): Reference field of C373
+    @(141.6810 mm, 102.8581 mm): Pad 1 [LF_A] of C381 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(141.9376 mm, 102.3421 mm): Reference field of R380
+    @(141.6810 mm, 102.8581 mm): Pad 1 [LF_A] of C381 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(143.4731 mm, 102.4931 mm): Reference field of C377
+    @(143.1076 mm, 101.8321 mm): Pad 2 [LF_A] of R380 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(153.3450 mm, 103.3300 mm): Reference field of D302
+    @(152.8650 mm, 101.9000 mm): Pad 1 [NAT_RF] of J2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(153.3450 mm, 103.3300 mm): Reference field of D302
+    @(155.6900 mm, 102.1000 mm): Pad 2 [GND] of J2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(152.8650 mm, 104.3600 mm): Segment of J2 on F.Silkscreen
+    @(152.8600 mm, 104.5000 mm): Pad 1 [NAT_RF] of D302 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(153.1150 mm, 104.8600 mm): Segment of J2 on F.Silkscreen
+    @(152.8600 mm, 104.5000 mm): Pad 1 [NAT_RF] of D302 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(156.0000 mm, 107.3300 mm): Reference field of R384
+    @(154.7255 mm, 106.9202 mm): Pad 2 [GND] of C386 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(125.5000 mm, 113.3050 mm): Reference field of FHB8
+    @(125.0600 mm, 112.2000 mm): Pad 1 [FHB_N3] of FHB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(129.0000 mm, 115.1000 mm): Reference field of U11
+    @(129.2712 mm, 114.5274 mm): Pad 1 [VLNA_HB] of C353 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(125.5000 mm, 113.3050 mm): Reference field of FHB8
+    @(126.0200 mm, 112.2000 mm): Pad 2 [HB_HPF_O] of FHB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(129.0000 mm, 115.1000 mm): Reference field of U11
+    @(130.2312 mm, 114.5274 mm): Pad 2 [GND] of C353 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(129.7512 mm, 113.3674 mm): Reference field of C353
+    @(129.4618 mm, 113.1956 mm): Pad 1 [VLNA_HB] of C354 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(129.7512 mm, 113.3674 mm): Reference field of C353
+    @(130.4218 mm, 113.1956 mm): Pad 2 [GND] of C354 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5000 mm, 126.3200 mm): Reference field of C602
+    @(137.3625 mm, 125.4500 mm): Pad 3 [5V0] of U12 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.5000 mm, 129.0700 mm): Reference field of C609
+    @(136.5500 mm, 128.0000 mm): Pad 1 [5V0] of C602 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.5000 mm, 129.0700 mm): Reference field of C609
+    @(138.4500 mm, 128.0000 mm): Pad 2 [GND] of C602 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(130.0000 mm, 129.0700 mm): Reference field of C610
+    @(127.8625 mm, 128.4500 mm): Pad 3 [LDO_EN_MB] of U10 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(130.0000 mm, 129.0700 mm): Reference field of C610
+    @(130.1375 mm, 128.4500 mm): Pad 4 [<no net>] of U10 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(143.5000 mm, 127.5700 mm): Reference field of C606
+    @(143.8625 mm, 126.9500 mm): Pad 3 [5V0] of U8 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(146.4179 mm, 128.2216 mm): Reference field of R205
+    @(144.2750 mm, 129.0000 mm): Pad 2 [GND] of C606 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5000 mm, 126.3200 mm): Reference field of C602
+    @(139.6375 mm, 125.4500 mm): Pad 4 [<no net>] of U12 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(140.6615 mm, 127.0994 mm): Reference field of R206
+    @(138.4500 mm, 128.0000 mm): Pad 2 [GND] of C602 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(143.0000 mm, 129.5000 mm): Reference field of U7
+    @(142.7250 mm, 129.0000 mm): Pad 1 [3V0_RF] of C606 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(143.0000 mm, 129.5000 mm): Reference field of U7
+    @(144.2750 mm, 129.0000 mm): Pad 2 [GND] of C606 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(133.0000 mm, 109.3000 mm): Reference field of U24
+    @(132.1800 mm, 109.7000 mm): Pad 2 [GND] of C360 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(123.3800 mm, 113.3050 mm): Reference field of FHB5
+    @(122.9400 mm, 112.2000 mm): Pad 1 [FHB_N2] of FHB7 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(123.3800 mm, 113.3050 mm): Reference field of FHB5
+    @(123.9000 mm, 112.2000 mm): Pad 2 [FHB_N3] of FHB7 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(121.2600 mm, 113.3050 mm): Reference field of FHB2
+    @(120.8200 mm, 112.2000 mm): Pad 1 [FHB_N1] of FHB4 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(121.2600 mm, 113.3050 mm): Reference field of FHB2
+    @(121.7800 mm, 112.2000 mm): Pad 2 [FHB_N2] of FHB4 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(118.9900 mm, 106.9050 mm): Reference field of FLB4
+    @(118.5450 mm, 105.8000 mm): Pad 1 [FLB_N2] of FLB6 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.8700 mm, 112.6800 mm): Reference field of C351
+    @(113.6600 mm, 113.2000 mm): Pad 4 [GND] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.8700 mm, 112.6800 mm): Reference field of C351
+    @(113.6600 mm, 112.7000 mm): Pad 3 [<no net>] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.8700 mm, 112.6800 mm): Reference field of C351
+    @(114.6600 mm, 112.4500 mm): Pad 9 [GND] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(120.9100 mm, 122.6300 mm): Reference field of FMB11
+    @(121.8200 mm, 123.1800 mm): Pad 1 [FMB_N5] of FMB12 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(120.9100 mm, 122.6300 mm): Reference field of FMB11
+    @(121.8200 mm, 122.2100 mm): Pad 2 [FMB_M9] of FMB12 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(123.0300 mm, 122.6300 mm): Reference field of FMB14
+    @(121.8200 mm, 123.1800 mm): Pad 1 [FMB_N5] of FMB12 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(123.0300 mm, 122.6300 mm): Reference field of FMB14
+    @(121.8200 mm, 122.2100 mm): Pad 2 [FMB_M9] of FMB12 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(118.7900 mm, 122.6300 mm): Reference field of FMB8
+    @(119.7000 mm, 123.1800 mm): Pad 1 [FMB_N4] of FMB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(118.7900 mm, 122.6300 mm): Reference field of FMB8
+    @(119.7000 mm, 122.2100 mm): Pad 2 [FMB_M7] of FMB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.1800 mm, 120.9750 mm): Reference field of FMB3
+    @(111.3700 mm, 122.5000 mm): Pad 2 [GND] of U22 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(118.7900 mm, 122.6300 mm): Reference field of FMB8
+    @(117.5800 mm, 122.2150 mm): Pad 2 [GND] of FMB7 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(118.7900 mm, 122.6300 mm): Reference field of FMB8
+    @(117.5800 mm, 123.1750 mm): Pad 1 [FMB_N3] of FMB7 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.4811 mm, 118.6654 mm): Reference field of C363
+    @(139.0000 mm, 118.5000 mm): Pad 2 [MIX_DRV] of C364 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5000 mm, 117.3300 mm): Reference field of R360
+    @(139.0000 mm, 117.5400 mm): Pad 1 [GB_O] of C364 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5000 mm, 117.3300 mm): Reference field of R360
+    @(136.0000 mm, 116.9000 mm): Pad 1 [GB_I] of U25 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5000 mm, 117.3300 mm): Reference field of R360
+    @(136.0000 mm, 117.5400 mm): Pad 2 [GB_I] of C361 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5000 mm, 117.3300 mm): Reference field of R360
+    @(137.5000 mm, 116.8125 mm): Pad 2 [GND] of U25 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5000 mm, 117.3300 mm): Reference field of R360
+    @(139.0000 mm, 116.9000 mm): Pad 3 [GB_O] of U25 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(139.3850 mm, 114.8000 mm): Reference field of L361
+    @(139.0000 mm, 116.9000 mm): Pad 3 [GB_O] of U25 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(140.1600 mm, 118.0200 mm): Reference field of C364
+    @(139.8650 mm, 116.9000 mm): Pad 1 [GB_O] of L360 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.4906 mm, 110.4133 mm): Reference field of R702
+    @(135.6082 mm, 111.0897 mm): Pad 1 [TCXO_OUT] of R701 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.4906 mm, 110.4133 mm): Reference field of R702
+    @(135.6082 mm, 110.0697 mm): Pad 2 [REFCLK_RF] of R701 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(142.6700 mm, 114.2700 mm): Reference field of C370
+    @(142.3500 mm, 112.5500 mm): Pad 18 [<no net>] of U3 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(142.6700 mm, 114.2700 mm): Reference field of C370
+    @(142.8500 mm, 112.5500 mm): Pad 19 [3V0_RF] of U3 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(146.3115 mm, 103.7113 mm): Reference field of C375
+    @(145.7823 mm, 105.3688 mm): Pad 1 [3V0_RF] of C372 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.4811 mm, 118.6654 mm): Reference field of C363
+    @(136.9900 mm, 118.5000 mm): Pad 1 [SW2_COM] of R360 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.4811 mm, 118.6654 mm): Reference field of C363
+    @(138.0100 mm, 118.5000 mm): Pad 2 [MIX_DRV] of R360 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.7488 mm, 120.0974 mm): Reference field of C605
+    @(138.9611 mm, 119.8254 mm): Pad 2 [GND] of C363 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.7488 mm, 120.0974 mm): Reference field of C605
+    @(138.0011 mm, 119.8254 mm): Pad 1 [VGB] of C363 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.5000 mm, 122.1000 mm): Reference field of U12
+    @(136.9738 mm, 121.5274 mm): Pad 1 [5V0] of C605 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.5000 mm, 122.1000 mm): Reference field of U12
+    @(138.5238 mm, 121.5274 mm): Pad 2 [GND] of C605 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(134.7049 mm, 103.9301 mm): Reference field of R382
+    @(133.8289 mm, 104.6426 mm): Pad 1 [LF3] of C383 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(134.7049 mm, 103.9301 mm): Reference field of R382
+    @(133.8289 mm, 103.6826 mm): Pad 2 [GND] of C383 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.2259 mm, 101.8600 mm): Reference field of R381
+    @(137.5211 mm, 103.2414 mm): Pad 2 [GND] of C376 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(140.2477 mm, 104.8888 mm): Reference field of R370
+    @(139.4133 mm, 105.0135 mm): Pad 1 [3V0_RF] of C374 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(140.2477 mm, 104.8888 mm): Reference field of R370
+    @(139.4133 mm, 104.0535 mm): Pad 2 [GND] of C374 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(144.6223 mm, 104.8888 mm): Reference field of C372
+    @(144.6331 mm, 102.9731 mm): Pad 1 [3V0_RF] of C377 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(143.4731 mm, 102.4931 mm): Reference field of C377
+    @(143.0455 mm, 104.1855 mm): Pad 2 [GND] of C373 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(143.4731 mm, 102.4931 mm): Reference field of C377
+    @(143.1076 mm, 102.8521 mm): Pad 1 [LF1] of R380 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.4906 mm, 110.4133 mm): Reference field of R702
+    @(135.9000 mm, 108.2500 mm): Pad 2 [GND] of Y1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(136.4906 mm, 110.4133 mm): Reference field of R702
+    @(137.3000 mm, 108.2500 mm): Pad 3 [TCXO_OUT] of Y1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2100 mm, 114.4400 mm): Reference field of C302
+    @(107.4600 mm, 113.9000 mm): Pad 8 [GND] of U20 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2100 mm, 114.4400 mm): Reference field of C302
+    @(107.8600 mm, 113.9000 mm): Pad 1 [3V3] of U20 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2100 mm, 114.4400 mm): Reference field of C302
+    @(109.4300 mm, 113.7900 mm): Pad 2 [GND] of FHP2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.6400 mm, 111.0400 mm): Reference field of FHP3
+    @(111.9700 mm, 110.4625 mm): Pad 2 [VLNA_LB] of L311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.6000 mm, 113.3050 mm): Reference field of FHP2
+    @(110.1600 mm, 112.2000 mm): Pad 1 [FHP_N1] of FHP3 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.6000 mm, 113.3050 mm): Reference field of FHP2
+    @(111.4000 mm, 112.2000 mm): Pad 1 [HB_PRE_O] of C350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.6000 mm, 113.3050 mm): Reference field of FHP2
+    @(111.1200 mm, 112.2000 mm): Pad 2 [HB_PRE_O] of FHP3 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.6400 mm, 111.0400 mm): Reference field of FHP3
+    @(109.8900 mm, 110.7400 mm): Pad 2 [HB_VBIAS] of R350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(108.5200 mm, 111.0400 mm): Reference field of FHP1
+    @(109.8900 mm, 110.7400 mm): Pad 2 [HB_VBIAS] of R350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(108.7200 mm, 107.9600 mm): Reference field of C352
+    @(110.7700 mm, 107.5200 mm): Pad 1 [LB_CHK] of C311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(108.7200 mm, 107.9600 mm): Reference field of C352
+    @(110.7700 mm, 108.4800 mm): Pad 2 [GND] of C311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(108.5200 mm, 111.0400 mm): Reference field of FHP1
+    @(108.8700 mm, 110.7400 mm): Pad 1 [VLNA_HB] of R350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.6400 mm, 111.0400 mm): Reference field of FHP3
+    @(108.8700 mm, 110.7400 mm): Pad 1 [VLNA_HB] of R350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.1400 mm, 106.9000 mm): Reference field of L310
+    @(113.7300 mm, 105.8000 mm): Pad 2 [LB_F_IN] of C313 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.1400 mm, 106.9000 mm): Reference field of L310
+    @(112.7700 mm, 105.8000 mm): Pad 1 [LB_LNA_O] of C313 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.8600 mm, 106.9050 mm): Reference field of FLB2
+    @(116.4250 mm, 105.8000 mm): Pad 1 [FLB_N1] of FLB3 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.8600 mm, 106.9050 mm): Reference field of FLB2
+    @(117.3950 mm, 105.8000 mm): Pad 2 [FLB_N2] of FLB3 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(121.1100 mm, 106.9050 mm): Reference field of FLB7
+    @(120.6650 mm, 105.8000 mm): Pad 1 [FLB_N3] of FLB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(121.1100 mm, 106.9050 mm): Reference field of FLB7
+    @(121.6350 mm, 105.8000 mm): Pad 2 [LB_OUT] of FLB9 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(117.6400 mm, 111.0400 mm): Reference field of C355
+    @(116.6600 mm, 110.2650 mm): Pad 2 [VLNA_HB] of L350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(117.6400 mm, 111.0400 mm): Reference field of C355
+    @(116.6600 mm, 111.2350 mm): Pad 1 [HB_LNA_O] of L350 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(115.4900 mm, 110.7500 mm): Reference field of L350
+    @(115.6600 mm, 111.7000 mm): Pad 8 [<no net>] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(115.4900 mm, 110.7500 mm): Reference field of L350
+    @(115.6600 mm, 112.2000 mm): Pad 7 [HB_LNA_O] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(115.4900 mm, 110.7500 mm): Reference field of L350
+    @(114.6600 mm, 112.4500 mm): Pad 9 [GND] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.8700 mm, 112.6800 mm): Reference field of C351
+    @(113.6600 mm, 112.2000 mm): Pad 2 [HB_LNA_I] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.8700 mm, 112.6800 mm): Reference field of C351
+    @(113.6600 mm, 111.7000 mm): Pad 1 [HB_VBIAS] of U23 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.2500 mm, 104.6400 mm): Reference field of C313
+    @(111.3700 mm, 104.5000 mm): Pad 2 [GND] of U21 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.9300 mm, 108.0000 mm): Reference field of C311
+    @(111.9700 mm, 108.3375 mm): Pad 1 [LB_CHK] of L311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.9300 mm, 108.0000 mm): Reference field of C311
+    @(111.9700 mm, 107.3850 mm): Pad 2 [LB_CHK] of L310 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.9300 mm, 108.0000 mm): Reference field of C311
+    @(111.9700 mm, 106.4150 mm): Pad 1 [LB_LNA_O] of L310 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(113.1400 mm, 106.9000 mm): Reference field of L310
+    @(111.9700 mm, 108.3375 mm): Pad 1 [LB_CHK] of L311 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(153.5000 mm, 122.0700 mm): Reference field of R120
+    @(153.3250 mm, 121.5000 mm): Pad 2 [CHIP_PU] of R101 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(153.5000 mm, 122.0700 mm): Reference field of R120
+    @(155.0200 mm, 121.5000 mm): Pad 1 [3V3] of C108 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(156.4531 mm, 123.2359 mm): Reference field of C113
+    @(154.3250 mm, 123.5000 mm): Pad 2 [SPI_CS] of R120 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(153.5000 mm, 124.0700 mm): Reference field of R103
+    @(154.3250 mm, 123.5000 mm): Pad 2 [SPI_CS] of R120 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(154.0350 mm, 109.3275 mm): Reference field of R392
+    @(154.8250 mm, 111.0475 mm): Pad 2 [GND] of R395 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(154.0350 mm, 109.3275 mm): Reference field of R392
+    @(153.2650 mm, 111.0475 mm): Pad 2 [GND] of R393 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(154.4350 mm, 110.5375 mm): Reference field of R393
+    @(154.8250 mm, 111.0475 mm): Pad 2 [GND] of R395 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(156.0000 mm, 111.8300 mm): Reference field of R383
+    @(154.8250 mm, 111.0475 mm): Pad 2 [GND] of R395 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(151.0749 mm, 113.6053 mm): Reference field of C389
+    @(152.9606 mm, 113.6162 mm): Pad 1 [RFFC_RESETX_I] of R388 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(153.5000 mm, 124.0700 mm): Reference field of R103
+    @(152.6750 mm, 123.5000 mm): Pad 1 [VDD_SPI] of R120 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(151.1764 mm, 111.1367 mm): Reference field of C385
+    @(153.2650 mm, 111.0475 mm): Pad 2 [GND] of R393 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(149.3500 mm, 110.6000 mm): Reference field of T2
+    @(148.9050 mm, 110.3500 mm): Pad 1 [IF_SE] of L390 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(149.3150 mm, 111.8550 mm): Reference field of C390
+    @(148.9050 mm, 110.3500 mm): Pad 1 [IF_SE] of L390 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(149.3500 mm, 110.6000 mm): Reference field of T2
+    @(149.7550 mm, 110.3450 mm): Pad 1 [IF_SE] of U4 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(149.3150 mm, 111.8550 mm): Reference field of C390
+    @(149.7550 mm, 110.3450 mm): Pad 1 [IF_SE] of U4 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(148.5000 mm, 111.3000 mm): Circle of T2 on F.Silkscreen
+    @(148.1550 mm, 111.3750 mm): Pad 1 [IF_CT] of C390 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(147.4000 mm, 110.1000 mm): Reference field of U3
+    @(148.0550 mm, 110.8550 mm): Pad 1 [IF_CT] of T2 on F.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2194 mm)
+    Rule: board setup constraints; warning
+    @(161.3007 mm, 132.9597 mm): Via [GND] on F.Cu - B.Cu
+    @(161.3007 mm, 132.5403 mm): Via [GND] on F.Cu - B.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2472 mm)
+    Rule: board setup constraints; warning
+    @(128.2750 mm, 119.4750 mm): Via [3V3] on F.Cu - B.Cu
+    @(128.4750 mm, 119.0750 mm): Via [3V3] on F.Cu - B.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2272 mm)
+    Rule: board setup constraints; warning
+    @(153.2750 mm, 118.7750 mm): Via [CHIP_PU] on F.Cu - B.Cu
+    @(153.4250 mm, 118.3750 mm): Via [CHIP_PU] on F.Cu - B.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2243 mm)
+    Rule: board setup constraints; warning
+    @(153.5750 mm, 120.1250 mm): Via [CHIP_PU] on F.Cu - B.Cu
+    @(153.2750 mm, 120.4250 mm): Via [CHIP_PU] on F.Cu - B.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2301 mm)
+    Rule: board setup constraints; warning
+    @(144.1250 mm, 153.6250 mm): Via [PHY_XI] on F.Cu - B.Cu
+    @(143.8750 mm, 153.2750 mm): Via [PHY_XI] on F.Cu - B.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2472 mm)
+    Rule: board setup constraints; warning
+    @(154.4250 mm, 135.6250 mm): Via [ETH_PHY_RST_N] on F.Cu - B.Cu
+    @(154.2250 mm, 136.0250 mm): Via [ETH_PHY_RST_N] on F.Cu - B.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2243 mm)
+    Rule: board setup constraints; warning
+    @(160.4750 mm, 136.8750 mm): Via [USB_DM] on F.Cu - B.Cu
+    @(160.1750 mm, 136.5750 mm): Via [USB_DM] on F.Cu - B.Cu
+[hole_to_hole]: Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2301 mm)
+    Rule: board setup constraints; warning
+    @(151.0750 mm, 135.7750 mm): Via [LDO_EN_MB] on F.Cu - B.Cu
+    @(150.8250 mm, 136.1250 mm): Via [LDO_EN_MB] on F.Cu - B.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.1000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 170.0000 mm): Segment on Edge.Cuts
+    @(101.9000 mm, 113.5000 mm): Pad 1 [RF_IN_SMA] of J1 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 170.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 110.6750 mm): Pad 2 [GND] of J1 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 170.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 110.6750 mm): Pad 2 [GND] of J1 on B.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 170.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 116.3250 mm): Pad 2 [GND] of J1 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 170.0000 mm): Segment on Edge.Cuts
+    @(102.1000 mm, 116.3250 mm): Pad 2 [GND] of J1 on B.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.1000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 100.0000 mm): Segment on Edge.Cuts
+    @(152.8650 mm, 101.9000 mm): Pad 1 [NAT_RF] of J2 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 100.0000 mm): Segment on Edge.Cuts
+    @(155.6900 mm, 102.1000 mm): Pad 2 [GND] of J2 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 100.0000 mm): Segment on Edge.Cuts
+    @(155.6900 mm, 102.1000 mm): Pad 2 [GND] of J2 on B.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 100.0000 mm): Segment on Edge.Cuts
+    @(150.0400 mm, 102.1000 mm): Pad 2 [GND] of J2 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; warning
+    @(100.0000 mm, 100.0000 mm): Segment on Edge.Cuts
+    @(150.0400 mm, 102.1000 mm): Pad 2 [GND] of J2 on B.Cu
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(137.5000 mm, 114.9500 mm): Footprint U25
+    @(140.3500 mm, 116.9000 mm): Footprint L360
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(137.5000 mm, 114.9500 mm): Footprint U25
+    @(139.0000 mm, 118.0200 mm): Footprint C364
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(137.5000 mm, 114.9500 mm): Footprint U25
+    @(136.0000 mm, 118.0200 mm): Footprint C361
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(143.6000 mm, 110.1000 mm): Footprint U3
+    @(140.9350 mm, 114.8000 mm): Footprint L361
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(140.3500 mm, 116.9000 mm): Footprint L360
+    @(140.9350 mm, 114.8000 mm): Footprint L361
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(140.3500 mm, 116.9000 mm): Footprint L360
+    @(139.0000 mm, 118.0200 mm): Footprint C364
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(140.3500 mm, 116.9000 mm): Footprint L360
+    @(141.6950 mm, 116.9000 mm): Footprint C362
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(122.2100 mm, 113.3050 mm): Footprint FHB5
+    @(121.3000 mm, 112.2000 mm): Footprint FHB4
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(122.2100 mm, 113.3050 mm): Footprint FHB5
+    @(122.2100 mm, 115.0250 mm): Footprint FHB6
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(122.2100 mm, 113.3050 mm): Footprint FHB5
+    @(123.4200 mm, 112.2000 mm): Footprint FHB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(116.9100 mm, 105.8000 mm): Footprint FLB3
+    @(117.8200 mm, 106.9050 mm): Footprint FLB4
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(116.9100 mm, 105.8000 mm): Footprint FLB3
+    @(115.7000 mm, 106.9050 mm): Footprint FLB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(121.3000 mm, 112.2000 mm): Footprint FHB4
+    @(120.0900 mm, 113.3050 mm): Footprint FHB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(156.3850 mm, 110.5375 mm): Footprint C393
+    @(157.1650 mm, 110.0575 mm): Footprint L392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(156.3850 mm, 110.5375 mm): Footprint C393
+    @(155.6050 mm, 110.0575 mm): Footprint C392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(108.1400 mm, 122.5000 mm): Footprint C330
+    @(110.4200 mm, 123.1500 mm): Footprint U22
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(153.3450 mm, 104.5000 mm): Footprint D302
+    @(152.8650 mm, 102.1000 mm): Footprint J2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(120.9100 mm, 123.8000 mm): Footprint FMB11
+    @(119.7000 mm, 122.6950 mm): Footprint FMB9
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(120.9100 mm, 123.8000 mm): Footprint FMB11
+    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(120.0900 mm, 115.0250 mm): Footprint FHB3
+    @(120.0900 mm, 113.3050 mm): Footprint FHB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(116.6700 mm, 123.8000 mm): Footprint FMB6
+    @(115.4600 mm, 122.6950 mm): Footprint FMB5
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(116.6700 mm, 123.8000 mm): Footprint FMB6
+    @(117.5800 mm, 122.6950 mm): Footprint FMB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(111.9700 mm, 127.4000 mm): Footprint L331
+    @(110.7700 mm, 126.0000 mm): Footprint C331
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(111.9700 mm, 127.4000 mm): Footprint L331
+    @(111.9700 mm, 124.9000 mm): Footprint L330
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(114.7900 mm, 105.8000 mm): Footprint FLB1
+    @(113.2500 mm, 105.8000 mm): Footprint C313
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(114.7900 mm, 105.8000 mm): Footprint FLB1
+    @(115.7000 mm, 106.9050 mm): Footprint FLB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(158.0450 mm, 109.5775 mm): Footprint C394
+    @(157.1650 mm, 110.0575 mm): Footprint L392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(154.0450 mm, 110.0575 mm): Footprint R394
+    @(153.2650 mm, 110.5375 mm): Footprint R393
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(154.0450 mm, 110.0575 mm): Footprint R394
+    @(154.8250 mm, 110.5375 mm): Footprint R395
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(154.0450 mm, 110.0575 mm): Footprint R394
+    @(155.6050 mm, 110.0575 mm): Footprint C392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(154.0450 mm, 110.0575 mm): Footprint R394
+    @(152.8650 mm, 109.3275 mm): Footprint R392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(121.1500 mm, 105.8000 mm): Footprint FLB9
+    @(119.9400 mm, 106.9050 mm): Footprint FLB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(114.5500 mm, 123.8000 mm): Footprint FMB4
+    @(113.3400 mm, 122.6950 mm): Footprint FMB2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(114.5500 mm, 123.8000 mm): Footprint FMB4
+    @(115.4600 mm, 122.6950 mm): Footprint FMB5
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(113.3400 mm, 122.6950 mm): Footprint FMB2
+    @(112.4300 mm, 123.8000 mm): Footprint FMB1
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(113.3400 mm, 122.6950 mm): Footprint FMB2
+    @(113.3400 mm, 120.9750 mm): Footprint FMB3
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(147.8000 mm, 110.6000 mm): Footprint T2
+    @(148.1550 mm, 111.8550 mm): Footprint C390
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(147.8000 mm, 110.6000 mm): Footprint T2
+    @(148.9050 mm, 109.8650 mm): Footprint L390
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(153.2650 mm, 110.5375 mm): Footprint R393
+    @(152.0350 mm, 110.0575 mm): Footprint R391
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(153.2650 mm, 110.5375 mm): Footprint R393
+    @(152.8650 mm, 109.3275 mm): Footprint R392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(146.3700 mm, 114.2700 mm): Footprint C371
+    @(145.1000 mm, 116.9100 mm): Footprint T1
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(154.8250 mm, 110.5375 mm): Footprint R395
+    @(155.6050 mm, 110.0575 mm): Footprint C392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(113.2500 mm, 105.8000 mm): Footprint C313
+    @(111.9700 mm, 106.9000 mm): Footprint L310
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(117.8200 mm, 106.9050 mm): Footprint FLB4
+    @(119.0300 mm, 105.8000 mm): Footprint FLB6
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(117.8200 mm, 106.9050 mm): Footprint FLB4
+    @(117.8200 mm, 108.6250 mm): Footprint FLB5
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(127.0800 mm, 112.2000 mm): Footprint R352
+    @(125.5400 mm, 112.2000 mm): Footprint FHB9
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(131.7000 mm, 109.7000 mm): Footprint C360
+    @(133.0000 mm, 110.9000 mm): Footprint U24
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(149.2550 mm, 112.2550 mm): Footprint C391
+    @(149.2550 mm, 114.0550 mm): Footprint R390
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(157.1650 mm, 110.0575 mm): Footprint L392
+    @(155.6050 mm, 110.0575 mm): Footprint C392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(158.4000 mm, 136.0000 mm): Footprint U5
+    @(152.5000 mm, 130.5000 mm): Footprint U6
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(117.6400 mm, 112.2000 mm): Footprint C355
+    @(119.1800 mm, 112.2000 mm): Footprint FHB1
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(150.2550 mm, 110.3450 mm): Footprint U4
+    @(151.2550 mm, 109.5775 mm): Footprint L391
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(150.2550 mm, 110.3450 mm): Footprint U4
+    @(152.0350 mm, 110.0575 mm): Footprint R391
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(150.2550 mm, 110.3450 mm): Footprint U4
+    @(148.9050 mm, 109.8650 mm): Footprint L390
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(102.1000 mm, 113.5000 mm): Footprint J1
+    @(104.2000 mm, 113.9800 mm): Footprint D301
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(102.1000 mm, 113.5000 mm): Footprint J1
+    @(105.3800 mm, 113.5000 mm): Footprint C301
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(143.8300 mm, 114.2700 mm): Footprint C370
+    @(145.1000 mm, 116.9100 mm): Footprint T1
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(111.8800 mm, 112.2000 mm): Footprint C350
+    @(110.6400 mm, 112.2000 mm): Footprint FHP3
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(111.8800 mm, 112.2000 mm): Footprint C350
+    @(112.7100 mm, 112.6800 mm): Footprint C351
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(151.2550 mm, 109.5775 mm): Footprint L391
+    @(152.0350 mm, 110.0575 mm): Footprint R391
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(140.9350 mm, 114.8000 mm): Footprint L361
+    @(141.6950 mm, 116.9000 mm): Footprint C362
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(124.3300 mm, 113.3050 mm): Footprint FHB8
+    @(125.5400 mm, 112.2000 mm): Footprint FHB9
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(124.3300 mm, 113.3050 mm): Footprint FHB8
+    @(123.4200 mm, 112.2000 mm): Footprint FHB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(106.0000 mm, 164.0000 mm): Footprint J5
+    @(116.0000 mm, 164.0000 mm): Footprint SW1
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(119.7000 mm, 120.9750 mm): Footprint FMB10
+    @(119.7000 mm, 122.6950 mm): Footprint FMB9
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(110.4200 mm, 105.1500 mm): Footprint U21
+    @(108.1400 mm, 104.5000 mm): Footprint C310
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(110.4200 mm, 105.1500 mm): Footprint U21
+    @(111.9700 mm, 106.9000 mm): Footprint L310
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(119.0300 mm, 105.8000 mm): Footprint FLB6
+    @(119.9400 mm, 106.9050 mm): Footprint FLB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(119.9400 mm, 108.6250 mm): Footprint FLB8
+    @(119.9400 mm, 106.9050 mm): Footprint FLB7
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(112.4300 mm, 123.8000 mm): Footprint FMB1
+    @(111.9700 mm, 124.9000 mm): Footprint L330
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(112.4300 mm, 123.8000 mm): Footprint FMB1
+    @(110.4200 mm, 123.1500 mm): Footprint U22
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(121.8200 mm, 120.9750 mm): Footprint FMB13
+    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(120.0900 mm, 113.3050 mm): Footprint FHB2
+    @(119.1800 mm, 112.2000 mm): Footprint FHB1
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(104.2000 mm, 113.9800 mm): Footprint D301
+    @(105.3800 mm, 113.5000 mm): Footprint C301
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(110.6400 mm, 112.2000 mm): Footprint FHP3
+    @(109.4300 mm, 113.3050 mm): Footprint FHP2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(110.7700 mm, 108.0000 mm): Footprint C311
+    @(111.9700 mm, 109.4000 mm): Footprint L311
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(152.0350 mm, 110.0575 mm): Footprint R391
+    @(152.8650 mm, 109.3275 mm): Footprint R392
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(111.9700 mm, 106.9000 mm): Footprint L310
+    @(111.9700 mm, 109.4000 mm): Footprint L311
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(117.5800 mm, 122.6950 mm): Footprint FMB7
+    @(118.7900 mm, 123.8000 mm): Footprint FMB8
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(116.6600 mm, 110.7500 mm): Footprint L350
+    @(114.6600 mm, 112.4500 mm): Footprint U23
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(108.5200 mm, 112.2000 mm): Footprint FHP1
+    @(109.4300 mm, 113.3050 mm): Footprint FHP2
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(114.6600 mm, 112.4500 mm): Footprint U23
+    @(112.7100 mm, 112.6800 mm): Footprint C351
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(111.9700 mm, 124.9000 mm): Footprint L330
+    @(110.4200 mm, 123.1500 mm): Footprint U22
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(119.7000 mm, 122.6950 mm): Footprint FMB9
+    @(118.7900 mm, 123.8000 mm): Footprint FMB8
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; warning
+    @(123.0300 mm, 123.8000 mm): Footprint FMB14
+    @(121.8200 mm, 122.6950 mm): Footprint FMB12
+
+** Found 53 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(97.8500 mm, 136.0000 mm): Pad 2 [GND] of J3 on B.Cu
+    @(97.8500 mm, 136.0000 mm): Pad 2 [GND] of J3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(100.3000 mm, 100.3000 mm): Zone 'GND_L4' [GND] on B.Cu, priority 0
+    @(100.3000 mm, 100.3000 mm): Zone 'GND_L1' [GND] on F.Cu, priority 0
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(106.3500 mm, 136.0000 mm): Track [GND] on F.Cu, length 2.8900 mm
+    @(97.8500 mm, 136.0000 mm): Pad 2 [GND] of J3 on B.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(144.3500 mm, 112.5500 mm): Pad 22 [3V0_RF] of U3 on F.Cu
+    @(145.7750 mm, 113.0750 mm): Track [3V0_RF] on B.Cu, length 1.1000 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(146.6250 mm, 112.0250 mm): Track [RFFC_LD] on F.Cu, length 0.4000 mm
+    @(165.0700 mm, 109.4825 mm): Pad 65 [RFFC_LD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(140.3750 mm, 149.6250 mm): Track [PHY_3V3] on F.Cu, length 0.9500 mm
+    @(141.5625 mm, 151.0000 mm): Pad 28 [PHY_3V3] of U201 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(159.2450 mm, 111.4575 mm): Pad 5 [LDO_EN_HB] of U1 on F.Cu
+    @(153.6750 mm, 139.0000 mm): Pad 1 [LDO_EN_HB] of R603 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(167.0200 mm, 120.0000 mm): Pad 1 [VDD_SPI] of C117 on F.Cu
+    @(166.1200 mm, 117.2825 mm): Pad 39 [VDD_SPI] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(112.8500 mm, 162.1000 mm): Pad 1 [CHIP_PU] of SW1 on F.Cu
+    @(112.8500 mm, 165.9000 mm): Pad 2 [CHIP_PU] of SW1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(112.8500 mm, 162.1000 mm): Pad 1 [CHIP_PU] of SW1 on F.Cu
+    @(119.1500 mm, 162.1000 mm): Pad 1 [CHIP_PU] of SW1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(159.2450 mm, 110.4075 mm): Pad 2 [VDDA34] of U1 on F.Cu
+    @(161.9850 mm, 106.5000 mm): Pad 2 [VDDA34] of L101 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(146.4375 mm, 149.0000 mm): Pad 8 [PHY_VDDL] of U201 on F.Cu
+    @(146.4375 mm, 151.0000 mm): Pad 3 [PHY_VDDL] of U201 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(146.4375 mm, 149.0000 mm): Pad 8 [PHY_VDDL] of U201 on F.Cu
+    @(146.7250 mm, 145.6250 mm): Track [PHY_VDDL] on F.Cu, length 0.6500 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(146.4375 mm, 151.0000 mm): Pad 3 [PHY_VDDL] of U201 on F.Cu
+    @(145.0000 mm, 152.4375 mm): Pad 38 [PHY_VDDL] of U201 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(161.7347 mm, 125.2146 mm): Pad 1 [V1P8] of C114 on F.Cu
+    @(162.9700 mm, 117.2825 mm): Pad 30 [V1P8] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(162.9700 mm, 117.2825 mm): Pad 30 [V1P8] of U1 on F.Cu
+    @(164.3700 mm, 117.2825 mm): Pad 34 [V1P8] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(155.4900 mm, 114.5000 mm): Pad 1 [RFFC_ENBL] of R386 on F.Cu
+    @(166.4700 mm, 109.4825 mm): Pad 61 [RFFC_ENBL] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.5625 mm, 148.6000 mm): Pad 22 [PHY_RXD3] of U201 on F.Cu
+    @(148.6122 mm, 138.7077 mm): Pad 1 [PHY_RXD3] of R211 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(145.7728 mm, 123.3957 mm): Pad 1 [ETH_TXD0] of R202 on F.Cu
+    @(159.2450 mm, 114.6075 mm): Pad 14 [ETH_TXD0] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(143.4000 mm, 147.5625 mm): Pad 17 [PHY_TXD1] of U201 on F.Cu
+    @(146.6470 mm, 121.2217 mm): Pad 2 [PHY_TXD1] of R203 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.1715 mm, 128.2694 mm): Pad 2 [PHY_TX_CTL] of R206 on F.Cu
+    @(142.6000 mm, 147.5625 mm): Pad 19 [PHY_TX_CTL] of U201 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.5625 mm, 149.0000 mm): Pad 23 [PHY_RXD2] of U201 on F.Cu
+    @(151.8867 mm, 140.3371 mm): Pad 1 [PHY_RXD2] of R210 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.5625 mm, 149.4000 mm): Pad 24 [PHY_RXD1] of U201 on F.Cu
+    @(155.4396 mm, 141.7037 mm): Pad 1 [PHY_RXD1] of R209 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.5625 mm, 149.8000 mm): Pad 25 [PHY_RXD0] of U201 on F.Cu
+    @(148.3247 mm, 136.1697 mm): Pad 1 [PHY_RXD0] of R208 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.5625 mm, 150.2000 mm): Pad 26 [PHY_RX_CTL] of U201 on F.Cu
+    @(146.8509 mm, 139.7046 mm): Pad 1 [PHY_RX_CTL] of R212 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.5625 mm, 150.6000 mm): Pad 27 [PHY_RX_CLK] of U201 on F.Cu
+    @(144.6820 mm, 139.7101 mm): Pad 1 [PHY_RX_CLK] of R213 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(149.4678 mm, 125.9037 mm): Pad 1 [ETH_TXD2] of R204 on F.Cu
+    @(159.2450 mm, 115.3075 mm): Pad 16 [ETH_TXD2] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(162.3750 mm, 135.2750 mm): Track [USB_DP] on F.Cu, length 2.0000 mm
+    @(162.3550 mm, 136.2500 mm): Pad A6 [USB_DP] of J4 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(167.0450 mm, 115.6575 mm): Pad 44 [USB_DP] of U1 on F.Cu
+    @(160.8750 mm, 131.6250 mm): Track [USB_DP] on B.Cu, length 0.3536 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(150.3250 mm, 134.7250 mm): Track [LDO_EN_LB] on B.Cu, length 6.7000 mm
+    @(159.2450 mm, 112.8575 mm): Pad 9 [LDO_EN_LB] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(155.9900 mm, 106.5000 mm): Pad 1 [RFFC_ENX] of R385 on F.Cu
+    @(167.0450 mm, 110.0575 mm): Pad 60 [RFFC_ENX] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.8600 mm, 113.1000 mm): Pad 3 [SW_V1] of U20 on F.Cu
+    @(159.2450 mm, 112.1575 mm): Pad 7 [SW_V1] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.8600 mm, 113.5000 mm): Pad 2 [SW_V2] of U20 on F.Cu
+    @(159.2450 mm, 112.5075 mm): Pad 8 [SW_V2] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(145.9079 mm, 129.3916 mm): Pad 1 [ETH_TXD3] of R205 on F.Cu
+    @(159.2450 mm, 115.6575 mm): Pad 17 [ETH_TXD3] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(155.9731 mm, 124.3959 mm): Pad 1 [VREF_TOUCH] of C113 on F.Cu
+    @(159.2450 mm, 116.0075 mm): Pad 18 [VREF_TOUCH] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(140.1515 mm, 128.2694 mm): Pad 1 [ETH_TX_CTL] of R206 on F.Cu
+    @(159.2450 mm, 116.3575 mm): Pad 19 [ETH_TX_CTL] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(155.4396 mm, 140.6837 mm): Pad 2 [ETH_RXD1] of R209 on F.Cu
+    @(161.2200 mm, 117.2825 mm): Pad 25 [ETH_RXD1] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(158.9900 mm, 128.5000 mm): Pad 1 [SPI_D_C] of R115 on F.Cu
+    @(167.0450 mm, 116.3575 mm): Pad 42 [SPI_D_C] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(155.4900 mm, 116.0000 mm): Pad 1 [RFFC_RESETX] of R387 on F.Cu
+    @(166.1200 mm, 109.4825 mm): Pad 62 [RFFC_RESETX] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(152.6750 mm, 125.5000 mm): Pad 1 [LED_STAT] of R103 on F.Cu
+    @(164.7200 mm, 109.4825 mm): Pad 66 [LED_STAT] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(132.6000 mm, 111.3000 mm): Pad 3 [SW2_V1] of U24 on F.Cu
+    @(164.3700 mm, 109.4825 mm): Pad 67 [SW2_V1] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(132.6000 mm, 110.9000 mm): Pad 2 [SW2_V2] of U24 on F.Cu
+    @(164.0200 mm, 109.4825 mm): Pad 68 [SW2_V2] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.0000 mm, 155.0000 mm): Pad 1 [JTAG_TDO] of TP2 on F.Cu
+    @(163.6700 mm, 109.4825 mm): Pad 69 [JTAG_TDO] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(110.0000 mm, 155.0000 mm): Pad 1 [JTAG_TCK] of TP3 on F.Cu
+    @(163.3200 mm, 109.4825 mm): Pad 70 [JTAG_TCK] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(113.0000 mm, 155.0000 mm): Pad 1 [JTAG_TDI] of TP4 on F.Cu
+    @(162.9700 mm, 109.4825 mm): Pad 71 [JTAG_TDI] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(116.0000 mm, 155.0000 mm): Pad 1 [JTAG_TMS] of TP5 on F.Cu
+    @(162.6200 mm, 109.4825 mm): Pad 72 [JTAG_TMS] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(108.5400 mm, 164.0000 mm): PTH pad 2 [U0TXD] of J5
+    @(162.2700 mm, 109.4825 mm): Pad 73 [U0TXD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(111.0800 mm, 164.0000 mm): PTH pad 3 [U0RXD] of J5
+    @(161.9200 mm, 109.4825 mm): Pad 74 [U0RXD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(104.0000 mm, 155.0000 mm): Pad 1 [GPIO60] of TP1 on F.Cu
+    @(161.5700 mm, 109.4825 mm): Pad 75 [GPIO60] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(121.8500 mm, 162.1000 mm): Pad 1 [BOOT] of SW2 on F.Cu
+    @(121.8500 mm, 165.9000 mm): Pad 2 [BOOT] of SW2 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(121.8500 mm, 165.9000 mm): Pad 2 [BOOT] of SW2 on F.Cu
+    @(128.1500 mm, 165.9000 mm): Pad 2 [BOOT] of SW2 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(149.8250 mm, 121.5000 mm): Pad 2 [BOOT] of R102 on F.Cu
+    @(161.2200 mm, 109.4825 mm): Pad 76 [BOOT] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(141.1750 mm, 136.8750 mm): Track [3V3_PHY] on F.Cu, length 2.1213 mm
+    @(139.8500 mm, 134.0000 mm): Pad 2 [3V3_PHY] of U7 on F.Cu
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Silkscreen clearance
+    - Silkscreen clipped by board edge
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

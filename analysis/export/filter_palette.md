@@ -1,0 +1,49 @@
+# Joint 0402 palette across band filters (analysis/palette.py)
+
+Unique values: start 23, final **15**
+
+Palette: 0.6 pF, 0.7 pF, 1.2 pF, 1.4 pF, 1.6 pF, 2.3 pF, 4.3 pF, 12 pF, 0.8 nH, 1.6 nH, 2.3 nH, 2.8 nH, 3.9 nH, 5.1 nH, 6.8 nH
+
+
+## LB_LPF
+Values: L1=2.8, C2=1.6, L3=5.1, L4=2.8, C5=1.2, L6=5.1, L7=2.8, C8=1.2, L9=2.3
+
+| Metric | Nominal | MC 5th pct worst |
+|---|---|---|
+| IL max 0.03-1.75 GHz (spec <= 1.0) | 1.00 | 1.12 |
+| RL min 0.03-1.75 GHz (spec >= 14.0) | 17.24 | 16.53 |
+| Rej min 2.40-2.48 GHz (spec >= 42) | 52.47 | 44.28 |
+| Rej min 2.48-4.80 GHz (spec >= 30) | 36.55 | 35.50 |
+| Rej min 4.80-7.60 GHz (spec >= 47) | 54.63 | 53.33 |
+
+## MB_BPF2
+Values: C1=2.3, L2=6.8, C3=1.6, C4=1.4, L5=0.8, C6=12, C7=4.3, L8=2.8, L9=5.1, C10=0.7, L11=5.1, L12=3.9, C13=0.7, L14=3.9
+
+| Metric | Nominal | MC 5th pct worst |
+|---|---|---|
+| IL max 1.75-2.15 GHz (spec <= 2.5) | 3.24 | 4.34 |
+| RL min 1.75-2.15 GHz (spec >= 12.0) | 12.44 | 7.73 |
+| Rej min 0.03-1.50 GHz (spec >= 32) | 29.36 | 24.94 |
+| Rej min 2.40-2.48 GHz (spec >= 37) | 36.50 | 23.75 |
+| Rej min 2.70-3.15 GHz (spec >= 42) | 56.01 | 49.48 |
+| Rej min 3.15-4.60 GHz (spec >= 38) | 39.90 | 39.45 |
+| Rej min 4.60-7.00 GHz (spec >= 30) | 34.73 | 34.12 |
+
+## HB_HPF
+Values: C1=1.2, L2=2.3, C3=2.3, C4=0.7, L5=2.8, C6=1.2, C7=0.6, L8=1.6, C9=0.7
+
+| Metric | Nominal | MC 5th pct worst |
+|---|---|---|
+| IL max 3.10-6.00 GHz (spec <= 1.6) | 1.63 | 1.96 |
+| RL min 3.10-6.00 GHz (spec >= 13.0) | 12.39 | 10.95 |
+| Rej min 2.40-2.48 GHz (spec >= 47) | 45.79 | 38.59 |
+| Rej min 0.03-1.90 GHz (spec >= 52) | 51.67 | 50.45 |
+
+## HB_PRE
+Values: C1=1.4, L2=2.3, C3=1.6
+
+| Metric | Nominal | MC 5th pct worst |
+|---|---|---|
+| IL max 3.10-6.00 GHz (spec <= 0.35) | 0.18 | 0.19 |
+| RL min 3.10-6.00 GHz (spec >= 15.0) | 27.90 | 24.47 |
+| Rej min 0.03-1.00 GHz (spec >= 15) | 16.12 | 15.61 |

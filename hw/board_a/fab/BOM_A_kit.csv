@@ -1,0 +1,32 @@
+LCSC Part #,Qty per board,Designators,Value,Footprint,Note
+,1,U1,ESP32-S31-WROOM-1U-N16R16V,Espressif_ESP32-S31-WROOM-1U,reflow in house (A1); stock 0 at LCSC 2026-11-10; U.FL ANT1 -> patch cable to Bo
+C45783,4,"C101,C401,C601,C603",22uF,C_0805_2012Metric,
+C14663,1,C102,100nF,C_0603_1608Metric,
+C15850,3,"C103,C602,C604",10uF,C_0805_2012Metric,
+C25804,2,"R101,R102",10k,R_0603_1608Metric,
+C15849,1,C104,1uF,C_0603_1608Metric,EN RC delay
+C318884,1,SW1,RESET,SW_SPST_TL3342,
+C318884,1,SW2,BOOT,SW_SPST_TL3342,
+C49257,1,J5,UART,PinHeader_1x03_P2.54mm_Vertical,
+C21190,1,R103,1k,R_0603_1608Metric,
+C72043,1,D101,LED,LED_0603_1608Metric,
+,1,TP1,GPIO60,TestPoint_Pad_D1.0mm,
+C165948,1,J4,USB-C,USB_C_Receptacle_HRO_TYPE-C-31-M-12,
+C23186,2,"R401,R402",5.1k,R_0603_1608Metric,
+C7519,1,U5,USBLC6-2SC6,SOT-23-6,
+C1015,1,FB401,120R@100MHz,L_0603_1608Metric,
+C6186,2,"U6,U7",AMS1117-3.3,SOT-223-3_TabPin2,3V3: module (+ Board B switches)
+C239361,1,J6,To RF board,PinSocket_2x10_P2.54mm_Horizontal,2x10 2.54 mm right-angle female; doubles as GPIO header when used alone
+C47544379,1,U201,YT8531DC-CA,QFN-40-1EP_5x5mm_P0.4mm_EP3.6x3.6mm_ThermalVias,"JLC record is named '【邮寄专用】' ('for mailing only') and has no LCSC page link, unl"
+C9006,1,Y201,"25 MHz, CL 12 pF, +/-10 ppm",Crystal_SMD_3225-4Pin_3.2x2.5mm,"YT8531 requires +/-50 ppm, ESR <= 50 ohm, drive <= 0.5 mW. ESR of C9006 is not c"
+C1548,2,"C201,C202",15 pF 50V C0G,C_0402_1005Metric,Load cap for CL = 12 pF: 15/2 + ~4 pF stray = ~11.5 pF. CoreBoard uses 8.2 pF (C
+C25884,1,R201,2.49k 1%,R_0402_1005Metric,Datasheet: 2.49k +/-1% required
+C1525,10,"C203,C204,C205,C206,C207,C209,C211,C212,C213,C214",100 nF 16V,C_0402_1005Metric,
+C19702,2,"C208,C210",10 uF 10V,C_0603_1608Metric,The CoreBoard uses 4.7 uF here. We use 10 uF so the board shares one bulk value.
+C14709,1,FB201,"120 ohm @100 MHz, 2 A",L_0603_1608Metric,"The CoreBoard uses BLM18PG330SN1D (33 ohm, 3 A; C88984, extended). Either works."
+C25105,6,"R208,R209,R210,R211,R212,R213",33R 1%,R_0402_1005Metric,RX line (PHY drives). Pin 1 is the PHY side. Place at the PHY (source terminatio
+C25900,6,"R214,R215,R216,R217,R218,R219",4.7k 1%,R_0402_1005Metric,CFG_LDO1 = 0
+C23138,2,"R220,R221",330R 1%,R_0603_1608Metric,"LED2 = 1000M link/activity, drives green LED (J201 pin 11). Active high, as on t"
+C14663,1,C215,100 nF 50V,C_0603_1608Metric,"Chip-side centre-tap decoupling. The HR911130C ties all 4 CTs to P1, so one cap "
+C50933,1,J201,"RJ45 1000BASE-T magjack, integrated magnetics + Bob Smith, G/Y LEDs",RJ45_HanRun_HR911130C,Replaces CoreBoard T1 (ML-G24P02S) + J8 (MRD(W)A101A2) + R75/76/78/80 (75R) + C7
+C21189,1,R222,0R,R_0603_1608Metric,Joins chassis to logic GND at a single point near the jack. Fit 0R (as on the Co
